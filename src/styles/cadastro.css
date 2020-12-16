@@ -1,0 +1,27 @@
+#formLogin {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid gray 2px;
+    text-align: center;
+    margin: 5% auto;
+    max-width: 300px;
+}
+
+#formLogin h2{
+    margin: 15px;
+    padding: 8px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#formLogin p {
+    padding: 10px 0;
+    text-align: center;
+}
+
+#formLogin button{
+    margin: 15px auto;
+    padding: 8px 18px;
+}
