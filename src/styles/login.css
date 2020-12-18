@@ -35,7 +35,7 @@ form h3 {
 }
 
 .inputInformationLogin {
-    padding: 3px 30px;
+    padding: 3px 25px;
     text-align: center;
     display:flex;
     justify-content: space-between;
@@ -47,8 +47,8 @@ p {
 }
 
 form button{
-    margin: 15px auto;
-    padding: 8px 18px;
+    margin: 10px 25px;
+    padding: 5px 10px;
     cursor: pointer;
     text-transform: uppercase;
     background-color: #3763ae;
@@ -58,4 +58,15 @@ form button{
     font-weight: bold;
     letter-spacing: 1px;
 
+}
+
+span {
+    vertical-align: middle;
+}
+
+#imgGoogle{
+    height: 25px;
+    width: 25px;
+    padding-right: 10px;
+    filter: drop-shadow(0 0 1px black);
 }
