@@ -6,15 +6,15 @@ export const publicacoes = () => {
     <body>
     <section id='header-posts'>
         <a href="#" id="logo">
-            <img src="img/logo.png" alt="Logo do Site">
+            <img src="../src/img/logo.png" alt="Logo do Site">
         </a>
         <a href="#" id="exit">
-            <img src="img/exit.png" alt="Logout">
+            <img src="../src/img/exit.png" alt="Logout">
         </a>
     </section>
     <main>
         <section id="user-container">
-            <img src="img/user.png" alt="Usuário" class="user-item">
+            <img src="../src/img/user.png" alt="Usuário" class="user-item">
             <h2 class="user-item" >Olá, User!</h2>
         </section>
         <section id="option-container">
@@ -25,11 +25,11 @@ export const publicacoes = () => {
         <h5>Mais recentes</h5>
         <section id="post-container">
             <div class="post-item">
-            <img src="img/user.png">
+            <img src="../src/img/user.png">
             <p>Nome</p>
             </div>
         </section>
-        <img src="img/like.png" alt="like-user" id="like">
+        <img src="../src/img/like.png" alt="like-user" id="like">
     </main>
     
 </body>
