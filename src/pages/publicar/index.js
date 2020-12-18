@@ -21,3 +21,4 @@ export const publicar = () => {
 
     return rootElement;
   };
+
