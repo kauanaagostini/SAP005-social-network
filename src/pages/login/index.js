@@ -1,3 +1,5 @@
+import{handleGoogleSignUp} from "../../services/index.js"
+
 export const Login = () => {
   // Coloque sua página
   const rootElement = document.createElement('div');
@@ -15,11 +17,23 @@ export const Login = () => {
         <input class="input" type="password" placeholder="Informe sua senha" required />
       </p>
       <button id="btnLogin">Entrar</button>
-      <p>Ainda não possui cadastro, Clique aqui e <a href="createAccount">registre-se.</a></p>
+      <p>OU</p>
+      <button id="btnGoogle">
+          <span>
+              <img id="imgGoogle" src="../../img/google-symbol-1.png">
+          </span>
+          <span>Entrar com o Google</span>
+      </button>
+      <p>Ainda não possui cadastro, <a href="createAccount">registre-se</a>.</p>
     </form>
   `;
+
+  const btnGoogle = rootElement.querySelector("#btnGoogle")
+
+  btnGoogle.addEventListener("click", (event) => {
+    event.preventDefault()
+    handleGoogleSignUp()
+})
+
   return rootElement;
 };
-
-// <script src="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.js"></script>
-// <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.css" />
