@@ -1,3 +1,6 @@
+import {createPost} from "../../services/index.js"
+import {onNavigate} from "../../utils/history.js"
+
 export const publicar = () => {
     // Coloque sua página
     const rootElement = document.createElement('div');
@@ -12,7 +15,8 @@ export const publicar = () => {
   let mensagem = rootElement.querySelector('#post-user');
 
   post.addEventListener('click', (event) => {
-    console.log(mensagem.value);
+    createPost(mensagem.value);
+    onNavigate('/publicacoes')
   });
 
     return rootElement;
