@@ -2,7 +2,7 @@
 @import "reset.css";
 
 /* página de cadastro */
-@import "cadastro.css";
+@import "login.css";
 
 /* página de publicar */
 @import "publicar.css";
@@ -51,4 +51,6 @@ nav > ul{
     color:#313131;
     display: block;
     padding: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
