@@ -1,20 +1,23 @@
+import{getPosts} from "../../services/index.js"
+
+
 export const publicacoes = () => {
+
+    console.log(getPosts());
     // Coloque sua página
     const rootElement = document.createElement('div');
     rootElement.innerHTML = `
-
-    <body>
-    <section id='header-posts'>
+    <header id="header">
         <a href="#" id="logo">
-            <img src="img/logo.png" alt="Logo do Site">
+            <img src="../../img/logo.png" alt="Logo do Site">
         </a>
         <a href="#" id="exit">
-            <img src="img/exit.png" alt="Logout">
+            <img src="../../img/exit.png" alt="Logout">
         </a>
-    </section>
+    </header> 
     <main>
         <section id="user-container">
-            <img src="img/user.png" alt="Usuário" class="user-item">
+            <img src="../../img/user.png" alt="Logo do Site" class="user-item">
             <h2 class="user-item" >Olá, User!</h2>
         </section>
         <section id="option-container">
@@ -25,14 +28,22 @@ export const publicacoes = () => {
         <h5>Mais recentes</h5>
         <section id="post-container">
             <div class="post-item">
-            <img src="img/user.png">
+            <img src="../../img/user.png">
             <p>Nome</p>
             </div>
         </section>
-        <img src="img/like.png" alt="like-user" id="like">
+        <section id="container-edit"> 
+            <div class="item-edit">
+                <img src="../../img/like.png" alt="like" id="like">
+                <p id="number-of-likes"> 0 </p>
+            </div>
+            <div class="item-edit">
+                <p id="edit-post">EDITAR</p>
+                <p id="delete-post">DELETAR</p>
+            </div>     
+        </section>
     </main>
-    
-</body>
+      
     `;
     return rootElement;
   };

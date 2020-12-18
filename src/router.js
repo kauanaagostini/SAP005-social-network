@@ -2,7 +2,7 @@
 import { Home } from './pages/home/index.js';
 import { Login } from './pages/login/index.js';
 import { onNavigate } from './utils/history.js';
-import {cadastro} from './pages/cadastro/index.js';
+import {createAccount} from './pages/createAccount/index.js';
 import {publicar} from './pages/publicar/index.js';
 import {publicacoes} from './pages/publicacoes/index.js';
 
@@ -12,7 +12,7 @@ const routeRender = () => {
   const routes = {
     '/' : Home,
     '/login': Login,
-    '/cadastro': cadastro,
+    '/createAccount': createAccount,
     '/publicar': publicar,
     '/publicacoes': publicacoes,
   };
@@ -39,10 +39,10 @@ window.addEventListener('load', () => {
     });
 
   document
-    .getElementById('cadastro')
+    .getElementById('createAccount')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/cadastro')
+      onNavigate('/createAccount')
     });
   
     
