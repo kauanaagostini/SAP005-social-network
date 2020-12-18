@@ -48,7 +48,7 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 
 ### Personas 
 
-![Persona - 1](src/img/readme/persona1.jpg) 
+![Persona - 1](src/img/readme/persona1.jpg)
 ![Persona - 2](src/img/readme/persona2.jpg) 
 
 ### Entrevistas 
@@ -73,6 +73,7 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 :small_blue_diamond: Input que permita a outros usuários comentarem a publicação e darem likes;
 
 :small_blue_diamond: Função que permita ao usuário fazer logout do app.
+
 
 :pushpin: **História de Usuário 2 -** “Estudante, precisa de dicas objetivas sobre como estruturar uma redação para melhorá-las.” 
 
@@ -226,7 +227,7 @@ Comportamento:
 
 [apresentar dados] 
 
-## 7. Ferramentas: 
+## 7. Ferramentas 
 
 :hammer: HTML5 
 
