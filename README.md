@@ -3,14 +3,14 @@
 ## Índice
 
 - [1. Prefácio](#1-prefácio)
-- [2. Conhecendo Nossos Usuários](#2-conhecendo-nossos-usuarios)
-- [3. Definição de Produto](#3-definicao-de-produto)
+- [2. Conhecendo Nossos Usuários](#2-conhecendo-nossos-usuários)
+- [3. Definição de Produto](#3-definição-de-produto)
 - [4. Fluxograma](#4-fluxograma)
-- [5. Interface do Usuário (protótipo de baixa fidelidade)](#5-interface-do-usuario)
+- [5. Interface do Usuário](#5-interface-do-usuário)
 - [6. Teste de Usabilidade](#6-teste-de-usabilidade)
 - [7. Ferramentas](#7-ferramentas)
-- [8. Colocando a Mão na Massa](#8-colocando-a-mao-na-massa)
-- [9. Considerações](#9-consideracoes)
+- [8. Colocando a Mão na Massa](#8-colocando-a-mão-na-massa)
+- [9. Considerações Finais](#9-considerações-finais)
 - [10. Agradecimentos](#10-agradecimentos)
 - [11. Autoras](#11-autoras)
 
@@ -62,21 +62,30 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 
 **Critérios de Aceitação:** 
 
-:small_blue_diamond: Página de cadastro na plataforma; 
-:small_blue_diamond: Página para login na plataforma (e-mail e senha);  
-:small_blue_diamond: Página onde o usuário possa escrever uma publicação (input de texto e um botão enviar postagem); 
-:small_blue_diamond: Página onde todos da plataforma possam visualizar a publicação postada pelo usuário; 
-:small_blue_diamond: Input que permita a outros usuários comentarem a publicação e darem likes; 
-:small_blue_diamond: Função que permita ao usuário fazer logout do app. 
+:small_blue_diamond: Página de cadastro na plataforma;
+
+:small_blue_diamond: Página para login na plataforma (e-mail e senha);
+
+:small_blue_diamond: Página onde o usuário possa escrever uma publicação (input de texto e um botão enviar postagem);
+
+:small_blue_diamond: Página onde todos da plataforma possam visualizar a publicação postada pelo usuário;
+
+:small_blue_diamond: Input que permita a outros usuários comentarem a publicação e darem likes;
+
+:small_blue_diamond: Função que permita ao usuário fazer logout do app.
 
 :pushpin: **História de Usuário 2 -** “Estudante, precisa de dicas objetivas sobre como estruturar uma redação para melhorá-las.” 
 
 **Critérios de Aceitação:** 
 
 :small_blue_diamond: Página de cadastro na plataforma; 
+
 :small_blue_diamond: Página para login na plataforma (e-mail e senha);  
-:small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que aquele post é relacionado à estrutura de redação. 
+
+:small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que aquele post é relacionado à estrutura de redação.
+
 :small_blue_diamond: O sinalizador irá aparecer no post > página de publicações. 
+
 :small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
 :pushpin: **História de Usuário 3 -** “Estudante, gostaria de monitoria em suas redações para saber se está no caminho certo.”  
@@ -84,10 +93,15 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 **Critérios de Aceitação:**
 
 :small_blue_diamond: Página de cadastro na plataforma; 
+
 :small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+
 :small_blue_diamond: Página onde o usuário possa escrever uma publicação (input de texto e um botão enviar postagem); 
+
 :small_blue_diamond: Página onde todos da plataforma possam visualizar a publicação postada pelo usuário; 
+
 :small_blue_diamond: Input que permita a outros usuários comentarem a publicação e darem likes; 
+
 :small_blue_diamond: Função que permita ao usuário fazer logout do app. 
  
 :pushpin: **História de Usuário 4 -** “Estudante, precisa ler outras redações que tiveram boas notas, para usar como exemplo.” 
@@ -95,12 +109,19 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 **Critérios de Aceitação:**
 
 :small_blue_diamond: Página de cadastro na plataforma; 
+
 :small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+
 :small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que aquele post é uma redação. 
+
 :small_blue_diamond: O sinalizador irá aparecer no post > página de publicações; 
+
 :small_blue_diamond: Página onde todos da plataforma possam visualizar publicações de outros usuários; 
+
 :small_blue_diamond: Visualizar as curtidas (contagem de likes) para determinado post; 
+
 :small_blue_diamond: Poder ordenar por curtidas +++; 
+
 :small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
 :pushpin: **História de Usuário 5 -** “Estudante, gostaria de visualizar abordagens de temas que podem cair na redação, para poder separar e treinar.” 
@@ -108,10 +129,15 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 **Critérios de Aceitação:**
 
 :small_blue_diamond: Página de cadastro na plataforma; 
+
 :small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+
 :small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que aquele post é uma sugestão de temas para redação de vestibular; 
+
 :small_blue_diamond: O sinalizador irá aparecer no post > página de publicações;
+
 :small_blue_diamond: Página onde todos da plataforma possam visualizar publicações de outros usuários; 
+
 :small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
 :pushpin: **História de Usuário 6 -** “Estudante, gostaria de postar suas redações de forma anônima, porque tem vergonha de seus textos.” 
@@ -119,10 +145,15 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 **Critérios de Aceitação:** 
 
 :small_blue_diamond: Página de cadastro na plataforma; 
+
 :small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+
 :small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que ao postar, o usuário não quer que apareça seus dados no documento; 
+
 :small_blue_diamond: Post ir para a página de publicações com perfil anônimo (imagem de anônimo e nome User, por exemplo); 
+
 :small_blue_diamond: Página onde todos da plataforma possam visualizar publicações de outros usuários; 
+
 :small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
 ### Definição de pronto 
@@ -131,48 +162,63 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 
 Login com Firebase: 
 
-- Para o login e postagens na timeline, o uso de Firebase Authentication e Cloud Firestore.
-- O usuário deve poder criar uma conta de acesso ou autenticar-se com conta de e-mail e senha e também com uma conta do Google. 
+:small_blue_diamond: Para o login e postagens na timeline, o uso de Firebase Authentication e Cloud Firestore.
+
+:small_blue_diamond: O usuário deve poder criar uma conta de acesso ou autenticar-se com conta de e-mail e senha e também com uma conta do Google. 
 
 Validações: 
 
-- Somente usuários com contas válidas têm acesso permitido. 
-- Não haver usuários repetidos. 
-- A conta do usuário deve ser um e-mail válido. 
-- O que o usuário digita no campo de senha (input) deve ser secreto. 
+:small_blue_diamond: Somente usuários com contas válidas têm acesso permitido. 
+
+:small_blue_diamond: Não haver usuários repetidos. 
+
+:small_blue_diamond: A conta do usuário deve ser um e-mail válido. 
+
+:small_blue_diamond: O que o usuário digita no campo de senha (input) deve ser secreto. 
 
 Comportamento: 
 
-- Quando o formulário de registro ou login é enviado, ele deve ser validado. 
-- Se houver erros, mensagens descritivas devem ser exibidas para ajudar o usuário. 
+:small_blue_diamond: Quando o formulário de registro ou login é enviado, ele deve ser validado. 
+
+:small_blue_diamond: Se houver erros, mensagens descritivas devem ser exibidas para ajudar o usuário. 
 
 **Timeline:**  
 
 Validações: 
 
-- Ao publicar, deve ser validado se há conteúdo no input. 
+:small_blue_diamond: Ao publicar, deve ser validado se há conteúdo no input. 
 
 Comportamento: 
 
-- Ao recarregar o aplicativo, é necessário verificar se o usuário está logado antes de exibir o conteúdo.
-- Conseguir publicar um post.
-- Poder dar e remover likes em uma publicação. Máximo de um por usuário. 
-- Visualizar contagem de likes. 
-- Poder excluir uma postagem específica. 
-- Solicitar confirmação antes de excluir um post. 
-- Ao clicar em editar um post, você deve alterar o texto para um input que permite editar o texto e salvar as alterações. 
-- Ao salvar as alterações, você deve voltar ao texto normal, mas com a informação editada. 
-- Ao recarregar a página, poder ver os textos editados. 
+:small_blue_diamond: Ao recarregar o aplicativo, é necessário verificar se o usuário está logado antes de exibir o conteúdo.
+
+:small_blue_diamond: Conseguir publicar um post.
+
+:small_blue_diamond: Poder dar e remover likes em uma publicação. Máximo de um por usuário. 
+
+:small_blue_diamond: Visualizar contagem de likes. 
+
+:small_blue_diamond: Poder excluir uma postagem específica.
+
+:small_blue_diamond: Solicitar confirmação antes de excluir um post. 
+
+:small_blue_diamond: Ao clicar em editar um post, você deve alterar o texto para um input que permite editar o texto e salvar as alterações. 
+
+:small_blue_diamond: Ao salvar as alterações, você deve voltar ao texto normal, mas com a informação editada. 
+
+:small_blue_diamond: Ao recarregar a página, poder ver os textos editados. 
 
 **Testes**
 
-- Passar de 70% a 100% nos testes unitários; 
-- Responsividade;
-- Teste de experimentação de aplicativo com os usuários.
+:small_blue_diamond: Passar de 70% a 100% nos testes unitários; 
+
+:small_blue_diamond: Responsividade;
+
+:small_blue_diamond: Teste de experimentação de aplicativo com os usuários.
 
 ## 4. Fluxograma
 
-## 5. Interface de Usuário (protótipo de baixa fidelidade) 
+## 5. Interface de Usuário  
 
 [Imagens dos protótipos] 
 
@@ -200,6 +246,8 @@ Clica aqui, para testar :rocket:
 
 ## 11. Autoras 
 
-:octocat: Alessandra Alves | [GitHub - Alessandra](https://github.com/ale-alves)
-:octocat: Kauana Agostini  | [GitHub - Kauana](https://github.com/kauanaagostini)
-:octocat: Thaís Alencar | [GitHub - Thaís](https://github.com/alencartha)
+:small_blue_diamond: Alessandra Alves | [GitHub - Alessandra](https://github.com/ale-alves)
+
+:small_blue_diamond: Kauana Agostini  | [GitHub - Kauana](https://github.com/kauanaagostini)
+
+:small_blue_diamond: Thaís Alencar | [GitHub - Thaís](https://github.com/alencartha)<br/>
