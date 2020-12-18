@@ -3,373 +3,203 @@
 ## Índice
 
 - [1. Prefácio](#1-prefácio)
-- [2. Resumo do projeto](#2-resumo-do-projeto)
-- [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
-- [4. Considerações gerais](#4-considerações-gerais)
-- [5. Critérios de aceitação mínimos do
-  projeto](#5-critérios-de-aceitação-mínimos-do-projeto)
-- [6. Hacker edition](#6-hacker-edition)
-- [7. Entrega](#7-entrega)
-- [8. Guias, dicas e leituras
-  complementares](#8-guias-dicas-e-leituras-complementares)
+- [2. Conhecendo Nossos Usuários](#2-conhecendo-nossos-usuarios)
+- [3. Definição de Produto](#3-definicao-de-produto)
+- [4. Fluxograma](#4-fluxograma)
+- [5. Interface do Usuário (protótipo de baixa fidelidade)](#5-interface-do-usuario)
+- [6. Teste de Usabilidade](#6-teste-de-usabilidade)
+- [7. Ferramentas](#7-ferramentas)
+- [8. Colocando a Mão na Massa](#8-colocando-a-mao-na-massa)
+- [9. Considerações](#9-consideracoes)
+- [10. Agradecimentos](#10-agradecimentos)
+- [11. Autoras](#11-autoras)
 
 ---
 
 ## 1. Prefácio
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais
-invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem
-viver sem elas.
+A proposta do projeto é construir uma Rede Social sobre quaisquer assuntos, onde terá que permitir à qualquer usuário criar uma conta de acesso, logar-se com ela, criar, editar, deletar e dar likes em publicações. 
 
-Há redes sociais de todo tipo para todos os tipos de interesse. Por exemplo: em
-uma rodada de financiamento com investidores, foi apresentada uma rede social
-para químicos onde os usuários podem publicar artigos a respeito de suas
-pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
-determinadas tags ou popularidade, mais recente ou mais comentado.
+Ao se deparar com essa ideia, e após algumas reuniões e pesquisas com o grupo, decidimos criar um aplicativo, voltado à elaboração de redações. Visto que, a maioria das pessoas sentem dificuldades em como estruturar, diferenciá-la e até mesmo falar sobre o tema proposto.  
 
-## 2. Resumo do projeto
+A redação hoje em dia conta muitos pontos nas provas do vestibular, concurso público e até no processo seletivo de uma empresa. E saber fazer uma boa redação para garantir uma vaga, é fundamental. 
 
-Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
-decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
-educação, saúde, energias renováveis, amantes das
-[Empanadas](https://pt.wikipedia.org/wiki/Empanada), de
-[Tacos](<https://pt.wikipedia.org/wiki/Taco_(culin%C3%A1ria)>), de
-[Feijoada](https://pt.wikipedia.org/wiki/Feijoada), ou do que seja.
+K.A.T. é o aplicativo que faltava, para descomplicar a vida dos usuários, onde poderão postar suas redações, refazer, treinar, pedir ajuda, compartilhar dicas, comentar, curtir e receber feedbacks de melhorias seja de professores, como de amigos da rede. 
 
-Sua Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
-logar-se com ela, criar, editar, deletar e dar _likes_ em publicações.
+## 2. Conhecendo nossos Usuários 
 
-## 3. Objetivos de aprendizagem
+### Principais Usuários 
 
-O objetivo principal de aprendizagem deste projeto é construir uma [Single-page
-Application
-(SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-[_responsiva_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
-(com mais de uma tela/ página) na qual seja possível **ler e escrever dados.**
-
-### HTML e CSS
-
-- [ ] [HTML
-      semântico](https://developer.mozilla.org/pt-BR/docs/Glossario/Semantica)
-- [ ] [CSS `flexbox`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [ ] Construir sua aplicação respeitando o protótipo.
+Para todas as pessoas que irão prestar vestibular, concurso público e para todos aqueles que queiram se aperfeiçoar em suas redações de forma objetiva para fins profissionais e pessoais. E também professores que possam compartilhar dicas para melhorar as redações e comentar qualquer dúvida existente na rede. 
 
-### DOM e Web APIs
+### Problemas 
 
-- [ ] [Manipulação do
-      DOM](https://developer.mozilla.org/pt-BR/docs/DOM/Referencia_do_DOM/Introdu%C3%A7%C3%A3o)
-- [ ] [History
-      API](https://developer.mozilla.org/pt-BR/docs/Web/API/History_API)
+Estudantes tem dificuldades em elaborar suas redações, fugindo do tema, não conseguem estruturar de forma correta, lógica e interligada. Faltam muitas dicas de temas e objetividade nos assuntos, além disso gostariam que suas redações fossem comentadas para saber onde estão errando ou se estão no caminho certo. 
 
-### Javascript
+## 3. Definição de Produto 
 
-- [ ] [Uso de
-      callbacks](https://developer.mozilla.org/pt-BR/docs/Glossario/Callback_function)
-- [ ] [Consumo de
-      Promises](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
-- [ ] Uso de ES modules
-      ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-      |
-      [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
+Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo: 
 
-### Firebase
+:small_blue_diamond: Personas criadas; 
 
-- [ ] [Firestore](https://firebase.google.com/docs/firestore)
-- [ ] [Firebase Auth](https://firebase.google.com/docs/auth/web/start)
-- [ ] [Firebase security rules](https://firebase.google.com/docs/rules)
+:small_blue_diamond: Personas validadas com as entrevistas realizadas; 
 
-### Testing
+:small_blue_diamond: História de usuário. 
 
-- [ ] [Teste unitários](https://jestjs.io/docs/pt-BR/getting-started)
-- [ ] [Testes assíncronos](https://jestjs.io/docs/pt-BR/asynchronous)
-- [ ] [Mocking](https://jestjs.io/docs/pt-BR/manual-mocks)
-
-### Git e Github
+### Personas 
 
-- [ ] [Colaboração pelo Github](https://docs.github.com/pt/free-pro-team@latest/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)
-- [ ] Organização pelo [Github Projects](https://docs.github.com/pt/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards)
+![Persona - 1](src/img/readme/persona1.jpg) 
+![Persona - 2](src/img/readme/persona2.jpg) 
 
-### Boas práticas de programação
+### Entrevistas 
+[colocar as imagens]
 
-- [ ] Modularização
-- [ ] Nomenclatura / Semântica
-- [ ] Linting
+### História do Usuário 
 
----
+![História do Usuário](src/img/readme/historiaDoUsuario.png) 
 
-## 4. Considerações gerais
+:pushpin: **História de Usuário 1 -** “Estudante, gostaria de postar minhas redações, para que as pessoas pudessem opinar e comentar.” 
 
-- Este projeto deve ser desenvolvido em trios.
+**Critérios de Aceitação:** 
 
-- A lógica do projeto deve estar implementada completamente em JavaScript
-  (ES6+), HTML e CSS :smiley:. Para este projeto **não está permitido** o uso de
-  _frameworks_ ou bibliotecas de CSS e JS.
+:small_blue_diamond: Página de cadastro na plataforma; 
+:small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+:small_blue_diamond: Página onde o usuário possa escrever uma publicação (input de texto e um botão enviar postagem); 
+:small_blue_diamond: Página onde todos da plataforma possam visualizar a publicação postada pelo usuário; 
+:small_blue_diamond: Input que permita a outros usuários comentarem a publicação e darem likes; 
+:small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
-- A divisão e organização do trabalho deve permitir, sem exceção, que **cada
-  integrante** da equipe pratique a aprendizagem de tudo que está envolvido em
-  **cada história**. _Não dividam o trabalho como em uma fábrica._
+:pushpin: **História de Usuário 2 -** “Estudante, precisa de dicas objetivas sobre como estruturar uma redação para melhorá-las.” 
 
-- Está avançando em seus projetos com alguma fluidez e sem grandes problemas?
-  Seja generosa com suas parceiras, deixe-as aprender e praticar sem restrições,
-  mesmo que demore um pouco mais. Aproveite para _mentorá-las_, para fazer _pair
-  programming_. Uma das melhores formas de aprender é explicar verbalmente.
+**Critérios de Aceitação:** 
 
-- Está sentindo dificuldade e para você é mais difícil de avançar? Não fique com
-  as partes "fáceis" do projeto. Converse, negocie, busque sua oportunidade de
-  praticar e aprender o que é mais difícil para você.
-
-- Vocês apenas poderão trabalhar em uma história por vez. Não avancem para a
-  próxima sem completar a anterior. As histórias apenas são concluídas quando se
-  completam **todos** os critérios de aceitação + **toda** sua definição de
-  pronto.
-
-## 5. Critérios de aceitação mínimos do projeto
-
-### 5.1 Boilerplate
-
-O _boilerplate_ contém uma estrutura de arquivos como ponto de partida, assim
-como toda a configuração de dependências:
-
-```text
-.
-├── src
-|  ├── pages (páginas)
-|  |  └── home
-|  |  |  ├── index.js
-|  |  |  └── index.spec.js
-|  |  └── login
-|  |     ├── index.js
-|  |     └── index.spec.js
-|  ├── services (serviços externos)
-|  |  ├── index.js
-|  |  └── index.spec.js
-|  ├── utils
-|  |  └── history.js
-|  ├── index.html
-|  ├── router.js
-|  └── style.css
-├── README.md
-└── package.json
-
-```
-
-### 5.2 Definição do produto
-
-No `README.md`, conte-nos brevemente como você mapeou as necessidades dos seus
-usuários e como você chegou à definição final do seu produto. É importante que
-detalhe:
-
-- Quem são os principais usuários do produto.
-- Qual problema o produto resolve/para que ele serve para esses usuários.
-
-### 5.3 Histórias de usuário
-
-Depois de entender as necessidades de seus usuários, escreva as Histórias de
-Usuário. Elas representam tudo o que ele precisa fazer/ver na Rede Social. Cada
-uma de suas histórias de usuário deve possuir:
-
-- **Critérios de aceitação:** tudo o que deve acontecer para satisfazer as
-  necessidades do usuário.
-
-- **Definição de pronto:** todos os aspectos técnicos que devem ser atendidos
-  para que, como equipe, saibam que essa história está finalizada e pronta para
-  ser publicada. **Todas** suas histórias de usuário (com exceções), devem
-  incluir esses aspectos em sua definição de pronto (além de tudo o que precisa
-  adicionar):
-
-  - Ser uma SPA.
-  - Ser _responsivo_.
-  - Receber _code review_ de pelo menos uma parceira de sua equipe.
-  - Fazer _tests_ unitários.
-  - Fazer testes manuais buscando erros e imperfeições simples.
-  - Fazer testes de usabilidade e incorporar o _feedback_ dos usuários como
-    melhorias.
-
-### 5.4 Desenho da Interface de Usuário (protótipo de baixa fidelidade)
-
-Você deve definir qual será o fluxo que o usuário seguirá dentro do seu
-aplicativo e, com isso, criar a interface do usuário (UI) que siga este fluxo.
-
-### 5.5 Responsivo
-
-Deve funcionar bem em dispositivos de tela grande (computadores, laptops etc.) e
-pequena (_tablets_, telefones celulares etc.). Sugerimos seguir a técnica
-_`mobile first`_ (mais detalhes sobre essa técnica ao final).
-
-### 5.6 Considerações sobre o comportamento da Interface do Usuário (UI)
-
-Essas considerações ajudarão você a escrever as definições de pronto de sua
-H.U.:
+:small_blue_diamond: Página de cadastro na plataforma; 
+:small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+:small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que aquele post é relacionado à estrutura de redação. 
+:small_blue_diamond: O sinalizador irá aparecer no post > página de publicações. 
+:small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
-#### Criação e login de conta de usuário
+:pushpin: **História de Usuário 3 -** “Estudante, gostaria de monitoria em suas redações para saber se está no caminho certo.”  
 
-- _Login_ com Firebase:
-  - Para o _login_ e postagens na timeline, você pode usar
-    [Firebase Authentication](https://firebase.google.com/docs/auth) e [Cloud Firestore](https://firebase.google.com/docs/firestore)
-  - O usuário deve poder criar uma conta de acesso ou autenticar-se com conta de
-    e-mail e senha e também com uma conta do Google.
-- Validações:
-  - Somente usuários com contas válidas têm acesso permitido.
-  - Não haver usuários repetidos.
-  - A conta do usuário deve ser um email válido.
-  - O que o usuário digita no campo de senha (_input_) deve ser secreto.
-- Comportamento:
-  - Quando o formulário de registro ou login é enviado, ele deve ser validado.
-  - Se houver erros, mensagens descritivas devem ser exibidas para ajudar o
-    usuário.
+**Critérios de Aceitação:**
 
-#### Timeline/linha do tempo
+:small_blue_diamond: Página de cadastro na plataforma; 
+:small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+:small_blue_diamond: Página onde o usuário possa escrever uma publicação (input de texto e um botão enviar postagem); 
+:small_blue_diamond: Página onde todos da plataforma possam visualizar a publicação postada pelo usuário; 
+:small_blue_diamond: Input que permita a outros usuários comentarem a publicação e darem likes; 
+:small_blue_diamond: Função que permita ao usuário fazer logout do app. 
+ 
+:pushpin: **História de Usuário 4 -** “Estudante, precisa ler outras redações que tiveram boas notas, para usar como exemplo.” 
 
-- Validações:
-  - Ao publicar, deve ser validado se há conteúdo no _input_.
-- Comportamento:
-  - Ao recarregar o aplicativo, é necessário verificar se o usuário está
-    _logado_ antes de exibir o conteúdo,
-  - Conseguir publicar um _post_.
-  - Poder dar e remover _likes_ em uma publicação. Máximo de um por usuário.
-  - Visualizar contagem de _likes_.
-  - Poder excluir uma postagem específica.
-  - Solicitar confirmação antes de excluir um _post_.
-  - Ao clicar em editar um _post_, você deve alterar o texto para um _input_ que
-    permite editar o texto e salvar as alterações.
-  - Ao salvar as alterações, você deve voltar ao texto normal, mas com a
-    informação editada.
-  - Ao recarregar a página, poder ver os textos editados.
+**Critérios de Aceitação:**
 
-### 5.7 Considerações técnicas sobre front-end
+:small_blue_diamond: Página de cadastro na plataforma; 
+:small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+:small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que aquele post é uma redação. 
+:small_blue_diamond: O sinalizador irá aparecer no post > página de publicações; 
+:small_blue_diamond: Página onde todos da plataforma possam visualizar publicações de outros usuários; 
+:small_blue_diamond: Visualizar as curtidas (contagem de likes) para determinado post; 
+:small_blue_diamond: Poder ordenar por curtidas +++; 
+:small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
-- Separar a manipulação do DOM da lógica (separação de responsabilidades).
-- Ter várias telas. Para isso, seu aplicativo deve ser um [Single Page
-  Application
-  (SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-- Alterar e persistir dados. Os dados que você adiciona ou modifica devem
-  persistir por todo o aplicativo. Recomendamos que você use o
-  [Firebase](https://firebase.google.com/) para isso também.
+:pushpin: **História de Usuário 5 -** “Estudante, gostaria de visualizar abordagens de temas que podem cair na redação, para poder separar e treinar.” 
 
-#### Testes unitários
+**Critérios de Aceitação:**
 
-- Lembre-se de que não há _setup_ de **testes** definido, isso dependerá da
-  estrutura do seu projeto. Você não deve esquecer de pensar sobre os testes.
-  Eles podem ajudar a definir a estrutura e sua lógica.
+:small_blue_diamond: Página de cadastro na plataforma; 
+:small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+:small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que aquele post é uma sugestão de temas para redação de vestibular; 
+:small_blue_diamond: O sinalizador irá aparecer no post > página de publicações;
+:small_blue_diamond: Página onde todos da plataforma possam visualizar publicações de outros usuários; 
+:small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
-- Os testes de unidade devem cobrir no mínimo 70% de _statements_, _functions_,
-  _lines_ e _branches_.
+:pushpin: **História de Usuário 6 -** “Estudante, gostaria de postar suas redações de forma anônima, porque tem vergonha de seus textos.” 
 
-### 5.8 Considerações técnicas UX
+**Critérios de Aceitação:** 
 
-- Faça pelo menos 2 entrevistas com os usuários.
-- Faça um protótipo de baixa fidelidade.
-- Verifique se a implementação do código segue as diretrizes do protótipo.
-- Faça sessões de teste de usabilidade com o produto em HTML.
+:small_blue_diamond: Página de cadastro na plataforma; 
+:small_blue_diamond: Página para login na plataforma (e-mail e senha);  
+:small_blue_diamond: No input de texto, quando o usuário for criar uma publicação, ter um filtro que sinalize que ao postar, o usuário não quer que apareça seus dados no documento; 
+:small_blue_diamond: Post ir para a página de publicações com perfil anônimo (imagem de anônimo e nome User, por exemplo); 
+:small_blue_diamond: Página onde todos da plataforma possam visualizar publicações de outros usuários; 
+:small_blue_diamond: Função que permita ao usuário fazer logout do app. 
 
-## 6. Hacker Edition
+### Definição de pronto 
 
-As seções chamadas _Hacker Edition_ são **opcionais**. Se **você terminou** e
-cumpriu todos os requisitos acima e sobrou tempo, tente concluí-las. Dessa
-forma, você pode aprofundar e/ou exercitar mais os objetivos de aprendizagem do
-projeto.
+**Criação e login de conta de usuário** 
 
-- Criar posts com imagens.
-- Procurar usuários, adicionar e excluir "amigos".
-- Definir a privacidade de _posts_ (público ou apenas para amigos).
-- Permitir ver na linha do tempo de usuários "não amigos" apenas os posts
-  públicos.
-- Permitir comentar ou responder a uma postagem.
-- Editar perfil.
+Login com Firebase: 
 
-## 7. Entrega
+- Para o login e postagens na timeline, o uso de Firebase Authentication e Cloud Firestore.
+- O usuário deve poder criar uma conta de acesso ou autenticar-se com conta de e-mail e senha e também com uma conta do Google. 
 
-O projeto será entregue subindo seu código no GitHub (`commit` /`push`) e a
-interface será hospedada usando o [Firebase Hosting](https://firebase.google.com/docs/hosting).
+Validações: 
 
----
+- Somente usuários com contas válidas têm acesso permitido. 
+- Não haver usuários repetidos. 
+- A conta do usuário deve ser um e-mail válido. 
+- O que o usuário digita no campo de senha (input) deve ser secreto. 
 
-## 8. Guias, dicas e leituras complementares
+Comportamento: 
 
-### Primeiros passos
+- Quando o formulário de registro ou login é enviado, ele deve ser validado. 
+- Se houver erros, mensagens descritivas devem ser exibidas para ajudar o usuário. 
 
-Para começar, você precisará criar um _fork_ e _clone_ deste repositório.
+**Timeline:**  
 
-### Instalação de Firebase
+Validações: 
 
-Este projeto está configurado para rodar por meio do servidor do Firebase. Para isso, será necessário possuir o [Firebase CLI](https://firebase.google.com/docs/cli#install_the_firebase_cli) instalado globalmente em sua máquina. Utilize o comando `npm install -g firebase-tools`
+- Ao publicar, deve ser validado se há conteúdo no input. 
 
-Inicie um novo projeto web no [console do Firebase](https://console.firebase.google.com/) (pode desabilitar o analytics).
+Comportamento: 
 
-Caso apareça a opção de habilitar o Hosting na tela seguinte, selecionar.
+- Ao recarregar o aplicativo, é necessário verificar se o usuário está logado antes de exibir o conteúdo.
+- Conseguir publicar um post.
+- Poder dar e remover likes em uma publicação. Máximo de um por usuário. 
+- Visualizar contagem de likes. 
+- Poder excluir uma postagem específica. 
+- Solicitar confirmação antes de excluir um post. 
+- Ao clicar em editar um post, você deve alterar o texto para um input que permite editar o texto e salvar as alterações. 
+- Ao salvar as alterações, você deve voltar ao texto normal, mas com a informação editada. 
+- Ao recarregar a página, poder ver os textos editados. 
 
-Clique no menu lateral `Cloud Firestore` para criar uma nova database como `production mode` e escolher a região `us-east1`.
+**Testes**
 
-**IMPORTANTE** rodar todos os comandos do Firebase no terminal a partir da pasta raiz do projeto.
+- Passar de 70% a 100% nos testes unitários; 
+- Responsividade;
+- Teste de experimentação de aplicativo com os usuários.
 
-Executar o comando `firebase login` e realizar o [login](https://firebase.google.com/docs/cli#sign-in-test-cli) por meio de uma conta Google - deve abrir uma janela automaticamente, se não abrir pode clicar no link que vai aparecer no console.
+## 4. Fluxograma
 
-Executar o comando `firebase init` para iniciar o setup do projeto.
+## 5. Interface de Usuário (protótipo de baixa fidelidade) 
 
-Selecionar Hosting (aperte espaço para selecionar essa opção e depois enter).
+[Imagens dos protótipos] 
 
-Selecionar `Use an existing project` (o terminal vai mostrar o nome do projeto que você acabou de criar no site do Firebase).
+## 6. Teste de Usabilidade 
 
-Escrever `src` para definir como `public directory` (o padrão vai estar como `public`).
+[apresentar dados] 
 
-Escrever `y` para selecionar como SPA.
+## 7. Ferramentas: 
 
-Escrever `N` para não fazer builds e deploys automáticos com GitHub.
+:hammer: HTML5 
 
-O Firebase vai dizer que `src/index.html` já existe e pergunta se quer sobrescrever. Nesse momento não tem problema fazer isso, ele vai sobrescrever o que veio no boilerplate da Lab com uma página padrão do Firebase. Sugerimos dar `N`, para não sobrescrever o `index.html`.
+:hammer: CSS3 
 
-Se der tudo certo, o Firebase vai criar o arquivo `.firebaserc` de configuração na pasta do projeto e estamos prontas pra continuar.
+:hammer: Vanilla JavaScript 
 
-Instale as dependências do projeto rodando o comando `npm install`.
+## 8. Colocando a Mão na Massa  
 
-Para iniciar sua aplicação web, use o comando `npm start` que usamos nos projetos anteriores. Com esse comando, você deve ver em `http://localhost:5000` uma página padrão do Firebase, que está sendo renderizada de `src/index.html`.
+[explicando como utilizar o app e inserir imagens] 
 
-### Mobile first
+Clica aqui, para testar :rocket: 
 
-O conceito de [_mobile
-first_](https://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/) faz
-referência a um processo de desenho e desenvolvimento que parte de como se vê e
-como funciona uma aplicação primeiro em um dispositivo móvel e mais adiante se
-analisa como adaptar a aplicação à telas progressivamente maiores. Esta é uma
-contraposição ao modelo tradicional, no qual primeiro se desenha os websites (ou
-webapps) para desktops e depois os adaptam para telas menores.
+## 9. Considerações Finais 
 
-A motivação aqui é se assegurar que desde o começo sejam desenhadas telas
-_responsivas_. Dessa forma, começamos com a aparência e o comportamento do
-aplicativo em uma tela e ambiente móvel.
+## 10. Agradecimentos 
 
-### Múltiplas telas
+## 11. Autoras 
 
-Em projetos anteriores, nossas aplicações eram compostas de apenas uma tela
-_principal_ (uma só _página_). Neste projeto, precisaremos dividir nossa
-interface em várias _pages_ e oferecer uma maneira de navegar entre
-essas telas. Esse problema pode ser resolvido de várias maneiras: com arquivos
-HTML independentes (cada um com seu próprio URL) e links tradicionais; mantendo
-na memória e renderizando condicionalmente (sem atualizar a página);
-[manipulando o histórico do
-navegador](https://developer.mozilla.org/pt-BR/docs/Web/API/History_API#Navegando_atrav%C3%A9s_do_hist%C3%B3rico)
-com
-[`window.history`](https://developer.mozilla.org/pt-BR/docs/Web/API/History_API).
-Neste projeto, convidamos você a explorar opções e decidir sobre uma opção de
-implementação.
-
-### Gravação de dados
-
-Nos projetos anteriores, consumimos dados, mas ainda não tínhamos escrito dados
-(salvar alterações, criar dados, excluir, etc). Neste projeto, você precisará
-criar (salvar) novos dados, além de ler, atualizar e modificar os dados
-existentes. Esses dados podem ser salvos remotamente usando o
-[Firebase](https://firebase.google.com/).
-
-Outras:
-
-- [Mobile
-  First](https://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/)
-- [Mobile First Is NOT Mobile Only - Nielsen Norman
-  Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
-- [Flexbox - CSS
-  Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [Módulos:
-  Export](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
-- [Módulos:
-  Import](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import)
+:octocat: Alessandra Alves | [GitHub - Alessandra](https://github.com/ale-alves)
+:octocat: Kauana Agostini  | [GitHub - Kauana](https://github.com/kauanaagostini)
+:octocat: Thaís Alencar | [GitHub - Thaís](https://github.com/alencartha)
