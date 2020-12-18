@@ -1,6 +1,11 @@
 // exporte suas funções
 
-export const myFunction = () => {
-  // seu código aqui
-  console.log('Olá mundo!');
+const post=[];
+
+export const createPost = (mensagem) => {
+  post.push(mensagem);
 };
+
+export const getPosts =()=>{
+  return post;
+}
