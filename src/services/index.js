@@ -1,28 +1,25 @@
 // exporte suas funções
 
-// export const createPost = (post) => {
-//   firebase
-//     .firestore()
-//     .collection('post')
-//     .add({
-//       text: post
-//     });
-// };
+ export const createPost = (post) => {
+   firebase
+     .firestore()
+     .collection('post')
+     .add({
+        text: post,
+        likes:0,
+        comentarios:[]
+     });
+ };
 
-
-
-export const likePost =(likes) =>{
-  likePost = likePost +1;
-}
-
-
-const post=[];
-
-export const createPost = (mensagem) => {
-  post.push(mensagem);
-};
 
 export const getPosts =()=>{
+  const post = firebase.firestore().collection('post')
+  post.get().then(snap=>{
+    snap.forEach(doc=>{
+      console.log(doc.data())
+    });
+      
+    });
   return post;
 }
 

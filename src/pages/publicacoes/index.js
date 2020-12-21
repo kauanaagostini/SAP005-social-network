@@ -1,5 +1,4 @@
-import{getPosts} from "../../services/index.js"
-import {likePost} from "../../services/index.js";
+import{getPosts} from "../../services/index.js";
 
 
 export const publicacoes = () => {
