@@ -13,10 +13,11 @@ export const publicar = () => {
   `
   const post= rootElement.querySelector('#postar');
   let mensagem = rootElement.querySelector('#post-user');
+  
 
   post.addEventListener('click', (event) => {
     createPost(mensagem.value);
-    onNavigate('/publicacoes')
+    onNavigate('/publicacoes');
   });
 
     return rootElement;
