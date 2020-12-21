@@ -11,12 +11,12 @@ export const publicar = () => {
       <button id="postar">Enviar</button>
     </section>  
   `
-  const post= rootElement.querySelector('#postar');
-  let mensagem = rootElement.querySelector('#post-user');
+  const submitPost= rootElement.querySelector('#postar');
+  let text = rootElement.querySelector('#post-user');
   
 
-  post.addEventListener('click', (event) => {
-    createPost(mensagem.value);
+  submitPost.addEventListener('click', (event) => {
+    createPost(text.value);
     onNavigate('/publicacoes');
   });
 
