@@ -29,16 +29,20 @@ export const getPosts =()=>{
 export const handleSignUp = (email, password) => {
   firebase.auth()
   .createUserWithEmailAndPassword(email, password)
+  .then(user =>{
+    console.log("usuario", user)
+    alert("Usuário criado com sucesso!")
+  })
   .catch((error) => {
-    var errorMessage = error.message;
+    let errorMessage = error.message;
     alert(`${errorMessage}`)
-    console.log("deuerrado!");
   });
 };
 
 export const handleGoogleSignUp = () => {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithRedirect(provider)
+  let provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope('https://www.googleapis.com/auth/plus.login');
+  firebase.auth().signInWithRedirect(provider);
 }
 
 

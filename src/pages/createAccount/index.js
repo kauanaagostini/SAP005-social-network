@@ -1,6 +1,4 @@
 import{handleSignUp} from "../../services/index.js"
-import { onNavigate } from "../../utils/history.js";
-// import {onNavigate} from "../../utils/history.js"
 
 export const createAccount = () => {
     // Coloque sua página
@@ -13,16 +11,12 @@ export const createAccount = () => {
                 <h3>É rápido e fácil!</h3>
             </section>
             <p class="inputInformationCreate">
-                <label class="title" for="User">Insira seu e-mail</label>
-                <input class="input" id="email" type="e-mail" placeholder="E-mail">
-            </p>
-            <p class="inputInformationCreate">
-                <label class="title" for="password">Nova senha</label>
-                <input class="input" id="password" type="password" placeholder="Senha">
-            </p>
-            <p class="inputInformationCreate">
-                <label class="title" for="password">Repita a senha</label>
-                <input class="input" id="samePassword" type="password" placeholder="Repita sua senha">
+                <input class="input" id="firstName" type="text" placeholder="Nome" required>
+                <input class="input" id="lastName" type="text" placeholder="Sobrenome" required>
+                <input class="input" id="birth" type="date" placeholder="Data de Nascimento" required>
+                <input class="input" id="email" type="email" placeholder="E-mail" required>
+                <input class="input" id="password" type="password" placeholder="Senha" required>
+                <input class="input" id="samePassword" type="password" placeholder="Repita sua senha" required>
             </p>
             <button id="btnCreateAccount">Cadastre-se</button>
         </form>
