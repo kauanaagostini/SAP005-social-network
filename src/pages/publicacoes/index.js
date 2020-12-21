@@ -1,4 +1,5 @@
 import{getPosts} from "../../services/index.js"
+import {likePost} from "../../services/index.js";
 
 
 export const publicacoes = () => {
@@ -45,6 +46,14 @@ export const publicacoes = () => {
     </main>
       
     `;
+
+    // let likeIcon = rootElement.querySelector("like");
+
+    // likeIcon.addEventListener('click', (event) =>{
+    //     let numberOfLikes = rootElement.querySelector("number-of-likes");
+    //     numberOfLikes = likePost (numberOfLikes);
+    // });
+
     return rootElement;
   };
   
