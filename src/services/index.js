@@ -9,8 +9,14 @@
 //     });
 // };
 
-const post=[];
 
+
+export const likePost =(likes) =>{
+  likePost = likePost +1;
+}
+
+
+const post=[];
 
 export const createPost = (mensagem) => {
   post.push(mensagem);
