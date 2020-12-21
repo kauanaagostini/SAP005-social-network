@@ -1,6 +1,16 @@
 // exporte suas funções
 
+// export const createPost = (post) => {
+//   firebase
+//     .firestore()
+//     .collection('post')
+//     .add({
+//       text: post
+//     });
+// };
+
 const post=[];
+
 
 export const createPost = (mensagem) => {
   post.push(mensagem);
@@ -24,4 +34,5 @@ export const handleGoogleSignUp = () => {
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithRedirect(provider)
 }
+
 
