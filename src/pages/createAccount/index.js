@@ -11,12 +11,12 @@ export const createAccount = () => {
                 <h3>É rápido e fácil!</h3>
             </section>
             <p class="inputInformationCreate">
-                <input class="input" id="firstName" type="text" placeholder="Nome" required>
-                <input class="input" id="lastName" type="text" placeholder="Sobrenome" required>
-                <input class="input" id="birth" type="date" placeholder="Data de Nascimento" required>
-                <input class="input" id="email" type="email" placeholder="E-mail" required>
-                <input class="input" id="password" type="password" placeholder="Senha" required>
-                <input class="input" id="samePassword" type="password" placeholder="Repita sua senha" required>
+                <input class="input" id="firstName" type="text" placeholder="Nome" >
+                <input class="input" id="lastName" type="text" placeholder="Sobrenome" >
+                <input class="input" id="birth" type="date" placeholder="Data de Nascimento" >
+                <input class="input" id="email" type="email" placeholder="E-mail" >
+                <input class="input" id="password" type="password" placeholder="Senha" >
+                <input class="input" id="samePassword" type="password" placeholder="Repita sua senha" >
             </p>
             <button id="btnCreateAccount">Cadastre-se</button>
         </form>

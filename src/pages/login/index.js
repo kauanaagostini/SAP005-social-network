@@ -1,4 +1,4 @@
-import{handleGoogleSignUp} from "../../services/index.js"
+import{handleGoogleSignUp, handleSignIn} from "../../services/index.js"
 import { onNavigate } from "../../utils/history.js";
 
 export const Login = () => {
@@ -10,8 +10,8 @@ export const Login = () => {
         <h2>Acesse sua conta</h2>
       </section>
       <p class="inputInformationLogin">
-        <input class="input" type="e-mail" placeholder="E-mail cadastrado" required />
-        <input class="input" type="password" placeholder="Senha" required />
+        <input class="input" id="email" type="email" placeholder="E-mail cadastrado" required />
+        <input class="input" id="password" type="password" placeholder="Senha" required />
       </p>
       <button id="btnLogin">Entrar</button>
       <div class="other">
@@ -29,12 +29,22 @@ export const Login = () => {
     </form>
   `;
 
-  const btnGoogle = rootElement.querySelector("#btnGoogle")
+  const btnGoogle = rootElement.querySelector("#btnGoogle");
+  const btnLogin = rootElement.querySelector("#btnLogin");
+
+  btnLogin.addEventListener("click", (event) => {
+    event.preventDefault()
+    const email = rootElement.querySelector("#email").value
+    const password = rootElement.querySelector("#password").value
+    handleSignIn(email, password);
+    onNavigate("/publicacoes");
+  })
 
   btnGoogle.addEventListener("click", (event) => {
     event.preventDefault()
     handleGoogleSignUp()
-})
+    onNavigate('/publicacoes')
+  });
 
   return rootElement;
 };
