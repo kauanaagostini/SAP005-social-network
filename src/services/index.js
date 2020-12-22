@@ -33,17 +33,23 @@ export const likes = (id, likes) => {
     });
 };
 
-export const handleSignUp = (email, password) => {
-  firebase.auth()
-  .createUserWithEmailAndPassword(email, password)
-  .then(user =>{
-    console.log("usuario")
-    alert("Usuário criado com sucesso!")
-  })
-  .catch((error) => {
-    let errorMessage = error.message;
-    alert(`${errorMessage}`)
-  });
+export const handleSignUp = (email, password, samePassword, firstName, lastName) => {
+  if (password != samePassword) {
+    return alert("Senhas informadas são divergentes")
+  } else if (firstName.length < 1 || lastName.length < 1) {
+    return alert("Os campos Nome e Sobrenome precisam ser preenchidos.")
+  } else {
+    firebase.auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(user =>{
+      firebase.auth().currentUser.displayName = firstName + lastName
+      alert("Usuário criado com sucesso!")
+    })
+    .catch((error) => {
+      let errorMessage = error.message;
+      alert(`${errorMessage}`)
+    });
+  }
 };
 
 export const handleGoogleSignUp = () => {
@@ -56,7 +62,7 @@ export const handleGoogleSignUp = () => {
 export const handleSignIn = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((user) =>{
-    alert(`Bem-vindo ${firebase.auth().currentUser.email}!`)
+  alert(`Bem-vindo ${firebase.auth().currentUser.email}!`)
   })
   .catch((error) => {
     let errorMessage = error.message;
@@ -64,18 +70,7 @@ export const handleSignIn = (email, password) => {
   });
 };
 
-export const handleSingOut = () => {
-  firebase.auth().signOut()
-  .then(()=>{
-    alert("Obrigada por acessar nossa rede!")
-  })
-  .catch((error) => {
-    let errorMessage = error.message;
-    alert(`${errorMessage}`)
-  });
-};
-
-export const signOut = () => {
+export const handleSignOut = () => {
   firebase
     .auth()
     .signOut()
@@ -84,3 +79,13 @@ export const signOut = () => {
     });
 };
 
+export const validatePassword = (password, samePassword) => {
+  if (password != samePassword)
+  return alert("senhas divergentes")
+}
+
+export const validateEmptyInput = (firstName, lastName) => {
+  if (firstName.length < 1 || lastName.length < 1) {
+    return alert("Os campos Nome e Sobrenome são de preenchimentos obrigatórios")
+  }
+}

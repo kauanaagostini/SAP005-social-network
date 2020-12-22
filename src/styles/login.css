@@ -47,8 +47,11 @@ p {
     margin: 7px 0;
     letter-spacing: 1px;
     text-align: center;
-    text-transform: uppercase;
     background-color: transparent;
+}
+
+#firstName, #lastName {
+    text-transform: capitalize;
 }
 
 .input:focus {
