@@ -3,7 +3,7 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: solid gray 2px;
+    border: solid #3763ae99 2px;
     border-radius: 5px;
     text-align: center;
     margin: 5% auto;
@@ -11,7 +11,7 @@ form {
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 form h2{
@@ -24,17 +24,10 @@ form h2{
 }
 
 form h3 {
-    padding: 2px 0;
+    padding: 10px 0;
 }
 
-.inputInformationCreate {
-    padding: 3px 0;
-    text-align: center;
-    display:flex;
-    justify-content: space-between;
-}
-
-.inputInformationLogin {
+.inputInformationLogin, .inputInformationCreate {
     padding: 3px 25px;
     text-align: center;
     display:flex;
@@ -42,8 +35,40 @@ form h3 {
 }
 
 p {
-    padding: 3px 0;
-    text-align: center; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+}
+
+.input {
+    height: 25px;
+    border: solid 2px #3763ae99;
+    border-radius: 7px;
+    margin: 7px 0;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.input:focus {
+    border-color: #3763ae;
+    outline: none !important;
+}
+
+.other {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: #3763ae;
+    padding: 0 25px;
+}
+
+.empty {
+    height: 1px;
+    width: 100px;
+    background-color: #3763ae;
 }
 
 form button{
@@ -51,13 +76,16 @@ form button{
     padding: 5px 10px;
     cursor: pointer;
     text-transform: uppercase;
-    background-color: #3763ae;
-    border: solid 1px #3763ae;
+    background-color: #3763ae99;
+    border: none;
     border-radius: 5px;
     color: #ffffff;
     font-weight: bold;
     letter-spacing: 1px;
+}
 
+form button:hover{
+    background-color: #3763ae;
 }
 
 span {

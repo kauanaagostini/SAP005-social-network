@@ -1,10 +1,10 @@
-import{getPosts} from "../../services/index.js"
-import {likePost} from "../../services/index.js";
+import{getPosts} from "../../services/index.js";
 
 
 export const publicacoes = () => {
 
-    console.log(getPosts());
+  getPosts()
+
     // Coloque sua página
     const rootElement = document.createElement('div');
     rootElement.innerHTML = `
@@ -32,6 +32,9 @@ export const publicacoes = () => {
             <img src="../../img/user.png">
             <p>Nome</p>
             </div>
+            <div class="post-item">
+            <p id="text"> oioioioioi </p>
+            </div>
         </section>
         <section id="container-edit"> 
             <div class="item-edit">
@@ -46,14 +49,6 @@ export const publicacoes = () => {
     </main>
       
     `;
-
-    // let likeIcon = rootElement.querySelector("like");
-
-    // likeIcon.addEventListener('click', (event) =>{
-    //     let numberOfLikes = rootElement.querySelector("number-of-likes");
-    //     numberOfLikes = likePost (numberOfLikes);
-    // });
-
     return rootElement;
   };
   
