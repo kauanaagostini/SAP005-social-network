@@ -1,5 +1,5 @@
 import{handleGoogleSignUp, handleSignIn} from "../../services/index.js"
-import { onNavigate } from "../../utils/history.js";
+import{onNavigate} from "../../utils/history.js"
 
 export const Login = () => {
   // Coloque sua página
@@ -10,8 +10,8 @@ export const Login = () => {
         <h2>Acesse sua conta</h2>
       </section>
       <p class="inputInformationLogin">
-        <input class="input" id="email" type="email" placeholder="E-mail cadastrado" required />
-        <input class="input" id="password" type="password" placeholder="Senha" required />
+        <input class="input" id="email" type="email" placeholder="E-mail cadastrado" required>
+        <input class="input" id="password" type="password" placeholder="Senha" required>
       </p>
       <button id="btnLogin">Entrar</button>
       <div class="other">
