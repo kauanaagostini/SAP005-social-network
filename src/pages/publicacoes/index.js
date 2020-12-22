@@ -1,9 +1,10 @@
-import{getPosts} from "../../services/index.js"
+import{getPosts} from "../../services/index.js";
 
 
 export const publicacoes = () => {
 
-    console.log(getPosts());
+  getPosts()
+
     // Coloque sua página
     const rootElement = document.createElement('div');
     rootElement.innerHTML = `
@@ -30,6 +31,9 @@ export const publicacoes = () => {
             <div class="post-item">
             <img src="../../img/user.png">
             <p>Nome</p>
+            </div>
+            <div class="post-item">
+            <p id="text"> oioioioioi </p>
             </div>
         </section>
         <section id="container-edit"> 
