@@ -5,12 +5,12 @@
      .firestore()
      .collection('post')
      .add({
+        name: firebase.auth().currentUser.displayName,
         text: post,
         likes:0,
         comentarios:[]
-     });
+     })
  };
-
 
 export const getPosts =()=>{
   const post = firebase.firestore().collection('post')
@@ -23,11 +23,21 @@ export const getPosts =()=>{
   return post;
 }
 
+export const likes = (id, likes) => {
+  firebase
+    .firestore()
+    .collection('post')
+    .doc(id)
+    .update({
+      likes: likes + 1,
+    });
+};
+
 export const handleSignUp = (email, password) => {
   firebase.auth()
   .createUserWithEmailAndPassword(email, password)
   .then(user =>{
-    console.log("usuario", user)
+    console.log("usuario")
     alert("Usuário criado com sucesso!")
   })
   .catch((error) => {
@@ -42,4 +52,13 @@ export const handleGoogleSignUp = () => {
   firebase.auth().signInWithRedirect(provider);
 }
 
+
+export const signOut = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      onNavigate('/login');
+    });
+};
 
