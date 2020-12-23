@@ -12,12 +12,14 @@ body{
     max-width: 50px;
 }
 
-header{
+#header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
 }
+
+
 
 #user-container{
     display: flex;
@@ -30,6 +32,10 @@ header{
 
 .user-item{
     padding: 10px;
+}
+
+#hello-user{
+    align-self: center;
 }
 
 #user-container > img{
@@ -68,13 +74,17 @@ h5{
     padding-left: 10px; 
     display: flex;  
     flex-direction: row;
-    justify-content: space-between;
+}
+
+#post-item{
+    flex: 1;
 }
 
 .post-item > img{
     max-width: 50px;
     position: relative;
-    top: 40%;
+    top: 38%;
+    margin-left: 34px;
     transform: translateY(-50%);
 }
 
@@ -82,8 +92,21 @@ h5{
     margin-left: 5px;
     font-size: 10pt;
     position: relative;
-    top: 9%;
+    top: 23%;
+    margin-left: 20px;
     transform: translateY(-50%);
+}
+
+#text-container{
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
+#text-post{
+    align-self: center;
 }
 
 #container-edit{
