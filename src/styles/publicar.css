@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;  
 }   
 
 .title {
@@ -12,11 +10,13 @@
   color: #3763ae;
   margin-right: 18em;
   padding-bottom: 0.5em;
+  margin-top: 20px;
 }
 
 #post-user {   
     border: solid gray 2px;
     border-radius: 5px; 
+    margin-top: 10px !important;
 }
 
 #postar {
@@ -31,4 +31,13 @@
     font-weight: bold;
     letter-spacing: 4px; 
      
+}
+
+#container-button{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: baseline;
+	align-content: stretch;
 }

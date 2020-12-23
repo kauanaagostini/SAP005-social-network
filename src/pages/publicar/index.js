@@ -16,7 +16,7 @@ export const publicar = () => {
     <main>
       <section id="user-container">
         <img src="../../img/user.png" alt="Logo do Site" class="user-item">
-        <h2 class="user-item" >Olá, User!</h2>
+        <h2 class="user-item" id="hello-user">Olá, User!</h2>
       </section>
       <section id="option-container">
         <h3 ><a href="#" class="option-item">Publicar</a></h3>

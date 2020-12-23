@@ -22,8 +22,8 @@ getPosts()
             <h2 class="user-item" id="hello-user">Olá, User!</h2>
         </section>
         <section id="option-container">
-            <h3 ><a href="#" class="option-item">Publicar</a></h3>
-            <h3 ><a href="#" class="option-item">Publicações</a></h3>
+            <h3 ><a href="#" class="option-item" id="posts-view">Publicar</a></h3>
+            <h3 ><a href="#" class="option-item" id="posts-view">Publicações</a></h3>
         </section>
         <h4>Publicações</h4>
         <h5>Mais recentes</h5>
@@ -34,6 +34,7 @@ getPosts()
     </main>
       
     `;
+
      
 
     return rootElement;
