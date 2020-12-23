@@ -1,11 +1,47 @@
-import{ getPosts} from "../../services/index.js";
+import { getPosts } from "../../services/index.js";
 
 
 
 export const publicacoes = () => {
 
-getPosts()
+    const addPost = (post) => {
+        const user = post.data().name;
+        const likes = post.data().likes;
+        const postTemplate =
+            `
+            <section id="post-container" id="${post.id}">
+              <div class="post-item">
+                  <img src="../../img/user.png">
+                  <p>${post.data().name}</p>
+              </div>
+              <div id="text-container">
+                <p id="text-post">${post.data().text} </p>
+              </div>
+            </section>
+            <section id="container-edit"> 
+              <div class="item-edit">
+                <img src="../../img/like.png" alt="like" id="like">
+                <p id="number-of-likes">${post.data().likes} </p>
+              </div>
+              <div class="item-edit">
+                  <p id="edit-post">EDITAR</p>
+                  <p id="delete-post">DELETAR</p>
+              </div>     
+            </section>
+        `
+        document.getElementById("text").innerHTML += postTemplate;
+        document.getElementById("hello-user").innerHTML = `Olá, ${user} !`;
+    };
+
+    getPosts().then(snap => {
+        snap.forEach(doc => {
+            addPost(doc)
+            console.log(doc.data())
+        });
+    })
+
     // Coloque sua página
+
     const rootElement = document.createElement('div');
     rootElement.innerHTML = `
     <header id="header">
@@ -35,8 +71,8 @@ getPosts()
       
     `;
 
-     
+
 
     return rootElement;
-  };
-  
+};
+
