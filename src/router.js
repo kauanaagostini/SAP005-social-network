@@ -60,8 +60,20 @@ window.addEventListener('load', () => {
       onNavigate('/publicacoes')
     });  
     
-  
 
+    // document
+    // .getElementById('posts-view')
+    // .addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   onNavigate('/publicacoes')
+    // }); 
+    
+    // document
+    // .getElementById('posts-write')
+    // .addEventListener('click', (e) => {
+    //   e.preventDefault();
+    //   onNavigate('/publicar')
+    // }); 
 
   routeRender();
 });
