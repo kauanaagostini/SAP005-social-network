@@ -1,5 +1,6 @@
 // exporte suas funções
 
+
  export const createPost = (post) => {
    firebase
      .firestore()
@@ -14,14 +15,8 @@
 
 export const getPosts =()=>{
   const post = firebase.firestore().collection('post')
-  post.get().then(snap=>{
-    snap.forEach(doc=>{
-      console.log(doc.data())
-    });
-      
-    });
-  return post;
-}
+  return post.get();
+};
 
 export const likes = (id, likes) => {
   firebase
