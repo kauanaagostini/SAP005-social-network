@@ -52,7 +52,7 @@ export const handleGoogleSignUp = () => {
 export const handleSignIn = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((user) =>{
-  alert(`Bem-vindo ${firebase.auth().currentUser.email}!`)
+  alert(`Bem-vindo ${firebase.auth().currentUser.displayName}!`)
   })
   .catch((error) => {
     let errorMessage = error.message;
@@ -65,7 +65,7 @@ export const handleSignOut = () => {
     .auth()
     .signOut()
     .then(() => {
-      onNavigate('/login');
+      alert(`Usuário deslogado com sucesso. \nObrigada por acessar nossa aplicação!`);
     });
 };
 
