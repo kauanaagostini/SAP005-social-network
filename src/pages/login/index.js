@@ -32,16 +32,14 @@ export const Login = () => {
   const btnGoogle = rootElement.querySelector("#btnGoogle");
   const btnLogin = rootElement.querySelector("#btnLogin");
 
-  btnLogin.addEventListener("click", (event) => {
-    event.preventDefault()
+  btnLogin.addEventListener("click", () => {
     const email = rootElement.querySelector("#email").value
     const password = rootElement.querySelector("#password").value
     handleSignIn(email, password);
-    onNavigate("/publicacoes");
+    onNavigate("/publicar");
   })
 
-  btnGoogle.addEventListener("click", (event) => {
-    event.preventDefault()
+  btnGoogle.addEventListener("click", () => {
     handleGoogleSignUp()
     onNavigate('/publicacoes')
   });

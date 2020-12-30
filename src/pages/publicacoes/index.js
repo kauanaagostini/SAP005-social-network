@@ -1,4 +1,5 @@
-import { getPosts } from "../../services/index.js";
+import { getPosts, handleSignOut } from "../../services/index.js";
+import { onNavigate } from "../../utils/history.js";
 
 
 
@@ -30,13 +31,13 @@ export const publicacoes = () => {
             </section>
         `
         document.getElementById("text").innerHTML += postTemplate;
-        document.getElementById("hello-user").innerHTML = `Olá, ${user} !`;
+        document.getElementById("hello-user").innerHTML = `Olá, ${firebase.auth().currentUser.displayName} !`;
     };
 
     getPosts().then(snap => {
         snap.forEach(doc => {
             addPost(doc)
-            console.log(doc.data())
+            //console.log(doc.data())
         });
     })
 
@@ -48,18 +49,17 @@ export const publicacoes = () => {
         <a href="#" id="logo">
             <img src="../../img/logo.png" alt="Logo do Site">
         </a>
-        <a href="#" id="exit">
-            <img src="../../img/exit.png" alt="Logout">
-        </a>
+        <input id="exit" type="image" src="../../img/exit.png" alt="Logout" />
+
     </header> 
     <main>
         <section id="user-container">
             <img src="../../img/user.png" alt="Logo do Site" class="user-item">
-            <h2 class="user-item" id="hello-user">Olá, User!</h2>
+            <h2 class="user-item" id="hello-user"> </h2>
         </section>
         <section id="option-container">
-            <h3 ><a href="#" class="option-item" id="posts-view">Publicar</a></h3>
-            <h3 ><a href="#" class="option-item" id="posts-view">Publicações</a></h3>
+            <h3 ><a href="publicar" class="option-item" id="posts-view">Publicar</a></h3>
+            <h3 ><a href="publicacoes" class="option-item" id="posts-view">Publicações</a></h3>
         </section>
         <h4>Publicações</h4>
         <h5>Mais recentes</h5>
@@ -70,6 +70,12 @@ export const publicacoes = () => {
     </main>
       
     `;
+    const btnExit = rootElement.querySelector("#exit");
+    btnExit.addEventListener("click", (event) => {
+        event.preventDefault();
+        handleSignOut()
+        onNavigate("/login")
+    })
 
 
 

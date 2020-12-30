@@ -1,4 +1,5 @@
 import{handleSignUp, validateEmptyInput, validatePassword} from "../../services/index.js"
+import { onNavigate } from "../../utils/history.js";
 
 export const createAccount = () => {
     // Coloque sua página
@@ -33,7 +34,9 @@ export const createAccount = () => {
         const returnValidateInput = validateEmptyInput(firtsName, lastName)
         if(returnValidatePassword && returnValidateInput){
             handleSignUp(email, password, firtsName, lastName)
+            onNavigate("/publicacoes")
         }
+
         
     })
     return rootElement;
