@@ -1,4 +1,4 @@
-import{handleSignUp} from "../../services/index.js"
+import{handleSignUp, validateEmptyInput, validatePassword} from "../../services/index.js"
 
 export const createAccount = () => {
     // Coloque sua página
@@ -29,7 +29,12 @@ export const createAccount = () => {
         const samePassword = rootElement.querySelector("#samePassword").value
         const firtsName = rootElement.querySelector("#firstName").value
         const lastName = rootElement.querySelector("#lastName").value
-        handleSignUp(email, password, samePassword, firtsName, lastName)
+        const returnValidatePassword = validatePassword(password,samePassword)
+        const returnValidateInput = validateEmptyInput(firtsName, lastName)
+        if(returnValidatePassword && returnValidateInput){
+            handleSignUp(email, password, firtsName, lastName)
+        }
+        
     })
     return rootElement;
 };

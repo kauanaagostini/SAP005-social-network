@@ -28,23 +28,18 @@ export const likes = (id, likes) => {
     });
 };
 
-export const handleSignUp = (email, password, samePassword, firstName, lastName) => {
-  if (password != samePassword) {
-    return alert("Senhas informadas são divergentes")
-  } else if (firstName.length < 1 || lastName.length < 1) {
-    return alert("Os campos Nome e Sobrenome precisam ser preenchidos.")
-  } else {
-    firebase.auth()
+export const handleSignUp = (email, password, firstName, lastName) => {
+  firebase.auth()
     .createUserWithEmailAndPassword(email, password)
     .then(user =>{
-      firebase.auth().currentUser.displayName = firstName + lastName
+      const userName = `${firstName} ${lastName}`
+      user.user.updateProfile({displayName: userName})
       alert("Usuário criado com sucesso!")
     })
     .catch((error) => {
       let errorMessage = error.message;
       alert(`${errorMessage}`)
     });
-  }
 };
 
 export const handleGoogleSignUp = () => {
@@ -75,12 +70,19 @@ export const handleSignOut = () => {
 };
 
 export const validatePassword = (password, samePassword) => {
-  if (password != samePassword)
-  return alert("senhas divergentes")
-}
+  if (password != samePassword){
+    alert("senhas divergentes")
+    return false
+  } else { 
+    return true
+  }
+};
 
 export const validateEmptyInput = (firstName, lastName) => {
   if (firstName.length < 1 || lastName.length < 1) {
-    return alert("Os campos Nome e Sobrenome são de preenchimentos obrigatórios")
+    alert("Os campos Nome e Sobrenome são de preenchimentos obrigatórios")
+    return false
+  } else {
+    return true
   }
 }
