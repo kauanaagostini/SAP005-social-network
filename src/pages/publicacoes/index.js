@@ -1,4 +1,4 @@
-import { getPosts, handleSignOut } from "../../services/index.js";
+import { getPosts, handleSignOut} from "../../services/index.js";
 import { onNavigate } from "../../utils/history.js";
 
 
@@ -6,18 +6,19 @@ import { onNavigate } from "../../utils/history.js";
 export const publicacoes = () => {
 
     const addPost = (post) => {
-        const user = post.data().name;
-        const likes = post.data().likes;
         const postTemplate =
             `
             <section id="post-container" id="${post.id}">
-              <div class="post-item">
-                  <img src="../../img/user.png">
-                  <p>${post.data().name}</p>
-              </div>
-              <div id="text-container">
-                <p id="text-post">${post.data().text} </p>
-              </div>
+                <div class="post-item">
+                    <img src="../../img/user.png">
+                    <p>${post.data().name}</p>
+                </div>
+                <div id="text-container">
+                    <p id="text-post">${post.data().text} </p>  
+                </div>
+              <div id="container-date">
+                <p id="date">${post.data().date} </p>
+              </div> 
             </section>
             <section id="container-edit"> 
               <div class="item-edit">
@@ -30,6 +31,7 @@ export const publicacoes = () => {
               </div>     
             </section>
         `
+
         document.getElementById("text").innerHTML += postTemplate;
         document.getElementById("hello-user").innerHTML = `Olá, ${firebase.auth().currentUser.displayName} !`;
     };

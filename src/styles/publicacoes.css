@@ -74,6 +74,7 @@ h5{
     padding-left: 10px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #post-item{
@@ -103,6 +104,11 @@ h5{
     justify-content: center;
     align-items: flex-start;
     align-content: center;
+}
+
+#date-container{
+    display: flex;
+    align-items: flex-end;
 }
 
 #text-post{
