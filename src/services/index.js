@@ -8,6 +8,9 @@
      .add({
         name: firebase.auth().currentUser.displayName,
         text: post,
+        date: firebase.firestore.Timestamp.fromDate(new Date())
+        .toDate()
+        .toLocaleString('pt-BR'),
         likes:0,
         comentarios:[]
      })
@@ -18,15 +21,14 @@ export const getPosts =()=>{
   return post.get();
 };
 
-export const likes = (id, likes) => {
-  firebase
-    .firestore()
-    .collection('post')
-    .doc(id)
-    .update({
-      likes: likes + 1,
-    });
-};
+// export const likes = (likes) => {
+//   firebase
+//     .firestore()
+//     .collection('post')
+//     .update({
+//       likes: likes + 1,
+//     });
+// };
 
 export const handleSignUp = (email, password, firstName, lastName) => {
   firebase.auth()
