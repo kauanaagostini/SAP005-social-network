@@ -67,7 +67,7 @@ h5{
 }
 
 
-#post-container{
+.post-container{
     padding: 33px;
     margin-top: 26px;
     background-color: rgb(201, 201, 201);
@@ -125,7 +125,7 @@ h5{
   display: flex;
 }
 
-#like{
+.btn-like{
     display: block;
     max-height: 28px;
     max-width: 32px;
@@ -188,7 +188,7 @@ h5{
         margin-left: 15px;
     }
 
-    #post-container{
+    .post-container{
         margin: 0 auto;
         background-color: rgb(201, 201, 201);
         height: 200px;
@@ -203,7 +203,7 @@ h5{
     }
 
 
-    #like{
+    .btn-like{
         max-width: 40px;
         margin-top:5px;
         cursor: pointer;

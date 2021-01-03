@@ -1,4 +1,4 @@
-import { createPost, handleSignOut } from "../../services/index.js";
+import { createPost, handleSignOut} from "../../services/index.js";
 import { onNavigate } from "../../utils/history.js";
 
 export const publicar = () => {
@@ -43,6 +43,7 @@ export const publicar = () => {
       handleSignOut()
       onNavigate("/login")
   })
+
 
   return rootElement;
 };
