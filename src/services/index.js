@@ -2,7 +2,7 @@
 
 export const getPosts = () => {
   const post = firebase.firestore().collection('post') 
-  .orderBy("date", "desc")
+  .orderBy("date", "desc") 
   return post.get();
 };
 

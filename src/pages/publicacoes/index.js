@@ -1,4 +1,4 @@
-import { getPosts, handleSignOut, likePost, deletePost} from "../../services/index.js";
+import { getPosts, handleSignOut, likePost, deletePost } from "../../services/index.js";
 import { onNavigate } from "../../utils/history.js";
 
 
@@ -14,12 +14,12 @@ export const publicacoes = () => {
                     <p>${post.data().name}</p>
                 </div>
                 <div id="text-container">
-                    <p id="text-post">${post.data().text} </p>  
+                    <textarea id="text-post">${post.data().text}</textarea> 
                 </div>
-              <div id="container-date">
-                <p id="date">${post.data().date} </p>
-              </div> 
             </section>
+            <section id="container-date">
+                <p id="text-date">${post.data().date} </p>
+            </section> 
             <section id="container-edit"> 
               <div class="item-edit">
                 <img src="../../img/like.png" alt="like" class="btn-like" data-id=${post.id}>
@@ -31,27 +31,33 @@ export const publicacoes = () => {
               </div>     
             </section>
         `
+
         document.getElementById("text").innerHTML += postTemplate;
 
         const btnLike = document.querySelector(".btn-like")
-        btnLike.addEventListener("click", ()=>{
-            likePost(btnLike.dataset.id)
-            console.log(btnLike.dataset.id)
+        btnLike.addEventListener("click", () => {
+        likePost(btnLike.dataset.id)
+        console.log(btnLike.dataset.id)
+
         })
 
         const btnDelete = document.querySelector("#delete-post")
-        btnDelete.addEventListener("click", (event)=>{
-            event.preventDefault();
-            deletePost(btnDelete.dataset.id)
-        })
-    }
+        btnDelete.addEventListener("click", () => {
+        deletePost(btnDelete.dataset.id)
+        }) 
+
+
     
-   
+    }
+
+
     getPosts().then(snap => {
         snap.forEach(post => {
             addPost(post)
+            console.log(post)
         });
     })
+
 
     // Coloque sua página
 
@@ -66,15 +72,17 @@ export const publicacoes = () => {
     </header> 
     <main>
         <section id="user-container">
-            <img src="../../img/user.png" alt="Logo do Site" class="user-item">
+            <img src="../../img/user.png" alt="Logo do Site">
             <h2 class="user-item" id="hello-user">Olá, ${firebase.auth().currentUser.displayName}!</h2>
         </section>
         <section id="option-container">
             <h3 ><a href="publicar" class="option-item" id="posts-view">Publicar</a></h3>
             <h3 ><a href="publicacoes" class="option-item" id="posts-view">Publicações</a></h3>
         </section>
-        <h4>Publicações</h4>
-        <h5>Mais recentes</h5>
+        <section id=recent-container>
+            <h4>Publicações</h4>
+            <h5>Mais recentes</h5>
+        </section>
         <section>
             <div id=text></div>
         </section>
@@ -88,9 +96,9 @@ export const publicacoes = () => {
         handleSignOut()
         onNavigate("/login")
     })
-  
+
+
     return rootElement;
 };
-
 
 
