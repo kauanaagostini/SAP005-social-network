@@ -1,5 +1,3 @@
-/* reset css */
-@import "reset.css";
 
 /* página de cadastro */
 @import "login.css";
@@ -12,6 +10,15 @@
 
 
 /* ---------GERAL------------------------ */
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    text-decoration: none;
+    border:0;
+    box-sizing: border-box;
+}
 
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -47,4 +54,68 @@ nav > ul{
     padding: 10px;
     font-weight: bold;
     letter-spacing: 0.5px;
+}
+
+/*  -----------------------ESTILO DO TOPO PAGINA PUBLICAR/PUBLICAÇOES-------------------------- */
+
+#logo > img{
+    max-width: 50px;
+}
+
+#exit{
+    max-width: 45px;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#user-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.user-item{
+    padding: 10px;
+}
+
+#photo-user{
+    max-height: 87px;
+}
+
+#hello-user{
+    align-self: center;
+}
+
+#user-container > img{
+    max-width: 73px;
+}
+
+#option-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.option-item{
+    padding: 10px;
+}
+
+
+@media only screen and (min-width: 1382px) { 
+
+    #user-container > img{
+        max-width: 100px;
+    }
+
 }

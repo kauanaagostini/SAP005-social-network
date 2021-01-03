@@ -4,68 +4,15 @@ body{
     margin: 10px;
 }
 
-#logo > img{
-    max-width: 50px;
-}
-
-#exit{
-    max-width: 45px;
-}
-
-#header{
+#recent-container{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
+    padding-top: 46px;
 }
 
-
-
-#user-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: center;
+#recent-container >h4{
+    font-size: 26px;
 }
-
-.user-item{
-    padding: 10px;
-}
-
-#hello-user{
-    align-self: center;
-}
-
-#user-container > img{
-    max-width: 50px;
-}
-
-#option-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: center;
-}
-
-.option-item{
-    padding: 10px;
-}
-
-h4{
-    padding-top: 27px;
-    font-size: 14pt;
-    padding-left: 25px;
-}
-
-h5{
-    text-align: end;
-    font-size: 12pt;
-}
-
 
 .post-container{
     padding: 33px;
@@ -77,25 +24,15 @@ h5{
     flex-wrap: wrap;
 }
 
-#post-item{
-    flex: 1;
+.post-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .post-item > img{
-    max-width: 50px;
-    position: relative;
-    top: 38%;
-    margin-left: 34px;
-    transform: translateY(-50%);
-}
-
-.post-item >p{
-    margin-left: 5px;
-    font-size: 10pt;
-    position: relative;
-    top: 23%;
-    margin-left: 20px;
-    transform: translateY(-50%);
+    max-width: 65px;
 }
 
 #text-container{
@@ -106,19 +43,32 @@ h5{
     align-content: center;
 }
 
-#date-container{
-    display: flex;
-    align-items: flex-end;
+#text-post{
+    margin: 0px; 
+    width: 311px; 
+    height: 108px; 
+    resize: none;
+    text-align: center;
+    border: none;
+    background-color: #c9c9c9;
+    font-size:18px;
 }
 
-#text-post{
-    align-self: center;
+#container-date{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#text-date{  
+    font-size: 12px;
+    color:#afaeae;
 }
 
 #container-edit{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 45px;
 }
 
 .item-edit{
@@ -158,19 +108,20 @@ h5{
 
 @media only screen and (min-width: 1382px) { 
 
-    #user-container > img{
-        max-width: 100px;
+    #recent-container{
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding:40px 0;
+        width: 78%;
     }
 
-    h4{
-        font-size: 20pt;
-        text-align: center;
-    }
-
-    h5{
-        text-align: end;
-        padding-right: 40px;
-        margin-right: 200px;
+    .post-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: 20px;
     }
 
     .post-item > img{
@@ -180,14 +131,6 @@ h5{
         transform: translateY(-50%);
     }
 
-    .post-item >p{
-        font-size: 12pt;
-        position: relative;
-        top: 20%;
-        transform: translateY(-50%);
-        margin-left: 15px;
-    }
-
     .post-container{
         margin: 0 auto;
         background-color: rgb(201, 201, 201);
@@ -195,13 +138,20 @@ h5{
         width: 78%;
     }
 
-    #container-edit{
+    #container-date{
         margin: 0 auto;
-        width: 70%;
-        display:flex;
-        justify-content: space-between;
+        width: 78%;
+        display: flex;
+        justify-content: flex-end;
     }
 
+    #container-edit{
+        margin: 0 auto;
+        width: 78%;
+        display:flex;
+        justify-content: space-between;
+        padding-bottom: 40px;
+    }
 
     .btn-like{
         max-width: 40px;
