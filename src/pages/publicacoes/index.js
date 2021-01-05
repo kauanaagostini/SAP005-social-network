@@ -1,4 +1,4 @@
-import { getPosts, handleSignOut, likePost, deletePost } from "../../services/index.js";
+import { deletePost, getPosts, handleSignOut, likePost } from "../../services/index.js";
 import { onNavigate } from "../../utils/history.js";
 
 
@@ -6,6 +6,7 @@ import { onNavigate } from "../../utils/history.js";
 export const publicacoes = () => {
 
     const addPost = (post) => {
+
         const postTemplate =
             `
             <section class="post-container" data-id=${post.id}>
@@ -23,41 +24,42 @@ export const publicacoes = () => {
             <section id="container-edit"> 
               <div class="item-edit">
                 <img src="../../img/like.png" alt="like" class="btn-like" data-id=${post.id}>
-                <p id="number-of-likes" data-id=${post.id}>${post.data().likes} </p>
+                <p id="number-of-likes" class= "number-of-likes" data-id=${post.id}>${post.data().likes}</p>
               </div>
               <div class="item-edit">
                   <p id="edit-post"data-id=${post.id}>EDITAR</p>
-                  <p id="delete-post" data-id=${post.id}>DELETAR</p>
+                  <p class="delete-post" data-id=${post.id}>DELETAR</p>
               </div>     
             </section>
         `
 
         document.getElementById("text").innerHTML += postTemplate;
 
-        const btnLike = document.querySelector(".btn-like")
-        btnLike.addEventListener("click", () => {
-        likePost(btnLike.dataset.id)
-        console.log(btnLike.dataset.id)
-
-        })
-
-        const btnDelete = document.querySelector("#delete-post")
-        btnDelete.addEventListener("click", () => {
-        deletePost(btnDelete.dataset.id)
-        }) 
+        document.querySelectorAll('.btn-like').forEach((event) =>
+            event.addEventListener('click', (event) => {
+                let btnLike = event.target.parentNode.querySelector('.btn-like')
+                console.log(btnLike.dataset.id)
+                likePost(btnLike.dataset.id)
+            })
+        );
 
 
-    
+        document.querySelectorAll('.delete-post').forEach((event) =>
+            event.addEventListener('click', (event) => {
+                let btnDelete = event.target.parentNode.querySelector('.delete-post')
+                console.log(btnDelete.dataset.id)
+                deletePost(btnDelete.dataset.id)
+            })
+        );
+
+
     }
-
 
     getPosts().then(snap => {
         snap.forEach(post => {
             addPost(post)
-            console.log(post)
         });
     })
-
 
     // Coloque sua página
 
@@ -81,7 +83,6 @@ export const publicacoes = () => {
         </section>
         <section id=recent-container>
             <h4>Publicações</h4>
-            <h5>Mais recentes</h5>
         </section>
         <section>
             <div id=text></div>

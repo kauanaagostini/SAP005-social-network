@@ -98,7 +98,7 @@ body{
     text-decoration: underline;
 }
 
-#delete-post{
+.delete-post{
     display: block;
     cursor: pointer;
     margin-top: 10px;
