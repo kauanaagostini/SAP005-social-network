@@ -1,10 +1,10 @@
-import{handleSignUp, validateEmptyInput, validatePassword} from "../../services/index.js"
-import { onNavigate } from "../../utils/history.js";
+import { handleSignUp, validateEmptyInput, validatePassword } from '../../services/index.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const createAccount = () => {
-    // Coloque sua página
-    const rootElement = document.createElement('div');
-    rootElement.innerHTML = `
+  // Coloque sua página
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = `
         <form id="formCreateAccount">
             <section>
                 <h2>Novo por aqui</h2>
@@ -21,23 +21,21 @@ export const createAccount = () => {
             <button id="btnCreateAccount">Cadastre-se</button>
         </form>
     `;
-    const btnCreateAccount = rootElement.querySelector("#btnCreateAccount")
- 
-    btnCreateAccount.addEventListener("click", (event) => {
-        event.preventDefault()
-        const email = rootElement.querySelector("#email").value;
-        const password = rootElement.querySelector("#password").value;
-        const samePassword = rootElement.querySelector("#samePassword").value
-        const firtsName = rootElement.querySelector("#firstName").value
-        const lastName = rootElement.querySelector("#lastName").value
-        const returnValidatePassword = validatePassword(password,samePassword)
-        const returnValidateInput = validateEmptyInput(firtsName, lastName)
-        if(returnValidatePassword && returnValidateInput){
-            handleSignUp(email, password, firtsName, lastName)
-            onNavigate("/publicacoes")
-        }
+  const btnCreateAccount = rootElement.querySelector('#btnCreateAccount');
 
-        
-    })
-    return rootElement;
+  btnCreateAccount.addEventListener('click', (event) => {
+    event.preventDefault();
+    const email = rootElement.querySelector('#email').value;
+    const password = rootElement.querySelector('#password').value;
+    const samePassword = rootElement.querySelector('#samePassword').value;
+    const firtsName = rootElement.querySelector('#firstName').value;
+    const lastName = rootElement.querySelector('#lastName').value;
+    const returnValidatePassword = validatePassword(password, samePassword);
+    const returnValidateInput = validateEmptyInput(firtsName, lastName);
+    if (returnValidatePassword && returnValidateInput) {
+      handleSignUp(email, password, firtsName, lastName);
+      onNavigate('/publicacoes');
+    }
+  });
+  return rootElement;
 };

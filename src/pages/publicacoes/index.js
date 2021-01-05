@@ -1,3 +1,4 @@
+
 import { deletePost, getPosts, handleSignOut, likePost } from "../../services/index.js";
 import { onNavigate } from "../../utils/history.js";
 
@@ -9,6 +10,7 @@ export const publicacoes = () => {
 
         const postTemplate =
             `
+
             <section class="post-container" data-id=${post.id}>
                 <div class="post-item">
                     <img src="../../img/user.png">
@@ -61,10 +63,13 @@ export const publicacoes = () => {
         });
     })
 
-    // Coloque sua página
+   
 
-    const rootElement = document.createElement('div');
-    rootElement.innerHTML = `
+  // Coloque sua página
+
+
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = `
     <header id="header">
         <a href="#" id="logo">
             <img src="../../img/logo.png" alt="Logo do Site">
@@ -75,7 +80,7 @@ export const publicacoes = () => {
     <main>
         <section id="user-container">
             <img src="../../img/user.png" alt="Logo do Site">
-            <h2 class="user-item" id="hello-user">Olá, ${firebase.auth().currentUser.displayName}!</h2>
+            <h2 class="user-item" id="hello-user"> </h2>
         </section>
         <section id="option-container">
             <h3 ><a href="publicar" class="option-item" id="posts-view">Publicar</a></h3>
@@ -91,15 +96,23 @@ export const publicacoes = () => {
     </main>
       
     `;
-    const btnExit = rootElement.querySelector("#exit");
-    btnExit.addEventListener("click", (event) => {
-        event.preventDefault();
-        handleSignOut()
-        onNavigate("/login")
-    })
 
+  const userName = rootElement.querySelector('#hello-user')
 
-    return rootElement;
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user != null) {
+      userName.innerHTML = `Olá, ${user.displayName}!`;
+    } else {
+      alert("Usuário não logado!")
+    }
+  })
+
+  const btnExit = rootElement.querySelector('#exit');
+  btnExit.addEventListener('click', (event) => {
+    event.preventDefault();
+    handleSignOut();
+    onNavigate('/login');
+  });
+
+  return rootElement;
 };
-
-
