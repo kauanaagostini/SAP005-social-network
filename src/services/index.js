@@ -1,10 +1,15 @@
 // exporte suas funções
 
+
+
 export const getPosts = () => {
-  const post = firebase.firestore().collection('post') 
-  .orderBy("date", "desc") 
+  const post = firebase
+    .firestore()
+    .collection('post')
+    .orderBy("date", "desc")
   return post.get();
 };
+
 
 export const createPost = (post) => {
   const user = firebase.auth().currentUser;
@@ -23,16 +28,21 @@ export const createPost = (post) => {
     })
 };
 
+
 export const likePost = (id) => {
   let postLike = firebase.firestore().collection("post").doc(id);
   postLike.update({
     likes: firebase.firestore.FieldValue.increment(1)
   })
+
 }
 
+
 export const deletePost = (id) => {
-  firebase.firestore().collection("post").doc(id).delete();
+  let postLike = firebase.firestore().collection("post").doc(id);
+  postLike.delete()
 }
+
 
 export const handleSignUp = (email, password, firstName, lastName) => {
   firebase.auth()
