@@ -50,9 +50,7 @@ export const handleSignUp = (email, password, firstName, lastName) => {
 
 export const handleGoogleSignUp = () => {
   let provider = new firebase.auth.GoogleAuthProvider();
-  provider.addScope('https://www.googleapis.com/auth/plus.login');
-  firebase.auth().signInWithRedirect(provider);
-  alert(`Bem-vindo ${firebase.auth().currentUser.displayName}`)
+  return firebase.auth().signInWithRedirect(provider);
 };
 
 export const handleSignIn = (email, password) => {
