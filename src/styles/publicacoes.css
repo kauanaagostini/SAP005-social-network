@@ -17,11 +17,14 @@ body{
 .post-container{
     padding: 33px;
     margin-top: 26px;
-    background-color: rgb(201, 201, 201);
+    background-color: #ffffffc2;
     padding-left: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    border: solid 2px transparent;
+    box-shadow: 0 0 0.2em #3C3B37;
+    border-radius: 5px;
 }
 
 .post-item{
@@ -49,9 +52,15 @@ body{
     height: 108px; 
     resize: none;
     text-align: center;
-    border: none;
-    background-color: #c9c9c9;
+    border: solid 2px transparent;
+    background-color: #ffffff;
     font-size:18px;
+    border-radius: 5px;
+}
+
+#text-post:focus {
+    border-color: #3C3B37;
+    outline: none !important;
 }
 
 #container-date{
@@ -106,7 +115,7 @@ body{
 }
 
 
-@media only screen and (min-width: 1382px) { 
+@media only screen and (min-width: 801px) { 
 
     #recent-container{
         margin: 0 auto;
@@ -133,7 +142,6 @@ body{
 
     .post-container{
         margin: 0 auto;
-        background-color: rgb(201, 201, 201);
         height: 200px;
         width: 78%;
     }

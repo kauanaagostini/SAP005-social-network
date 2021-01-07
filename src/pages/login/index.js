@@ -36,12 +36,12 @@ export const Login = () => {
     const email = rootElement.querySelector('#email').value;
     const password = rootElement.querySelector('#password').value;
     handleSignIn(email, password);
-    onNavigate('/publicar');
+    onNavigate('/publicacoes');
   });
 
   btnGoogle.addEventListener('click', () => {
     handleGoogleSignUp();
-    onNavigate('/publicar');
+    onNavigate('/publicacoes');
   });
 
   return rootElement;

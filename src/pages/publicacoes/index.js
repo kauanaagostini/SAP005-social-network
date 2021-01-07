@@ -71,20 +71,18 @@ export const publicacoes = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
     <header id="header">
-        <a href="#" id="logo">
-            <img src="../../img/logo.png" alt="Logo do Site">
-        </a>
-        <input id="exit" type="image" src="../../img/exit.png" alt="Logout" />
+        <img id="logo" src="../../img/Logo/logo-temporario-red.png" alt="Logo do Site">
+        <section id="option-container">
+            <h3 ><a href="publicar" class="option-item" id="posts-view">Publicar</a></h3>
+            <h3 ><a href="publicacoes" class="option-item" id="posts-view">Publicações</a></h3>
+        </section>
+        <input id="exit" type="image" src="../../img/Logout/logout-red.png" alt="Logout" />
 
     </header> 
     <main>
         <section id="user-container">
             <img src="../../img/user.png" alt="Logo do Site">
             <h2 class="user-item" id="hello-user"> </h2>
-        </section>
-        <section id="option-container">
-            <h3 ><a href="publicar" class="option-item" id="posts-view">Publicar</a></h3>
-            <h3 ><a href="publicacoes" class="option-item" id="posts-view">Publicações</a></h3>
         </section>
         <section id=recent-container>
             <h4>Publicações</h4>
@@ -97,15 +95,15 @@ export const publicacoes = () => {
       
     `;
 
-  const userName = rootElement.querySelector('#hello-user')
+    const userName = rootElement.querySelector('#hello-user');
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user != null) {
-      userName.innerHTML = `Olá, ${user.displayName}!`;
-    } else {
-      alert("Usuário não logado!")
-    }
-  })
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user != null) {
+           return userName.innerHTML = `Olá, ${user.displayName}!`;
+        } else {
+            console.log("Usuário não logado!")
+        }
+    })
 
   const btnExit = rootElement.querySelector('#exit');
   btnExit.addEventListener('click', (event) => {
