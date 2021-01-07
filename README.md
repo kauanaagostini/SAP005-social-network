@@ -52,7 +52,9 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 ![Persona - 2](src/img/readme/persona2.jpg) 
 
 ### Entrevistas 
-[colocar as imagens]
+![Entrevista Voniam](src/img/readme/entrevistaPersona1.jpg)
+
+![Entrevista Ana](src/img/readme/entrevistaPersona2.jpg)
 
 ### História do Usuário 
 
