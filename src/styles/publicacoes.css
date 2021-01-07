@@ -43,7 +43,7 @@ body{
     align-content: center;
 }
 
-#text-post{
+.text-post{
     margin: 0px; 
     width: 311px; 
     height: 108px; 
@@ -90,7 +90,7 @@ body{
     margin-top: 10px;
 }
 
-#edit-post{
+.edit-post{
     display: block;
     cursor: pointer;
     margin-right: 10px;
