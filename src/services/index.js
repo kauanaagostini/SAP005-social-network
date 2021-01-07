@@ -111,9 +111,6 @@ export const handleSignOut = () => {
   firebase
     .auth()
     .signOut()
-    .then(() => {
-      alert(`Usuário deslogado com sucesso. \nObrigada por acessar nossa aplicação!`);
-    });
 };
 
 export const validatePassword = (password, samePassword) => {
