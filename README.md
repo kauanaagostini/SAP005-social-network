@@ -219,6 +219,14 @@ Comportamento:
 
 ## 4. Fluxograma
 
+Através das histórias de usuário, conseguimos montar um fluxo de como seria o processo de criação de conta, login e publicação do usuário em nossa aplicação.
+
+![Fluxograma Login](src/img/readme/Fluxograma_Login.jpg)
+
+![Fluxograma Postagem](src/img/readme/Fluxograma_Postagem.jpg)
+
+![Fluxograma Likes](src/img/readme/Fluxograma_Like_Postagem.jpg)
+
 ## 5. Interface de Usuário  
 
 [Imagens dos protótipos] 
