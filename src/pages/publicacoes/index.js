@@ -17,7 +17,7 @@ export const publicacoes = () => {
                     <p>${post.data().name}</p>
                 </div>
                 <div id="text-container">
-                    <textarea id="text-post">${post.data().text}</textarea> 
+                    <textarea class="text-post" ${post.id}>${post.data().text}</textarea> 
                 </div>
             </section>
             <section id="container-date">
@@ -29,7 +29,7 @@ export const publicacoes = () => {
                 <p id="number-of-likes" class= "number-of-likes" data-id=${post.id}>${post.data().likes}</p>
               </div>
               <div class="item-edit">
-                  <p id="edit-post"data-id=${post.id}>EDITAR</p>
+                  <p class="edit-post"data-id=${post.id}>EDITAR</p>
                   <p class="delete-post" data-id=${post.id}>DELETAR</p>
               </div>     
             </section>
@@ -42,20 +42,37 @@ export const publicacoes = () => {
                 let btnLike = event.target.parentNode.querySelector('.btn-like')
                 console.log(btnLike.dataset.id)
                 likePost(btnLike.dataset.id)
+                getPosts()
+                onNavigate('/publicacoes');
             })
+
         );
 
+ 
+        // document.querySelectorAll('.edit-post').forEach((event) =>
+        //     event.addEventListener('click', (event) => {
+        //         const btnEdit = event.target.parentNode.querySelector(".edit-post")
+        //         document.querySelectorAll(".text-post").forEach((event) => {
+        //             const textArea = event.parentNode.querySelector(".text-post")
+        //             editPost(textArea.value, btnEdit.dataset.id)
+        //             console.log(textArea.value, btnEdit.dataset.id)
+        //         })
+        //     })
+        // )
 
+      
         document.querySelectorAll('.delete-post').forEach((event) =>
             event.addEventListener('click', (event) => {
                 let btnDelete = event.target.parentNode.querySelector('.delete-post')
                 console.log(btnDelete.dataset.id)
                 deletePost(btnDelete.dataset.id)
+                getPosts()
+                onNavigate('/publicacoes');
             })
-        );
-
-
+        )
     }
+
+
 
     getPosts().then(snap => {
         snap.forEach(post => {
@@ -63,13 +80,13 @@ export const publicacoes = () => {
         });
     })
 
-   
-
-  // Coloque sua página
 
 
-  const rootElement = document.createElement('div');
-  rootElement.innerHTML = `
+    // Coloque sua página
+
+
+    const rootElement = document.createElement('div');
+    rootElement.innerHTML = `
     <header id="header">
         <a href="#" id="logo">
             <img src="../../img/logo.png" alt="Logo do Site">
@@ -97,22 +114,22 @@ export const publicacoes = () => {
       
     `;
 
-  const userName = rootElement.querySelector('#hello-user')
+    const userName = rootElement.querySelector('#hello-user')
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user != null) {
-      userName.innerHTML = `Olá, ${user.displayName}!`;
-    } else {
-      alert("Usuário não logado!")
-    }
-  })
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user != null) {
+            userName.innerHTML = `Olá, ${user.displayName}!`;
+        } else {
+            alert("Usuário não logado!")
+        }
+    })
 
-  const btnExit = rootElement.querySelector('#exit');
-  btnExit.addEventListener('click', (event) => {
-    event.preventDefault();
-    handleSignOut();
-    onNavigate('/login');
-  });
+    const btnExit = rootElement.querySelector('#exit');
+    btnExit.addEventListener('click', (event) => {
+        event.preventDefault();
+        handleSignOut();
+        onNavigate('/login');
+    });
 
-  return rootElement;
+    return rootElement;
 };
