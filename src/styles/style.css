@@ -8,6 +8,8 @@
 /* página de visualizar publicações */
 @import "publicacoes.css";
 
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 
 /* ---------GERAL------------------------ */
 * {
@@ -18,6 +20,7 @@
     text-decoration: none;
     border:0;
     box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
 }
 
 body{

@@ -3,8 +3,8 @@ import { onNavigate } from '../../utils/history.js';
 
 export const publicar = () => {
   // Coloque sua página
-      const rootElement = document.createElement('div');
-      rootElement.innerHTML = `
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = `
         <header id="header">
           <img id="logo" src="../../img/Logo/logo-temporario-red.png" alt="Logo do Site">
           <section id="option-container">
@@ -26,31 +26,35 @@ export const publicar = () => {
             <button id="postar">Enviar</button>
           </section>  
       `;
-      
-      const post = rootElement.querySelector('#postar');
-      const mensagem = rootElement.querySelector('#post-user');
-      const userName = rootElement.querySelector('#hello-user');
 
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user != null) {
-          userName.innerHTML = `Olá, ${user.displayName}!`;
-        } else {
-          alert("Usuário não logado!")
-        }
-      })
-    
-      post.addEventListener('click', () => {
-        createPost(mensagem.value);
-        onNavigate('/publicacoes');
-      });
-    
-      const btnExit = rootElement.querySelector('#exit');
-      btnExit.addEventListener('click', (event) => {
-        event.preventDefault();
-        handleSignOut();
-        onNavigate('/login');
-      });
-    
-      return rootElement;
+  const post = rootElement.querySelector('#postar');
+  const mensagem = rootElement.querySelector('#post-user');
+  const userName = rootElement.querySelector('#hello-user');
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user != null) {
+      userName.innerHTML = `Olá, ${user.displayName}!`;
+    } else {
+      alert("Usuário não logado!")
+    }
+  })
+
+  post.addEventListener('click', () => {
+    if (mensagem.value === '') {
+      alert("Digite a mensagem!")
+    } else {
+      createPost(mensagem.value);
+      onNavigate('/publicacoes');
+    }
+  });
+
+  const btnExit = rootElement.querySelector('#exit');
+  btnExit.addEventListener('click', (event) => {
+    event.preventDefault();
+    handleSignOut();
+    onNavigate('/login');
+  });
+
+  return rootElement;
 
 };
