@@ -106,9 +106,48 @@ span {
     vertical-align: middle;
 }
 
+a {
+    color: #3c3b37;
+}
+
+a:hover {
+    color: #FE4C6A;
+}
+
 #imgGoogle{
     height: 15%;
     width: 15%;
     padding-right: 10px;
     filter: drop-shadow(0 0 1px black);
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: #d5d5d5;
+}
+
+#kat{
+    text-align: center;
+    color: #3c3b37;
+    padding: 10px 0;
+    font-size: 13px;
+}
+
+#devs {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+#ale, #kau, #tha {
+    padding: 0 5px;
+}
+
+#devs a:hover{
+    text-decoration: underline overline;
 }
