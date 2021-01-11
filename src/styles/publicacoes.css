@@ -70,7 +70,7 @@ body{
 
 #text-date{  
     font-size: 12px;
-    color:#afaeae;
+    color:#3C3B37;
 }
 
 #container-edit{
@@ -92,26 +92,48 @@ body{
     cursor: pointer;
 }
 
+.btn-dislike{
+    margin-top: 13px;
+    margin-left: 10px;
+    max-height: 28px;
+    max-width: 32px;
+    cursor: pointer;
+}
+
+#number-of-dilikes{
+    display: block;
+    font-size: 15pt;
+    margin-left: 8px;
+    margin-top: 8px;
+    color: #FE4C6A;
+    font-weight: 700;
+}
+
 #number-of-likes{
     display: block;
-    font-size: 13pt;
-    margin-left: 4px;
-    margin-top: 10px;
+    font-size: 15pt;
+    margin-left: 8px;
+    margin-top: 8px;
+    color: #3C3B37;
+    font-weight: 700;
 }
 
-.edit-post{
-    display: block;
+.btn-edit-post{
+    display: none;
+    max-height: 28px;
+    max-width: 32px;
+    margin-top: 2px;
     cursor: pointer;
     margin-right: 10px;
-    margin-top: 10px;
-    text-decoration: underline;
+   
 }
 
-.delete-post{
-    display: block;
+.btn-delete-post{
+    display: none;
+    max-height: 28px;
+    max-width: 32px;
+    margin-top: 2px;
     cursor: pointer;
-    margin-top: 10px;
-    text-decoration: underline;
 }
 
 
@@ -146,11 +168,24 @@ body{
         width: 78%;
     }
 
+    .text-post{
+        margin: 0px; 
+        width: 800px;
+        height: 108px; 
+        resize: none;
+        text-align: center;
+        border: solid 2px transparent;
+        background-color: #ffffff;
+        font-size:18px;
+        border-radius: 5px;
+    }
+
     #container-date{
         margin: 0 auto;
         width: 78%;
         display: flex;
         justify-content: flex-end;
+        margin-top: 10px;
     }
 
     #container-edit{
@@ -165,6 +200,19 @@ body{
         max-width: 40px;
         margin-top:5px;
         cursor: pointer;
+    }
+
+    .btn-like2{
+        max-width: 40px;
+        margin-top:5px;
+        cursor: pointer;
+    }
+    
+    .btn-dislike{
+        margin-top: 15px;
+        max-width: 40px;
+        cursor: pointer;
+        margin-left: 10px;
     }
 
 
