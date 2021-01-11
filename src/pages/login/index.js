@@ -25,8 +25,18 @@ export const Login = () => {
           </span>
           <span>Entrar com Google</span>
       </button>
-      <p>Ainda não possui cadastro, <a href="/createAccount">registre-se</a>.</p>
+      <p>Ainda não possui cadastro, <a id="register" href="/createAccount">registre-se.</a></p>
     </form>
+    <footer id="footer">
+      <div id="kat">
+        <p id="copy">&copy; Desenvolvido por KAT - Redações</p>
+      </div>
+      <div id="devs">
+        <p><a id="ale" href="http://github.com/ale-alves/" target="_blank">Alessandra Alves</a></p>
+        <p><a id="kau" href="http://github.com/kauanaagostini/" target="_blank">Kauana Agostini</a></p>
+        <p><a id="tha" href="http://github.com/alencartha/" target="_blank">Thaís Alencar</a></p>
+      </div>
+    </footer>
   `;
 
   const btnGoogle = rootElement.querySelector('#btnGoogle');
