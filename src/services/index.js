@@ -1,81 +1,6 @@
 // exporte suas funções
 
-export const getPosts = () => {
-  const post = firebase
-    .firestore()
-    .collection('post')
-    .orderBy("date", "desc")
-    // .onSnapshot((snapshot) => {
-    //   snapshot.docChanges().forEach((change) => {
-    //     if (change.type === 'added') {
-    //        addPost(post)
-    //     }
-    //     if (change.type === "modified") {
-    //       addPost(change.doc.data())
-    //     }
-    //     if (change.type === "removed") {
-    //       addPost(change.doc.data())
-    //     }
-    //   });
-    // });
-  return post.get();
-};
-
-
-// export const getPosts = () => {
-//   const post = firebase
-//     .firestore()
-//     .collection('post')
-//     .orderBy("date", "desc")
-//     return post.get()
-// };
-
-export const createPost = (post) => {
-  const user = firebase.auth().currentUser;
-  const date = new Date();
-  firebase
-    .firestore()
-    .collection("post")
-    .add({
-      name: user.displayName,
-      user_id: user.uid,
-      text: post,
-      date: date.toLocaleString(),
-      time: date.getTime(),
-      likes: 0,
-      comentarios: []
-    })
-    .then(function() {
-      console.log("Post enviado com sucesso!");
-    })
-    .catch(function() {
-      console.error("Ocorreu um erro");
-    });
-};
-
-
-export const likePost = (id) => {
-  let postLike = firebase.firestore().collection("post").doc(id);
-  postLike.update({
-    likes: firebase.firestore.FieldValue.increment(1)
-  })
-
-}
-
-// export const editPost = (text, id) => firebase
-//   .firestore()
-//   .collection("post")
-//   .doc(id)
-//   .update({
-//     text: text,
-//   });
-
-
-export const deletePost = (id) => {
-  let postDelete = firebase.firestore().collection("post").doc(id);
-  postDelete.delete()
-}
-
+// ----- LOGIN -----
 
 export const handleSignUp = (email, password, firstName, lastName) => {
   firebase.auth()
@@ -130,3 +55,76 @@ export const validateEmptyInput = (firstName, lastName) => {
     return true
   }
 }
+
+
+// ----- POSTS -----
+
+export const createPost = (post) => {
+    const user = firebase.auth().currentUser;
+    const date = new Date();
+    firebase
+      .firestore()
+      .collection("post")
+      .add({
+        name: user.displayName,
+        user_id: user.uid,
+        text: post,
+        date: date.toLocaleString(),
+        time: date.getTime(),
+        users_like: [],
+        users_dislike: [],
+        comentarios: [],
+
+      })
+      .then(function () {
+        console.log("Post enviado com sucesso!");
+      })
+      .catch(function () {
+        console.error("Ocorreu um erro");
+      });
+  };
+
+
+export const getPosts = () => {
+  const post = firebase
+    .firestore()
+    .collection('post')
+    .orderBy("date", "desc")
+  return post.get()
+};
+
+export const likePost = (id, userID) => {
+  const userLike = firebase.firestore.FieldValue.arrayUnion(userID);
+  const userRemoveDislike = firebase.firestore.FieldValue.arrayRemove(userID);
+  const postLike = firebase.firestore().collection("post").doc(id);
+  postLike.update({
+    users_like: userLike,
+    users_dislike: userRemoveDislike,
+  })
+}
+
+export const dislikePost = (id, userID) => {
+  const userDislike = firebase.firestore.FieldValue.arrayUnion(userID);
+  const userRemoveLike = firebase.firestore.FieldValue.arrayRemove(userID);
+  const postDislike = firebase.firestore().collection("post").doc(id);
+  postDislike.update({
+    users_dislike: userDislike,
+    users_like: userRemoveLike,
+  })
+}
+
+export const editPost = (text, id) => firebase
+  .firestore()
+  .collection("post")
+  .doc(id)
+  .update({
+    text: text,
+  });
+
+
+export const deletePost = (id) => {
+  let postDelete = firebase.firestore().collection("post").doc(id);
+  postDelete.delete()
+}
+
+
