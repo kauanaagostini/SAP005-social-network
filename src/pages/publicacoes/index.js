@@ -1,4 +1,4 @@
-import { getPosts, handleSignOut, likePost, deletePost } from "../../services/index.js";
+import { getPosts, handleSignOut, likePost, deletePost} from "../../services/index.js";
 import { onNavigate } from "../../utils/history.js";
 
 

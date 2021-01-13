@@ -92,3 +92,15 @@ export const validateEmptyInput = (firstName, lastName) => {
     return true
   }
 }
+
+export const postImage = (photo, callback) => {
+  const file = photo.files[0];
+  const storageRef = firebase.storage().ref('imagens/' + file.name);
+
+  storageRef.put(file).then(() => {
+    storageRef.getDownloadURL().then((url) => {
+      console.log(url);
+      callback(url);
+    });
+  });
+};

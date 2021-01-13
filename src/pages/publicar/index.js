@@ -1,4 +1,4 @@
-import { createPost, handleSignOut} from "../../services/index.js";
+import { createPost, handleSignOut, postImage } from "../../services/index.js";
 import { onNavigate } from "../../utils/history.js";
 
 export const publicar = () => {
@@ -22,11 +22,16 @@ export const publicar = () => {
       </section>
       <section class="page-section">
         <label class="title" for="title">Publicar</label>
+        <img src='' width='100%' class='imgPreview'>
         <textarea id="post-user" cols="50" rows="20" placeholder="Escreva aqui..."></textarea>
       </section>
+      <input type="image" class="btnImage" src="img/att-photo.png" value="ENVIAR" alt="button for image" />
+          <input type='file' class='photo' id='photo' accept='image/png, image/jpeg, image/jpg'/> 
+        </label>
       <section id="container-button">
         <button id="postar">Enviar</button>
       </section>  
+     </section>   
   `;
   //console.log(firebase.auth().currentUser.displayName)
   const post = rootElement.querySelector("#postar");
@@ -44,6 +49,14 @@ export const publicar = () => {
       onNavigate("/login")
   })
 
+  const photo = rootElement.querySelector('.photo');
+  const preview = rootElement.querySelector('.imgPreview');
+ 
+  photo.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    preview.src = URL.createObjectURL(file);
+    postImage(photo, validarUrl);
+  });
 
   return rootElement;
 };
