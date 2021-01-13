@@ -1,5 +1,5 @@
-
-import { deletePost, getPosts, handleSignOut, likePost, dislikePost, editPost } from "../../services/index.js";
+import {getPosts, handleSignOut} from "../../services/index.js";
+import { addPost } from "../../components/post.js";
 import { onNavigate } from "../../utils/history.js";
 
 
@@ -16,7 +16,7 @@ export const publicacoes = () => {
     const rootElement = document.createElement('div');
     rootElement.innerHTML =
 
-    ` 
+        ` 
         <header id="header">
             <img id="logo" src="../../img/Logo/logo-temporario-red.png" alt="Logo do Site">
             <section id="option-container">
@@ -53,106 +53,11 @@ export const publicacoes = () => {
         onNavigate('/login');
     });
 
-
-    const addPost = (post) => {
-
-        const postTemplate =
-
-        `
-            <section class="post-container" data-id=${post.id}>
-                <div class="post-item">
-                    <img src="../../img/user.png">
-                    <p>${post.data().name}</p>
-                </div>
-                <div id="text-container">
-                    <textarea class="text-post" ${post.id}>${post.data().text}</textarea> 
-                </div>
-            </section>
-
-            <section id="container-date">
-                <p id="text-date">${post.data().date} </p>
-            </section> 
-
-            <section id="container-edit"> 
-              <div class="item-edit">
-                <img src="../../img/Like/like-black.png" alt="like" class="btn-like" data-id=${post.id}>
-                <p id="number-of-likes" class= "number-of-likes" data-id=${post.id}>${post.data().users_like.length}</p>
-                <img src="../../img/Dislike/dislike-red1.png" alt="dislike" class="btn-dislike" data-id=${post.id}>
-                <p id="number-of-dilikes" class= "number-of-likes" data-id=${post.id}>${post.data().users_dislike.length}</p>
-              </div>
-              <div class="item-edit">
-                  <img src="../../img/Edit/edit-black.png" class="btn-edit-post" data-id=${post.id}>
-                  <img src="../../img/Trash/trash.png" class="btn-delete-post" data-id=${post.id}>
-              </div>     
-            </section>
-
-        `
-
-        document.getElementById("text").innerHTML += postTemplate;
-
-        const showEditsForCurrentUser = () => {
-            const userPost = post.data().user_id
-            const currentUser = firebase.auth().currentUser.uid
-            document.querySelectorAll(".btn-delete-post").forEach((event) => {
-                const btnDelete = event.parentNode.querySelector(".btn-delete-post")
-                const btnEdit = event.parentNode.querySelector(".btn-edit-post")
-                if (userPost === currentUser) {
-                    btnDelete.style.display = 'block';
-                    btnEdit.style.display = 'block';
-                }
-            })
-        }
-
-        showEditsForCurrentUser()
-
-
-        document.querySelectorAll('.btn-like').forEach((event) =>
-            event.addEventListener('click', (event) => {
-                const btnLike = event.target.parentNode.querySelector('.btn-like')
-                const currentUserLike = firebase.auth().currentUser.uid;
-                likePost(btnLike.dataset.id, currentUserLike)
-                onNavigate('/publicacoes')     
-            })
-        )
-
-        document.querySelectorAll('.btn-dislike').forEach((event) =>
-            event.addEventListener('click', (event) => {
-                const btnDislike = event.target.parentNode.querySelector('.btn-dislike')
-                const currentUserLike = firebase.auth().currentUser.uid
-                console.log(btnDislike.dataset.id, currentUserLike)
-                dislikePost(btnDislike.dataset.id, currentUserLike)
-                onNavigate('/publicacoes')
-            })
-        )
-
-
-        document.querySelectorAll('.btn-edit-post').forEach((event) =>
-            event.addEventListener('click', (event) => {
-                const btnEdit = event.target.parentNode.querySelector(".btn-edit-post")
-                document.querySelectorAll(".text-post").forEach((e) => {
-                    const textArea = e.parentNode.querySelector(".text-post")
-                    editPost(textArea.value, btnEdit.dataset.id)
-                    console.log(textArea.value, btnEdit.dataset.id)
-                })
-            })
-        );
-
-        document.querySelectorAll('.btn-delete-post').forEach((event) =>
-            event.addEventListener('click', (event) => {
-                const btnDelete = event.target.parentNode.querySelector('.btn-delete-post')
-                if (confirm("Tem certeza que deseja deletar a publicação?")) {
-                    deletePost(btnDelete.dataset.id)
-                    getPosts()
-                    onNavigate('/publicacoes');
-                }
-            })
-        )
-    }
-
+    const postSection = rootElement.querySelector("#text")
 
     getPosts().then(snap => {
         snap.forEach(post => {
-            addPost(post)
+            postSection.appendChild(addPost(post))
         });
     })
 
