@@ -10,8 +10,8 @@ export const Login = () => {
         <img id="logo-login" src="../../img/img-login.jpg" alt="logo login">
         <p id="text-login">Vestibular chegando, dúvidas em como fazer uma boa redação?
            Relaxe estamos aqui para te ajudar!
-           KAT - Redações é uma aplicação desenvolvida para você que está com duvidas de redações e 
-           e precisa daquela dica extra.
+           KAT - Redações é uma aplicação desenvolvida para você que está com dúvidas em redações e 
+           precisa daquela dica extra.
            Faça seu cadastro e aproveite tudo que a aplicação lhe oferece para arrasar no vestibular.</p>
       </div>
       <form id="formLogin">
