@@ -18,7 +18,7 @@ export const createAccount = () => {
                 <input class="input" id="password" type="password" placeholder="Senha" required>
                 <input class="input" id="samePassword" type="password" placeholder="Repita sua senha" required>
             </p>
-            <button id="btnCreateAccount">Cadastre-se</button>
+            <button type="button" id="btnCreateAccount">Cadastre-se</button>
         </form>
         <footer id="footer">
         <div id="kat">
@@ -45,7 +45,6 @@ export const createAccount = () => {
     const returnValidateInput = validateEmptyInput(firtsName, lastName);
     if (returnValidatePassword && returnValidateInput) {
       handleSignUp(email, password, firtsName, lastName);
-      onNavigate('/publicacoes');
     }
   });
   return rootElement;

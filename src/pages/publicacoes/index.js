@@ -1,15 +1,17 @@
-<<<<<<< HEAD
-import { getPosts, handleSignOut, likePost, deletePost} from "../../services/index.js";
-=======
-
 import {getPosts, handleSignOut} from "../../services/index.js";
 import { addPost } from "../../components/post.js";
->>>>>>> 0317ad87be80c9d2532262f886a110b9f207e98a
 import { onNavigate } from "../../utils/history.js";
 
 
 
 export const publicacoes = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user != null) {
+            return userName.innerHTML = `Olá, ${user.displayName}!`;
+        } else {
+            onNavigate("/login")
+        }
+    });
 
     const rootElement = document.createElement('div');
     rootElement.innerHTML =
@@ -26,7 +28,8 @@ export const publicacoes = () => {
 
         <main>
             <section id="user-container">
-                <img src="../../img/user.png" alt="Logo do Site">
+                <div id="photo-user"> </div>
+                <img src="../../img/user.png">
                 <h2 class="user-item" id="hello-user"> </h2>
             </section>
 
@@ -42,14 +45,6 @@ export const publicacoes = () => {
     `;
 
     const userName = rootElement.querySelector('#hello-user')
-
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user != null) {
-            userName.innerHTML = `Olá, ${user.displayName}!`;
-        } else {
-            alert("Usuário não logado!")
-        }
-    })
 
     const btnExit = rootElement.querySelector('#exit');
     btnExit.addEventListener('click', (event) => {

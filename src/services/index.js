@@ -1,5 +1,7 @@
 // exporte suas funções
 
+import { onNavigate } from "../utils/history.js";
+
 // ----- LOGIN -----
 
 export const handleSignUp = (email, password, firstName, lastName) => {
@@ -9,6 +11,7 @@ export const handleSignUp = (email, password, firstName, lastName) => {
       const userName = `${firstName} ${lastName}`
       user.user.updateProfile({ displayName: userName })
       alert("Usuário criado com sucesso!")
+      onNavigate('/publicacoes');
     })
     .catch((error) => {
       let errorMessage = error.message;
@@ -16,16 +19,25 @@ export const handleSignUp = (email, password, firstName, lastName) => {
     });
 };
 
-
-export const handleGoogleSignUp = () => {
+export const handleGoogleSignIn = () => {
   let provider = new firebase.auth.GoogleAuthProvider();
-  return firebase.auth().signInWithRedirect(provider);
+  firebase.auth()
+    .signInWithPopup(provider)
+    .then(user => {
+      alert(`Bem-vindo ${firebase.auth().currentUser.displayName}!`)
+      onNavigate("/publicacoes")
+    })
+    .catch((error) => {
+      let errorMessage = error.message;
+      alert(`${errorMessage}`)
+    }); 
 };
 
 export const handleSignIn = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((user) => {
       alert(`Bem-vindo ${firebase.auth().currentUser.displayName}!`)
+      onNavigate("/publicacoes")
     })
     .catch((error) => {
       let errorMessage = error.message;
@@ -57,7 +69,8 @@ export const validateEmptyInput = (firstName, lastName) => {
   }
 }
 
-<<<<<<< HEAD
+// <<<<<<< HEAD 
+
 export const postImage = (photo, callback) => {
   const file = photo.files[0];
   const storageRef = firebase.storage().ref('imagens/' + file.name);
@@ -69,7 +82,6 @@ export const postImage = (photo, callback) => {
     });
   });
 };
-=======
 
 // ----- POSTS -----
 
@@ -157,4 +169,3 @@ export const deletePost = (id) => {
   let postDelete = firebase.firestore().collection("post").doc(id);
   return postDelete.delete()
 }
->>>>>>> 0317ad87be80c9d2532262f886a110b9f207e98a
