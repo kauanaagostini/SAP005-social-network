@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+import { getPosts, handleSignOut, likePost, deletePost} from "../../services/index.js";
+=======
 
 import {getPosts, handleSignOut} from "../../services/index.js";
 import { addPost } from "../../components/post.js";
+>>>>>>> 0317ad87be80c9d2532262f886a110b9f207e98a
 import { onNavigate } from "../../utils/history.js";
 
 

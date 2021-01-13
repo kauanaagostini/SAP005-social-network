@@ -57,6 +57,19 @@ export const validateEmptyInput = (firstName, lastName) => {
   }
 }
 
+<<<<<<< HEAD
+export const postImage = (photo, callback) => {
+  const file = photo.files[0];
+  const storageRef = firebase.storage().ref('imagens/' + file.name);
+
+  storageRef.put(file).then(() => {
+    storageRef.getDownloadURL().then((url) => {
+      console.log(url);
+      callback(url);
+    });
+  });
+};
+=======
 
 // ----- POSTS -----
 
@@ -144,3 +157,4 @@ export const deletePost = (id) => {
   let postDelete = firebase.firestore().collection("post").doc(id);
   return postDelete.delete()
 }
+>>>>>>> 0317ad87be80c9d2532262f886a110b9f207e98a
