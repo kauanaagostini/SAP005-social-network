@@ -6,7 +6,6 @@ export const publicar = () => {
   // Coloque sua página
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
-<<<<<<< HEAD
     <header id="header">
       <a href="#" id="logo">
         <img src="../../img/logo.png" alt="Logo do Site">
