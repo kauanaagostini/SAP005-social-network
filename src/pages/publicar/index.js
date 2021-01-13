@@ -1,10 +1,12 @@
 import { createPost, handleSignOut, postImage } from "../../services/index.js";
 import { onNavigate } from "../../utils/history.js";
 
+
 export const publicar = () => {
   // Coloque sua página
-  const rootElement = document.createElement("div");
+  const rootElement = document.createElement('div');
   rootElement.innerHTML = `
+<<<<<<< HEAD
     <header id="header">
       <a href="#" id="logo">
         <img src="../../img/logo.png" alt="Logo do Site">
@@ -33,21 +35,19 @@ export const publicar = () => {
       </section>  
      </section>   
   `;
-  //console.log(firebase.auth().currentUser.displayName)
-  const post = rootElement.querySelector("#postar");
-  let mensagem = rootElement.querySelector("#post-user");
 
-  post.addEventListener("click", (event) => {
-    createPost(mensagem.value);
-    onNavigate("/publicacoes");
-  });
+  const post = rootElement.querySelector('#postar');
+  const mensagem = rootElement.querySelector('#post-user');
+  const userName = rootElement.querySelector('#hello-user');
 
-  const btnExit = rootElement.querySelector("#exit");
-  btnExit.addEventListener("click", (event) => {
-      event.preventDefault();
-      handleSignOut()
-      onNavigate("/login")
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user != null) {
+      userName.innerHTML = `Olá, ${user.displayName}!`;
+    } else {
+      alert("Usuário não logado!")
+    }
   })
+
 
   const photo = rootElement.querySelector('.photo');
   const preview = rootElement.querySelector('.imgPreview');
@@ -58,5 +58,22 @@ export const publicar = () => {
     postImage(photo, validarUrl);
   });
 
+  post.addEventListener('click', () => {
+    if (mensagem.value === '') {
+      alert("Digite a mensagem!")
+    } else {
+      createPost(mensagem.value);
+      onNavigate('/publicacoes');
+    }
+  });
+
+  const btnExit = rootElement.querySelector('#exit');
+  btnExit.addEventListener('click', (event) => {
+    event.preventDefault();
+    handleSignOut();
+    onNavigate('/login');
+  });
+
   return rootElement;
+
 };

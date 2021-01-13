@@ -8,6 +8,8 @@
 /* página de visualizar publicações */
 @import "publicacoes.css";
 
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 
 /* ---------GERAL------------------------ */
 * {
@@ -18,25 +20,30 @@
     text-decoration: none;
     border:0;
     box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
 }
 
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
-    margin: 10px;
+    background-image: url("../img/background-2.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #3C3B37;
 }
 
 
 /* ----------------HEADER-------------------------- */
 
-
-#logo > img{
+/* 
+#logo {
     max-width: 50px;
 }
 
-#exit > img{
+#exit {
     max-width: 50px;
-}
+} */
 
 /*  -----------------------NAVBAR-------------------------- * */
 
@@ -49,7 +56,7 @@ nav > ul{
 .item-menu{
     text-transform: uppercase;
     text-decoration: none;
-    color:#313131;
+    color:#3C3B37;
     display: block;
     padding: 10px;
     font-weight: bold;
@@ -58,12 +65,13 @@ nav > ul{
 
 /*  -----------------------ESTILO DO TOPO PAGINA PUBLICAR/PUBLICAÇOES-------------------------- */
 
-#logo > img{
+#logo {
     max-width: 50px;
 }
 
 #exit{
     max-width: 45px;
+    max-height: 45px;
 }
 
 #header{
@@ -71,6 +79,13 @@ nav > ul{
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
+}
+
+.option-item {
+    color: #3C3B37;
+    text-transform: uppercase;
+    padding: 10px;
+    transition:all 0.3s ease;
 }
 
 #user-container{
@@ -98,7 +113,7 @@ nav > ul{
     max-width: 73px;
 }
 
-#option-container{
+#option-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -107,9 +122,15 @@ nav > ul{
     align-content: center;
 }
 
-.option-item{
-    padding: 10px;
+#option-container a:hover{
+    color: #FE4C6A;
+    padding: 20px;
+    text-decoration: underline overline;
 }
+
+
+
+
 
 
 @media only screen and (min-width: 1382px) { 
@@ -118,4 +139,14 @@ nav > ul{
         max-width: 100px;
     }
 
+}
+
+@media only screen and (max-width: 801px) {
+    .option-item{
+        font-size: 85%;
+    }
+
+    body {
+        background-size: 95%;
+    }
 }

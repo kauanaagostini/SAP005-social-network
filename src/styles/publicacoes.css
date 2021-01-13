@@ -1,7 +1,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 #recent-container{
@@ -14,14 +14,17 @@ body{
     font-size: 26px;
 }
 
-.post-container{
+#post-infos{
     padding: 33px;
     margin-top: 26px;
-    background-color: rgb(201, 201, 201);
+    background-color: #ffffffc2;
     padding-left: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    border: solid 2px transparent;
+    box-shadow: 0 0 0.2em #3C3B37;
+    border-radius: 5px;
 }
 
 .post-item{
@@ -35,7 +38,7 @@ body{
     max-width: 65px;
 }
 
-#text-container{
+.text-container{
     flex: 3;
     display: flex;
     justify-content: center;
@@ -43,16 +46,44 @@ body{
     align-content: center;
 }
 
-#text-post{
+.text-post{
     margin: 0px; 
     width: 311px; 
     height: 108px; 
     resize: none;
     text-align: center;
-    border: none;
-    background-color: #c9c9c9;
+    border: solid 2px transparent;
+    background-color: #ffffff;
     font-size:18px;
+    border-radius: 5px;
 }
+
+.text-post:focus {
+    border-color: #3C3B37;
+    outline: none !important;
+    background-color: #ddddd9
+}
+
+.btn-save-edit{
+    cursor: pointer;
+    display: none;
+    padding: 8px;
+    border-radius: 35px;
+    background-color: #393834;
+    box-shadow: 3px 3px 10px #393834;
+    color: white;
+    outline:none;
+    transition:all 0.3s ease;
+}
+
+.btn-save-edit:hover{
+    padding: 8px;
+    border-radius: 35px;
+    background-color: #696967;
+    color: white;
+    border:none!important;
+}
+
 
 #container-date{
     display: flex;
@@ -61,7 +92,7 @@ body{
 
 #text-date{  
     font-size: 12px;
-    color:#afaeae;
+    color:#3C3B37;
 }
 
 #container-edit{
@@ -83,30 +114,60 @@ body{
     cursor: pointer;
 }
 
+.btn-liked{
+    background-image: url("../img/Like/like-gray.png");
+    max-height: 28px;
+    max-width: 32px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.btn-dislike{
+    margin-top: 13px;
+    margin-left: 10px;
+    max-height: 28px;
+    max-width: 32px;
+    cursor: pointer;
+}
+
+#number-of-dislikes{
+    display: block;
+    font-size: 15pt;
+    margin-left: 8px;
+    margin-top: 8px;
+    color: #FE4C6A;
+    font-weight: 700;
+}
+
 #number-of-likes{
     display: block;
-    font-size: 13pt;
-    margin-left: 4px;
-    margin-top: 10px;
+    font-size: 15pt;
+    margin-left: 8px;
+    margin-top: 8px;
+    color: #3C3B37;
+    font-weight: 700;
 }
 
-#edit-post{
-    display: block;
+.btn-edit-post{
+    display: none;
+    max-height: 28px;
+    max-width: 32px;
+    margin-top: 2px;
     cursor: pointer;
     margin-right: 10px;
-    margin-top: 10px;
-    text-decoration: underline;
+   
 }
 
-#delete-post{
-    display: block;
+.btn-delete-post{
+    display: none;
+    max-height: 28px;
+    max-width: 32px;
+    margin-top: 2px;
     cursor: pointer;
-    margin-top: 10px;
-    text-decoration: underline;
 }
 
 
-@media only screen and (min-width: 1382px) { 
+@media only screen and (min-width: 801px) { 
 
     #recent-container{
         margin: 0 auto;
@@ -131,18 +192,35 @@ body{
         transform: translateY(-50%);
     }
 
-    .post-container{
+    #post-infos{
         margin: 0 auto;
-        background-color: rgb(201, 201, 201);
         height: 200px;
         width: 78%;
     }
+
+    .text-post{
+        margin: 0px; 
+        width: 800px;
+        height: 108px; 
+        resize: none;
+        text-align: center;
+        border: solid 2px transparent;
+        background-color: #ffffff;
+        font-size:18px;
+        border-radius: 5px;
+    }
+
+    .btn-save-edit{
+        margin-left: 10px;    
+    }
+    
 
     #container-date{
         margin: 0 auto;
         width: 78%;
         display: flex;
         justify-content: flex-end;
+        margin-top: 10px;
     }
 
     #container-edit{
@@ -157,6 +235,19 @@ body{
         max-width: 40px;
         margin-top:5px;
         cursor: pointer;
+    }
+
+    .btn-like2{
+        max-width: 40px;
+        margin-top:5px;
+        cursor: pointer;
+    }
+    
+    .btn-dislike{
+        margin-top: 15px;
+        max-width: 40px;
+        cursor: pointer;
+        margin-left: 10px;
     }
 
 

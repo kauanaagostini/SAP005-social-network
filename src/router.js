@@ -2,15 +2,14 @@
 import { Home } from './pages/home/index.js';
 import { Login } from './pages/login/index.js';
 import { onNavigate } from './utils/history.js';
-import {createAccount} from './pages/createAccount/index.js';
-import {publicar} from './pages/publicar/index.js';
-import {publicacoes} from './pages/publicacoes/index.js';
-
+import { createAccount } from './pages/createAccount/index.js';
+import { publicar } from './pages/publicar/index.js';
+import { publicacoes } from './pages/publicacoes/index.js';
 
 const routeRender = () => {
   const rootDiv = document.getElementById('root');
   const routes = {
-    '/' : Home,
+    '/': Home,
     '/login': Login,
     '/createAccount': createAccount,
     '/publicar': publicar,
@@ -23,57 +22,54 @@ const routeRender = () => {
 
 window.addEventListener('popstate', routeRender);
 window.addEventListener('load', () => {
-
   document
     .getElementById('home')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/')
+      onNavigate('/');
     });
 
   document
     .getElementById('login')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/login')
+      onNavigate('/login');
     });
 
   document
     .getElementById('createAccount')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/createAccount')
+      onNavigate('/createAccount');
     });
-  
-    
+
   document
     .getElementById('publicar')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/publicar')
+      onNavigate('/publicar');
     });
-  
-    document
+
+  document
     .getElementById('publicacoes')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/publicacoes')
-    });  
-    
+      onNavigate('/publicacoes');
+    });
 
-    // document
-    // .getElementById('posts-view')
-    // .addEventListener('click', (e) => {
-    //   e.preventDefault();
-    //   onNavigate('/publicacoes')
-    // }); 
-    
-    // document
-    // .getElementById('posts-write')
-    // .addEventListener('click', (e) => {
-    //   e.preventDefault();
-    //   onNavigate('/publicar')
-    // }); 
+  // document
+  // .getElementById('posts-view')
+  // .addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   onNavigate('/publicacoes')
+  // });
+
+  // document
+  // .getElementById('posts-write')
+  // .addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   onNavigate('/publicar')
+  // });
 
   routeRender();
 });

@@ -1,10 +1,10 @@
-import{handleSignUp, validateEmptyInput, validatePassword} from "../../services/index.js"
-import { onNavigate } from "../../utils/history.js";
+import { handleSignUp, validateEmptyInput, validatePassword } from '../../services/index.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const createAccount = () => {
-    // Coloque sua página
-    const rootElement = document.createElement('div');
-    rootElement.innerHTML = `
+  // Coloque sua página
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = `
         <form id="formCreateAccount">
             <section>
                 <h2>Novo por aqui</h2>
@@ -20,24 +20,33 @@ export const createAccount = () => {
             </p>
             <button id="btnCreateAccount">Cadastre-se</button>
         </form>
-    `;
-    const btnCreateAccount = rootElement.querySelector("#btnCreateAccount")
- 
-    btnCreateAccount.addEventListener("click", (event) => {
-        event.preventDefault()
-        const email = rootElement.querySelector("#email").value;
-        const password = rootElement.querySelector("#password").value;
-        const samePassword = rootElement.querySelector("#samePassword").value
-        const firtsName = rootElement.querySelector("#firstName").value
-        const lastName = rootElement.querySelector("#lastName").value
-        const returnValidatePassword = validatePassword(password,samePassword)
-        const returnValidateInput = validateEmptyInput(firtsName, lastName)
-        if(returnValidatePassword && returnValidateInput){
-            handleSignUp(email, password, firtsName, lastName)
-            onNavigate("/publicacoes")
-        }
-
+        <footer id="footer">
+        <div id="kat">
+          <p id="copy">&copy; Desenvolvido por KAT - Redações</p>
+        </div>
+        <div id="devs">
+          <p><a id="ale" href="http://github.com/ale-alves/" target="_blank">Alessandra Alves</a></p>
+          <p><a id="kau" href="http://github.com/kauanaagostini/" target="_blank">Kauana Agostini</a></p>
+          <p><a id="tha" href="http://github.com/alencartha/" target="_blank">Thaís Alencar</a></p>
+        </div>
+      </footer>
         
-    })
-    return rootElement;
+    `;
+  const btnCreateAccount = rootElement.querySelector('#btnCreateAccount');
+
+  btnCreateAccount.addEventListener('click', (event) => {
+    event.preventDefault();
+    const email = rootElement.querySelector('#email').value;
+    const password = rootElement.querySelector('#password').value;
+    const samePassword = rootElement.querySelector('#samePassword').value;
+    const firtsName = rootElement.querySelector('#firstName').value;
+    const lastName = rootElement.querySelector('#lastName').value;
+    const returnValidatePassword = validatePassword(password, samePassword);
+    const returnValidateInput = validateEmptyInput(firtsName, lastName);
+    if (returnValidatePassword && returnValidateInput) {
+      handleSignUp(email, password, firtsName, lastName);
+      onNavigate('/publicacoes');
+    }
+  });
+  return rootElement;
 };

@@ -52,7 +52,9 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 ![Persona - 2](src/img/readme/persona2.jpg) 
 
 ### Entrevistas 
-[colocar as imagens]
+![Entrevista Voniam](src/img/readme/entrevistaPersona1.jpg)
+
+![Entrevista Ana](src/img/readme/entrevistaPersona2.jpg)
 
 ### História do Usuário 
 
@@ -218,6 +220,14 @@ Comportamento:
 :small_blue_diamond: Teste de experimentação de aplicativo com os usuários.
 
 ## 4. Fluxograma
+
+Através das histórias de usuário, conseguimos montar um fluxo de como seria o processo de criação de conta, login e publicação do usuário em nossa aplicação.
+
+![Fluxograma Login](src/img/readme/Fluxograma_Login.jpg)
+
+![Fluxograma Postagem](src/img/readme/Fluxograma_Postagem.jpg)
+
+![Fluxograma Likes](src/img/readme/Fluxograma_Like_Postagem.jpg)
 
 ## 5. Interface de Usuário  
 

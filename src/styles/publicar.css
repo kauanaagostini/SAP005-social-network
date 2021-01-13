@@ -27,6 +27,7 @@
 #post-user:focus {
     border-color: #3C3B37;
     outline: none !important;
+<<<<<<< HEAD
 }
 
 .btnImage {
@@ -49,6 +50,8 @@
 
 .photo {
     display: none;
+=======
+>>>>>>> 0317ad87be80c9d2532262f886a110b9f207e98a
 }
 
 #postar {
@@ -93,5 +96,9 @@
         margin: 10px auto;
     }
 
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 0317ad87be80c9d2532262f886a110b9f207e98a

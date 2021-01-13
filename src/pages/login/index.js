@@ -1,5 +1,5 @@
-import{handleGoogleSignUp, handleSignIn} from "../../services/index.js"
-import{onNavigate} from "../../utils/history.js"
+import { handleGoogleSignUp, handleSignIn } from '../../services/index.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
   // Coloque sua página
@@ -23,25 +23,35 @@ export const Login = () => {
           <span>
               <img id="imgGoogle" src="../../img/google-symbol-1.png">
           </span>
-          <span>Entrar com o Google</span>
+          <span>Entrar com Google</span>
       </button>
-      <p>Ainda não possui cadastro, <a href="/createAccount">registre-se</a>.</p>
+      <p>Ainda não possui cadastro, <a id="register" href="/createAccount">registre-se.</a></p>
     </form>
+    <footer id="footer">
+      <div id="kat">
+        <p id="copy">&copy; Desenvolvido por KAT - Redações</p>
+      </div>
+      <div id="devs">
+        <p><a id="ale" href="http://github.com/ale-alves/" target="_blank">Alessandra Alves</a></p>
+        <p><a id="kau" href="http://github.com/kauanaagostini/" target="_blank">Kauana Agostini</a></p>
+        <p><a id="tha" href="http://github.com/alencartha/" target="_blank">Thaís Alencar</a></p>
+      </div>
+    </footer>
   `;
 
-  const btnGoogle = rootElement.querySelector("#btnGoogle");
-  const btnLogin = rootElement.querySelector("#btnLogin");
+  const btnGoogle = rootElement.querySelector('#btnGoogle');
+  const btnLogin = rootElement.querySelector('#btnLogin');
 
-  btnLogin.addEventListener("click", () => {
-    const email = rootElement.querySelector("#email").value
-    const password = rootElement.querySelector("#password").value
+  btnLogin.addEventListener('click', () => {
+    const email = rootElement.querySelector('#email').value;
+    const password = rootElement.querySelector('#password').value;
     handleSignIn(email, password);
-    onNavigate("/publicar");
-  })
+    onNavigate('/publicacoes');
+  });
 
-  btnGoogle.addEventListener("click", () => {
-    handleGoogleSignUp()
-    onNavigate('/publicacoes')
+  btnGoogle.addEventListener('click', () => {
+    handleGoogleSignUp();
+    onNavigate('/publicacoes');
   });
 
   return rootElement;
