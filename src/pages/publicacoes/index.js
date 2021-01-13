@@ -5,6 +5,13 @@ import { onNavigate } from "../../utils/history.js";
 
 
 export const publicacoes = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user != null) {
+            return userName.innerHTML = `Olá, ${user.displayName}!`;
+        } else {
+            onNavigate("/login")
+        }
+    });
 
     const rootElement = document.createElement('div');
     rootElement.innerHTML =
@@ -21,7 +28,8 @@ export const publicacoes = () => {
 
         <main>
             <section id="user-container">
-                <img src="../../img/user.png" alt="Logo do Site">
+                <div id="photo-user"> </div>
+                <img src="../../img/user.png">
                 <h2 class="user-item" id="hello-user"> </h2>
             </section>
 
@@ -37,14 +45,6 @@ export const publicacoes = () => {
     `;
 
     const userName = rootElement.querySelector('#hello-user')
-
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user != null) {
-            userName.innerHTML = `Olá, ${user.displayName}!`;
-        } else {
-            alert("Usuário não logado!")
-        }
-    })
 
     const btnExit = rootElement.querySelector('#exit');
     btnExit.addEventListener('click', (event) => {

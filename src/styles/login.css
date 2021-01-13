@@ -3,18 +3,53 @@
     background-attachment: fixed;
 } */
 
+#page-login {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    align-items: stretch;
+}
+
+#login-info {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 15px 0 0;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 0.2em #3C3B37;
+}
+
+#logo-login {
+    width: 45%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+#text-login {
+    background-color: #ffffffc2;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
 form {
-    padding: 10px 5px;
+    padding: 45px 5px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     border: none;
     border-radius: 5px;
     text-align: center;
-    margin: 5% auto;
     max-width: 300px;
     background-color: #ffffffc2;
     box-shadow: 0 0 0.2em #3C3B37;
+}
+
+#formCreateAccount {
+    margin: 5% auto;
 }
 
 section {
@@ -108,14 +143,15 @@ span {
 
 a {
     color: #3c3b37;
+    text-decoration: underline;
 }
 
 a:hover {
     color: #FE4C6A;
+    text-decoration: underline;
 }
 
 #imgGoogle{
-    height: 15%;
     width: 15%;
     padding-right: 10px;
     filter: drop-shadow(0 0 1px black);
@@ -134,6 +170,7 @@ footer{
     color: #3c3b37;
     padding: 10px 0;
     font-size: 13px;
+
 }
 
 #devs {
@@ -146,8 +183,43 @@ footer{
 
 #ale, #kau, #tha {
     padding: 0 5px;
+    text-decoration: none;
 }
 
 #devs a:hover{
     text-decoration: underline overline;
+}
+
+@media only screen and (max-width: 768px) {
+    #page-login {
+        flex-direction: column;
+    }
+
+    #login-info {
+        width: 100%;
+        max-width: 300px;
+        order: 2;
+        margin: 0 auto;
+    }
+
+    form{
+        margin: 5% auto;
+        order: 1;
+        width: 300px;
+    }
+
+    footer{
+        position: relative;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #page-login {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+        align-items: center;
+        align-items: stretch;
+        width: 80%;
+    }
 }

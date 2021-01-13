@@ -2,7 +2,15 @@ import { createPost, handleSignOut } from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const publicar = () => {
-  // Coloque sua página
+  
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user != null) {
+      userName.innerHTML = `Olá, ${user.displayName}!`;
+    } else {
+      onNavigate("/login")
+    }
+  });
+
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
         <header id="header">
@@ -30,14 +38,6 @@ export const publicar = () => {
   const post = rootElement.querySelector('#postar');
   const mensagem = rootElement.querySelector('#post-user');
   const userName = rootElement.querySelector('#hello-user');
-
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user != null) {
-      userName.innerHTML = `Olá, ${user.displayName}!`;
-    } else {
-      alert("Usuário não logado!")
-    }
-  })
 
   post.addEventListener('click', () => {
     if (mensagem.value === '') {
