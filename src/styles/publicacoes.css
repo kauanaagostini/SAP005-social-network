@@ -14,7 +14,7 @@ body{
     font-size: 26px;
 }
 
-.post-container{
+#post-infos{
     padding: 33px;
     margin-top: 26px;
     background-color: #ffffffc2;
@@ -38,7 +38,7 @@ body{
     max-width: 65px;
 }
 
-#text-container{
+.text-container{
     flex: 3;
     display: flex;
     justify-content: center;
@@ -58,10 +58,32 @@ body{
     border-radius: 5px;
 }
 
-#text-post:focus {
+.text-post:focus {
     border-color: #3C3B37;
     outline: none !important;
+    background-color: #ddddd9
 }
+
+.btn-save-edit{
+    cursor: pointer;
+    display: none;
+    padding: 8px;
+    border-radius: 35px;
+    background-color: #393834;
+    box-shadow: 3px 3px 10px #393834;
+    color: white;
+    outline:none;
+    transition:all 0.3s ease;
+}
+
+.btn-save-edit:hover{
+    padding: 8px;
+    border-radius: 35px;
+    background-color: #696967;
+    color: white;
+    border:none!important;
+}
+
 
 #container-date{
     display: flex;
@@ -92,6 +114,14 @@ body{
     cursor: pointer;
 }
 
+.btn-liked{
+    background-image: url("../img/Like/like-gray.png");
+    max-height: 28px;
+    max-width: 32px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
 .btn-dislike{
     margin-top: 13px;
     margin-left: 10px;
@@ -100,7 +130,7 @@ body{
     cursor: pointer;
 }
 
-#number-of-dilikes{
+#number-of-dislikes{
     display: block;
     font-size: 15pt;
     margin-left: 8px;
@@ -162,7 +192,7 @@ body{
         transform: translateY(-50%);
     }
 
-    .post-container{
+    #post-infos{
         margin: 0 auto;
         height: 200px;
         width: 78%;
@@ -179,6 +209,11 @@ body{
         font-size:18px;
         border-radius: 5px;
     }
+
+    .btn-save-edit{
+        margin-left: 10px;    
+    }
+    
 
     #container-date{
         margin: 0 auto;
