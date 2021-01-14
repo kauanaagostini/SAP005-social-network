@@ -30,7 +30,9 @@ export const publicacoes = () => {
             </section>  
         </main>
       
+      
     `;
+
   const userName = rootElement.querySelector('#hello-user');
   firebase.auth().onAuthStateChanged((user) => {
     if (user != null) {
