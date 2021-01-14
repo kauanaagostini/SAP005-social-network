@@ -1,5 +1,4 @@
 import { handleSignUp, validateEmptyInput, validatePassword } from '../../services/index.js';
-import { onNavigate } from '../../utils/history.js';
 
 export const createAccount = () => {
   // Coloque sua página
@@ -35,6 +34,7 @@ export const createAccount = () => {
   const btnCreateAccount = rootElement.querySelector('#btnCreateAccount');
 
   btnCreateAccount.addEventListener('click', (event) => {
+    debugger
     event.preventDefault();
     const email = rootElement.querySelector('#email').value;
     const password = rootElement.querySelector('#password').value;
