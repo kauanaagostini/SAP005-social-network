@@ -1,6 +1,4 @@
-// exporte suas funções
-
-import { showModal } from '../components/showModal.js';
+import showModal from '../components/showModal.js';
 import { onNavigate } from '../utils/history.js';
 
 // ----- LOGIN -----
@@ -11,7 +9,7 @@ export const handleSignUp = (email, password, firstName, lastName) => {
     .then((user) => {
       const userName = `${firstName} ${lastName}`;
       user.user.updateProfile({ displayName: userName });
-      const message = "Usuário criado com sucesso!"
+      const message = 'Usuário criado com sucesso!';
       showModal.error(message);
       onNavigate('/publicacoes');
     })
@@ -53,7 +51,7 @@ export const handleSignOut = () => {
 
 export const validatePassword = (password, samePassword) => {
   if (password !== samePassword) {
-    const errorMessage = "As senhas digitadas são divergentes"
+    const errorMessage = 'As senhas digitadas são divergentes';
     showModal.error(errorMessage);
     return false;
   }
@@ -62,7 +60,7 @@ export const validatePassword = (password, samePassword) => {
 
 export const validateEmptyInput = (firstName, lastName) => {
   if (firstName.length < 1 || lastName.length < 1) {
-    const errorMessage = "Os campos Nome e Sobrenome são de preenchimentos obrigatórios"
+    const errorMessage = 'Os campos Nome e Sobrenome são de preenchimentos obrigatórios';
     showModal.error(errorMessage);
     return false;
   }
@@ -84,28 +82,24 @@ export const postImage = (photo, callback) => {
 };
 
 export const createPost = (post) => {
-    const user = firebase.auth().currentUser;
-    const date = new Date();
-    firebase
-      .firestore()
-      .collection("post")
-      .add({
-        name: user.displayName,
-        user_id: user.uid,
-        text: post,
-        date: date.toLocaleString(),
-        time: date.getTime(),
-        usersLike: [],
-        usersDislike: [],
+  const user = firebase.auth().currentUser;
+  const date = new Date();
+  firebase
+    .firestore()
+    .collection('post')
+    .add({
+      name: user.displayName,
+      user_id: user.uid,
+      text: post,
+      date: date.toLocaleString(),
+      time: date.getTime(),
+      usersLike: [],
+      usersDislike: [],
 
-      })
-      .then(() => {
-        return Promise.resolve(true);
-      })
-      .catch((error) => {
-        return Promise.reject(error);
-      });
-  };
+    })
+    .then(() => Promise.resolve(true))
+    .catch((error) => Promise.reject(error));
+};
 
 export const getPosts = () => {
   const post = firebase
@@ -120,35 +114,32 @@ export const likePost = (id, userID) => {
   const postLike = firebase.firestore().collection('post').doc(id);
   return postLike.update({
     usersLike: userLike,
-  })
- 
-}
+  });
+};
 
-export const removeLike =(id, userId) =>{
+export const removeLike = (id, userId) => {
   const userLike = firebase.firestore.FieldValue.arrayRemove(userId);
-  const postLike = firebase.firestore().collection("post").doc(id);
+  const postLike = firebase.firestore().collection('post').doc(id);
   return postLike.update({
     usersLike: userLike,
-  })
-
-}
+  });
+};
 
 export const dislikePost = (id, userID) => {
   const userDislike = firebase.firestore.FieldValue.arrayUnion(userID);
-  const postDislike = firebase.firestore().collection("post").doc(id);
-   return postDislike.update({
+  const postDislike = firebase.firestore().collection('post').doc(id);
+  return postDislike.update({
     usersDislike: userDislike,
-  })
-}
+  });
+};
 
 export const removeDislike = (id, userId) => {
   const userDislike = firebase.firestore.FieldValue.arrayRemove(userId);
   const postDislike = firebase.firestore().collection('post').doc(id);
   return postDislike.update({
     usersDislike: userDislike,
-  })
-
-}
+  });
+};
 
 export const editPost = (text, id) => {
   const postUpdate = firebase.firestore().collection('post').doc(id);
