@@ -97,9 +97,8 @@ export const createPost = (post) => {
         text: post,
         date: date.toLocaleString(),
         time: date.getTime(),
-        users_like: [],
-        users_dislike: [],
-        comentarios: [],
+        usersLike: [],
+        usersDislike: [],
 
       })
       .then(() => {
@@ -123,18 +122,16 @@ export const likePost = (id, userID) => {
   const userLike = firebase.firestore.FieldValue.arrayUnion(userID);
   const postLike = firebase.firestore().collection("post").doc(id);
   return postLike.update({
-    users_like: userLike,
+    usersLike: userLike,
   })
  
 }
 
 export const removeLike =(id, userId) =>{
-  console.log(id,userId)
   const userLike = firebase.firestore.FieldValue.arrayRemove(userId);
-  console.log(userLike)
   const postLike = firebase.firestore().collection("post").doc(id);
   return postLike.update({
-    users_like: userLike,
+    usersLike: userLike,
   })
 
 }
@@ -143,7 +140,7 @@ export const dislikePost = (id, userID) => {
   const userDislike = firebase.firestore.FieldValue.arrayUnion(userID);
   const postDislike = firebase.firestore().collection("post").doc(id);
    return postDislike.update({
-    users_dislike: userDislike,
+    usersDislike: userDislike,
   })
 }
 
@@ -151,7 +148,7 @@ export const removeDislike =(id, userId) =>{
   const userDislike = firebase.firestore.FieldValue.arrayRemove(userId);
   const postDislike = firebase.firestore().collection("post").doc(id);
   return postDislike.update({
-    users_dislike: userDislike,
+    usersDislike: userDislike,
   })
 
 }
