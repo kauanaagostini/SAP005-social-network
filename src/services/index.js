@@ -83,25 +83,28 @@ export const postImage = (photo, callback) => {
 };
 
 export const createPost = (post) => {
-  const user = firebase.auth().currentUser;
-  const date = new Date();
-  firebase
-    .firestore()
-    .collection('post')
-    .add({
-      name: user.displayName,
-      user_id: user.uid,
-      text: post,
-      date: date.toLocaleString(),
-      time: date.getTime(),
-      users_like: [],
-      users_dislike: [],
-      comentarios: [],
+    const user = firebase.auth().currentUser;
+    const date = new Date();
+    firebase
+      .firestore()
+      .collection("post")
+      .add({
+        name: user.displayName,
+        user_id: user.uid,
+        text: post,
+        date: date.toLocaleString(),
+        time: date.getTime(),
+        usersLike: [],
+        usersDislike: [],
 
-    })
-    .then(() => Promise.resolve(true))
-    .catch((error) => Promise.reject(error));
-};
+      })
+      .then(() => {
+        return Promise.resolve(true);
+      })
+      .catch((error) => {
+        return Promise.reject(error);
+      });
+  };
 
 export const getPosts = () => {
   const post = firebase
@@ -115,33 +118,36 @@ export const likePost = (id, userID) => {
   const userLike = firebase.firestore.FieldValue.arrayUnion(userID);
   const postLike = firebase.firestore().collection('post').doc(id);
   return postLike.update({
-    users_like: userLike,
-  });
-};
+    usersLike: userLike,
+  })
+ 
+}
 
-export const removeLike = (id, userId) => {
+export const removeLike =(id, userId) =>{
   const userLike = firebase.firestore.FieldValue.arrayRemove(userId);
-  const postLike = firebase.firestore().collection('post').doc(id);
+  const postLike = firebase.firestore().collection("post").doc(id);
   return postLike.update({
-    users_like: userLike,
-  });
-};
+    usersLike: userLike,
+  })
+
+}
 
 export const dislikePost = (id, userID) => {
   const userDislike = firebase.firestore.FieldValue.arrayUnion(userID);
-  const postDislike = firebase.firestore().collection('post').doc(id);
-  return postDislike.update({
-    users_dislike: userDislike,
-  });
-};
+  const postDislike = firebase.firestore().collection("post").doc(id);
+   return postDislike.update({
+    usersDislike: userDislike,
+  })
+}
 
 export const removeDislike = (id, userId) => {
   const userDislike = firebase.firestore.FieldValue.arrayRemove(userId);
   const postDislike = firebase.firestore().collection('post').doc(id);
   return postDislike.update({
-    users_dislike: userDislike,
-  });
-};
+    usersDislike: userDislike,
+  })
+
+}
 
 export const editPost = (text, id) => {
   const postUpdate = firebase.firestore().collection('post').doc(id);
