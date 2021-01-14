@@ -1,10 +1,12 @@
-import { likePost, removeLike,  editPost,  dislikePost, removeDislike, deletePost} from "../services/index.js"
+import {
+  likePost, removeLike, editPost, dislikePost, removeDislike, deletePost,
+} from '../services/index.js';
 
 export const addPost = (post) => {
-    const { name, text, date, users_like, users_dislike} = post.data()
+    const { name, text, date, usersLike, usersDislike} = post.data()
     const { id } = post
-    let arrayLikes = users_like;
-    let arrayDislikes =  users_dislike;
+    let arrayLikes = usersLike;
+    let arrayDislikes =  usersDislike;
     const postTemplate = document.createElement("section")
     postTemplate.classList.add("post-container")
     postTemplate.setAttribute("data-id", post.id)
@@ -39,17 +41,17 @@ export const addPost = (post) => {
           </div>     
         </section>
 
-    `
-    const showEditsForCurrentUser = () => {
-        const userPost = post.data().user_id
-        const currentUser = firebase.auth().currentUser.uid
-        const btnDelete = postTemplate.querySelector(".btn-delete-post")
-        const btnEdit = postTemplate.querySelector(".btn-edit-post")
-        if (userPost === currentUser) {
-            btnDelete.style.display = 'block';
-            btnEdit.style.display = 'block';
-        }
+    `;
+  const showEditsForCurrentUser = () => {
+    const userPost = post.data().user_id;
+    const currentUser = firebase.auth().currentUser.uid;
+    const btnDelete = postTemplate.querySelector('.btn-delete-post');
+    const btnEdit = postTemplate.querySelector('.btn-edit-post');
+    if (userPost === currentUser) {
+      btnDelete.style.display = 'block';
+      btnEdit.style.display = 'block';
     }
+  }
 
     showEditsForCurrentUser()
 
@@ -59,7 +61,6 @@ export const addPost = (post) => {
         if (!verifyUserLike) {
             likePost(id, currentUserLike)
                 .then(() => {
-                    console.log("deu bom");
                     const numberOfLikesElement = postTemplate.querySelector("#number-of-likes")
                     const numberOfLikes = Number(numberOfLikesElement.textContent)
                     numberOfLikesElement.textContent = numberOfLikes + 1
@@ -72,7 +73,6 @@ export const addPost = (post) => {
         } else {
             removeLike(id, currentUserLike)
                 .then(() => {
-                    console.log("deu bom");
                     const numberOfLikesElement = postTemplate.querySelector("#number-of-likes")
                     const numberOfLikes = Number(numberOfLikesElement.textContent)
                     numberOfLikesElement.textContent = numberOfLikes - 1
@@ -93,7 +93,6 @@ export const addPost = (post) => {
         if (!verifyUserDislike) {
             dislikePost(id, currentUserDislike)
                 .then(() => {
-                    console.log("deu bom");
                     const numberOfDislikesElement = postTemplate.querySelector("#number-of-dislikes")
                     const numberOfDislikes = Number(numberOfDislikesElement.textContent)
                     numberOfDislikesElement.textContent = numberOfDislikes + 1
@@ -106,7 +105,6 @@ export const addPost = (post) => {
         } else {
             removeDislike(id, currentUserDislike)
                 .then(() => {
-                    console.log("deu bom");
                     const numberOfDislikesElement = postTemplate.querySelector("#number-of-dislikes")
                     const numberOfDislikes = Number(numberOfDislikesElement.textContent)
                     numberOfDislikesElement.textContent = numberOfDislikes - 1
@@ -131,28 +129,25 @@ export const addPost = (post) => {
 
 
     const saveEdit = () => {
-        postTemplate.querySelector(`#btn-save-edit${id}`).addEventListener('click', (event) => {
-            const textAreaUpdate = postTemplate.querySelector(".text-post")
-            const btnSaveEdit = postTemplate.querySelector(".btn-save-edit")
-            btnSaveEdit.style.display = 'block';
-            editPost(textAreaUpdate.value, id)
-                .then(() => {
-                    console.log("deu bom");
-                    textAreaUpdate.setAttribute('disabled', 'disabled')
-                    btnSaveEdit.style.display = 'none';
-                })
-                .catch((error) => {
-                    alert(error);
-                });
-        })
+      postTemplate.querySelector(`#btn-save-edit${id}`).addEventListener('click', (event) => {
+        const textAreaUpdate = postTemplate.querySelector(".text-post")
+        const btnSaveEdit = postTemplate.querySelector(".btn-save-edit")
+        btnSaveEdit.style.display = 'block';
+        editPost(textAreaUpdate.value, id)
+          .then(() => {
+            textAreaUpdate.setAttribute('disabled', 'disabled')
+            btnSaveEdit.style.display = 'none';
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      });
     }
-
 
     postTemplate.querySelector(`#btn-delete-post${id}`).addEventListener('click', (event) => {
         if (confirm("Tem certeza que deseja excluir a publicação?")) {
             deletePost(id)
                 .then(() => {
-                    console.log("apagou");
                     postTemplate.style.display = 'none';
                 })
                 .catch((error) => {

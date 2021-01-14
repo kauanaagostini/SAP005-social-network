@@ -1,22 +1,10 @@
-import {getPosts, handleSignOut} from "../../services/index.js";
-import { addPost } from "../../components/post.js";
-import { onNavigate } from "../../utils/history.js";
-
-
+import { getPosts, handleSignOut } from '../../services/index.js';
+import { addPost } from '../../components/post.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const publicacoes = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user != null) {
-            return userName.innerHTML = `Olá, ${user.displayName}!`;
-        } else {
-            onNavigate("/login")
-        }
-    });
-
-    const rootElement = document.createElement('div');
-    rootElement.innerHTML =
-
-        ` 
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = ` 
         <header id="header">
             <img id="logo" src="../../img/Logo/logo-temporario-red.png" alt="Logo do Site">
             <section id="option-container">
@@ -43,23 +31,29 @@ export const publicacoes = () => {
         </main>
       
     `;
+  const userName = rootElement.querySelector('#hello-user');
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user != null) {
+      userName.innerHTML = `Olá, ${user.displayName}!`;
+    } else {
+      onNavigate('/');
+    }
+  });
 
-    const userName = rootElement.querySelector('#hello-user')
+  const btnExit = rootElement.querySelector('#exit');
+  btnExit.addEventListener('click', (event) => {
+    event.preventDefault();
+    handleSignOut();
+    onNavigate('/login');
+  });
 
-    const btnExit = rootElement.querySelector('#exit');
-    btnExit.addEventListener('click', (event) => {
-        event.preventDefault();
-        handleSignOut();
-        onNavigate('/login');
+  const postSection = rootElement.querySelector('#text');
+
+  getPosts().then((snap) => {
+    snap.forEach((post) => {
+      postSection.appendChild(addPost(post));
     });
+  });
 
-    const postSection = rootElement.querySelector("#text")
-
-    getPosts().then(snap => {
-        snap.forEach(post => {
-            postSection.appendChild(addPost(post))
-        });
-    })
-
-    return rootElement;
+  return rootElement;
 };

@@ -85,7 +85,6 @@ nav > ul{
     color: #3C3B37;
     text-transform: uppercase;
     padding: 10px;
-    transition:all 0.3s ease;
 }
 
 #user-container{
@@ -128,10 +127,48 @@ nav > ul{
     text-decoration: underline overline;
 }
 
+.e-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+}
 
+#errorMessage {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 0.2em #3C3B37;
+}
 
+.btnClose {
+    margin: 10px 25px;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-image: linear-gradient(135deg, #3BC6F6 -40%, #ffffff 50%, #FE4C6A 140%);
+    border: none;
+    border-radius: 5px;
+    color: #3C3B37;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 0.2em #3C3B37;
+}
 
+.btnClose:hover {
+    background-image: linear-gradient(135deg,  #FE4C6A -40%, #ffffff 50%, #3BC6F6 140%);
+}
 
+body .itemActive {
+    display: flex;
+}
 
 @media only screen and (min-width: 1382px) { 
 

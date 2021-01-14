@@ -29,6 +29,28 @@
     outline: none !important;
 }
 
+.btnImage {
+    width: 30px;
+    margin-left: 150px;
+    padding-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.icon-post {
+    width: 20%;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px;
+    border: 1px solid #3C3B37;
+    font-size: 22px;
+    background-color: #d5d5d5;
+}
+
+.photo {
+    display: none;
+}
+
 #postar {
     margin: 10px 25px;
     padding: 5px 10px;
@@ -70,6 +92,6 @@
     #postar {
         margin: 10px auto;
     }
-}
 
+}
 
