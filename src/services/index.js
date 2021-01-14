@@ -69,6 +69,7 @@ export const validateEmptyInput = (firstName, lastName) => {
   return true;
 };
 
+
 // ----- POSTS -----
 
 export const postImage = (photo, callback) => {
