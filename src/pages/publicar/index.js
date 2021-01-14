@@ -1,5 +1,6 @@
 import { createPost, handleSignOut } from '../../services/index.js';
 import { onNavigate } from '../../utils/history.js';
+import showModal from '../../components/showModal.js';
 
 export const publicar = () => {
   const rootElement = document.createElement('div');
@@ -54,7 +55,8 @@ export const publicar = () => {
 
   post.addEventListener('click', () => {
     if (mensagem.value === '') {
-      alert('Digite a mensagem!');
+      const errorMessage = 'Digite a mensagem!';
+      showModal.error(errorMessage);
     } else {
       createPost(mensagem.value);
       onNavigate('/publicacoes');
