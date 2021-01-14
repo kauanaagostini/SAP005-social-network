@@ -1,4 +1,6 @@
-import { likePost, removeLike,  editPost,  dislikePost, removeDislike, deletePost} from "../services/index.js"
+import {
+  likePost, removeLike, editPost, dislikePost, removeDislike, deletePost,
+} from '../services/index.js';
 
 export const addPost = (post) => {
     const { name, text, date, usersLike, usersDislike} = post.data()
@@ -39,17 +41,17 @@ export const addPost = (post) => {
           </div>     
         </section>
 
-    `
-    const showEditsForCurrentUser = () => {
-        const userPost = post.data().user_id
-        const currentUser = firebase.auth().currentUser.uid
-        const btnDelete = postTemplate.querySelector(".btn-delete-post")
-        const btnEdit = postTemplate.querySelector(".btn-edit-post")
-        if (userPost === currentUser) {
-            btnDelete.style.display = 'block';
-            btnEdit.style.display = 'block';
-        }
+    `;
+  const showEditsForCurrentUser = () => {
+    const userPost = post.data().user_id;
+    const currentUser = firebase.auth().currentUser.uid;
+    const btnDelete = postTemplate.querySelector('.btn-delete-post');
+    const btnEdit = postTemplate.querySelector('.btn-edit-post');
+    if (userPost === currentUser) {
+      btnDelete.style.display = 'block';
+      btnEdit.style.display = 'block';
     }
+  }
 
     showEditsForCurrentUser()
 
@@ -127,21 +129,20 @@ export const addPost = (post) => {
 
 
     const saveEdit = () => {
-        postTemplate.querySelector(`#btn-save-edit${id}`).addEventListener('click', (event) => {
-            const textAreaUpdate = postTemplate.querySelector(".text-post")
-            const btnSaveEdit = postTemplate.querySelector(".btn-save-edit")
-            btnSaveEdit.style.display = 'block';
-            editPost(textAreaUpdate.value, id)
-                .then(() => {
-                    textAreaUpdate.setAttribute('disabled', 'disabled')
-                    btnSaveEdit.style.display = 'none';
-                })
-                .catch((error) => {
-                    alert(error);
-                });
-        })
+      postTemplate.querySelector(`#btn-save-edit${id}`).addEventListener('click', (event) => {
+        const textAreaUpdate = postTemplate.querySelector(".text-post")
+        const btnSaveEdit = postTemplate.querySelector(".btn-save-edit")
+        btnSaveEdit.style.display = 'block';
+        editPost(textAreaUpdate.value, id)
+          .then(() => {
+            textAreaUpdate.setAttribute('disabled', 'disabled')
+            btnSaveEdit.style.display = 'none';
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      });
     }
-
 
     postTemplate.querySelector(`#btn-delete-post${id}`).addEventListener('click', (event) => {
         if (confirm("Tem certeza que deseja excluir a publicação?")) {

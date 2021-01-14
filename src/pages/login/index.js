@@ -1,8 +1,6 @@
 import { handleGoogleSignIn, handleSignIn } from '../../services/index.js';
-import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
-  // Coloque sua página
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
     <section id="page-login">

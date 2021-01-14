@@ -1,5 +1,4 @@
 import { handleSignUp, validateEmptyInput, validatePassword } from '../../services/index.js';
-import { onNavigate } from '../../utils/history.js';
 
 export const createAccount = () => {
   // Coloque sua página

@@ -1,5 +1,3 @@
-// Este é seu ponto de entrada da sua aplicação
-import { Home } from './pages/home/index.js';
 import { Login } from './pages/login/index.js';
 import { onNavigate } from './utils/history.js';
 import { createAccount } from './pages/createAccount/index.js';
@@ -9,8 +7,7 @@ import { publicacoes } from './pages/publicacoes/index.js';
 const routeRender = () => {
   const rootDiv = document.getElementById('root');
   const routes = {
-    '/': Home,
-    '/login': Login,
+    '/': Login,
     '/createAccount': createAccount,
     '/publicar': publicar,
     '/publicacoes': publicacoes,
@@ -23,17 +20,10 @@ const routeRender = () => {
 window.addEventListener('popstate', routeRender);
 window.addEventListener('load', () => {
   document
-    .getElementById('home')
-    .addEventListener('click', (e) => {
-      e.preventDefault();
-      onNavigate('/');
-    });
-
-  document
     .getElementById('login')
     .addEventListener('click', (e) => {
       e.preventDefault();
-      onNavigate('/login');
+      onNavigate('/');
     });
 
   document
@@ -56,20 +46,6 @@ window.addEventListener('load', () => {
       e.preventDefault();
       onNavigate('/publicacoes');
     });
-
-  // document
-  // .getElementById('posts-view')
-  // .addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   onNavigate('/publicacoes')
-  // });
-
-  // document
-  // .getElementById('posts-write')
-  // .addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   onNavigate('/publicar')
-  // });
 
   routeRender();
 });
