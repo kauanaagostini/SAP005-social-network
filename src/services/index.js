@@ -69,7 +69,7 @@ export const validateEmptyInput = (firstName, lastName) => {
   }
 }
 
-// <<<<<<< HEAD 
+
 
 export const postImage = (photo, callback) => {
   const file = photo.files[0];
