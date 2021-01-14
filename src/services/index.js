@@ -1,5 +1,6 @@
 // exporte suas funções
 
+import { showModal } from '../components/showModal.js';
 import { onNavigate } from '../utils/history.js';
 
 // ----- LOGIN -----
@@ -10,12 +11,13 @@ export const handleSignUp = (email, password, firstName, lastName) => {
     .then((user) => {
       const userName = `${firstName} ${lastName}`;
       user.user.updateProfile({ displayName: userName });
-      alert('Usuário criado com sucesso!');
+      const message = "Usuário criado com sucesso!"
+      showModal.error(message);
       onNavigate('/publicacoes');
     })
     .catch((error) => {
       const errorMessage = error.message;
-      alert(`${errorMessage}`);
+      showModal.error(errorMessage);
     });
 };
 
@@ -28,7 +30,7 @@ export const handleGoogleSignIn = () => {
     })
     .catch((error) => {
       const errorMessage = error.message;
-      alert(`${errorMessage}`);
+      showModal.error(errorMessage);
     });
 };
 
@@ -39,7 +41,7 @@ export const handleSignIn = (email, password) => {
     })
     .catch((error) => {
       const errorMessage = error.message;
-      alert(`${errorMessage}`);
+      showModal.error(errorMessage);
     });
 };
 
@@ -51,7 +53,8 @@ export const handleSignOut = () => {
 
 export const validatePassword = (password, samePassword) => {
   if (password !== samePassword) {
-    alert('senhas divergentes');
+    const errorMessage = "As senhas digitadas são divergentes"
+    showModal.error(errorMessage);
     return false;
   }
   return true;
@@ -59,15 +62,14 @@ export const validatePassword = (password, samePassword) => {
 
 export const validateEmptyInput = (firstName, lastName) => {
   if (firstName.length < 1 || lastName.length < 1) {
-    alert('Os campos Nome e Sobrenome são de preenchimentos obrigatórios');
+    const errorMessage = "Os campos Nome e Sobrenome são de preenchimentos obrigatórios"
+    showModal.error(errorMessage);
     return false;
   }
   return true;
 };
 
-
 // ----- POSTS -----
-
 
 export const postImage = (photo, callback) => {
   const file = photo.files[0];

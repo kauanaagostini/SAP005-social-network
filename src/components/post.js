@@ -3,12 +3,10 @@ import {
 } from '../services/index.js';
 
 export const addPost = (post) => {
-  const {
-    name, text, date, users_like, users_dislike,
-  } = post.data();
+  const { name, text, date } = post.data();
   const { id } = post;
-  let arrayLikes = users_like;
-  let arrayDislikes = users_dislike;
+  let arrayLikes = post.data().users_like;
+  let arrayDislikes = post.data().users_dislike;
   const postTemplate = document.createElement('section');
   postTemplate.classList.add('post-container');
   postTemplate.setAttribute('data-id', post.id);
@@ -143,7 +141,6 @@ export const addPost = (post) => {
     if (confirm('Tem certeza que deseja excluir a publicação?')) {
       deletePost(id)
         .then(() => {
-          console.log('apagou');
           postTemplate.style.display = 'none';
         })
         .catch((error) => {

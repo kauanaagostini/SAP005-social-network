@@ -34,7 +34,6 @@ export const createAccount = () => {
   const btnCreateAccount = rootElement.querySelector('#btnCreateAccount');
 
   btnCreateAccount.addEventListener('click', (event) => {
-    debugger
     event.preventDefault();
     const email = rootElement.querySelector('#email').value;
     const password = rootElement.querySelector('#password').value;
