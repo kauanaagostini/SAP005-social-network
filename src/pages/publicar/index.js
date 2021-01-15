@@ -56,7 +56,7 @@ export const publicar = () => {
   post.addEventListener('click', () => {
     if (mensagem.value === '') {
       const errorMessage = 'Digite a mensagem!';
-      showModal.error(errorMessage);
+      showModal(errorMessage);
     } else {
       createPost(mensagem.value);
       onNavigate('/publicacoes');

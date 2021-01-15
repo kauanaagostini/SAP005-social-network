@@ -69,7 +69,7 @@ export const addPost = (post) => {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          showModal.error(errorMessage);
+          showModal(errorMessage);
         });
     } else {
       removeLike(id, currentUserLike)
@@ -81,7 +81,7 @@ export const addPost = (post) => {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          showModal.error(errorMessage);
+          showModal(errorMessage);
         });
     }
   });
@@ -99,7 +99,7 @@ export const addPost = (post) => {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          showModal.error(errorMessage);
+          showModal(errorMessage);
         });
     } else {
       removeDislike(id, currentUserDislike)
@@ -111,7 +111,7 @@ export const addPost = (post) => {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          showModal.error(errorMessage);
+          showModal(errorMessage);
         });
     }
   });
@@ -128,7 +128,7 @@ export const addPost = (post) => {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          showModal.error(errorMessage);
+          showModal(errorMessage);
         });
     });
   };
@@ -149,7 +149,7 @@ export const addPost = (post) => {
         })
         .catch((error) => {
           const errorMessage = error.message;
-          showModal.error(errorMessage);
+          showModal(errorMessage);
         });
     }
   });
