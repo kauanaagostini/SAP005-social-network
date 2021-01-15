@@ -1,6 +1,4 @@
-// exporte suas funções
-
-import { showModal } from '../components/showModal.js';
+import showModal from '../components/showModal.js';
 import { onNavigate } from '../utils/history.js';
 
 // ----- LOGIN -----

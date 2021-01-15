@@ -1,4 +1,4 @@
-export const showModal = {
+const showModal = {
   error(message) {
     const errorTemplate = document.querySelector('#errorModal');
     const errorMessage = document.createElement('section');
@@ -18,3 +18,6 @@ export const showModal = {
     });
   },
 };
+
+export default showModal;
+
