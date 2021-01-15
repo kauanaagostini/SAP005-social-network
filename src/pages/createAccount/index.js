@@ -1,4 +1,5 @@
-import { handleSignUp, validateEmptyInput, validatePassword } from '../../services/index.js';
+import { handleSignUp } from '../../services/index.js';
+import { validatePassword, validateEmptyInput } from '../../utils/validation.js';
 import showModal from '../../components/showModal.js';
 import { onNavigate } from '../../utils/history.js';
 

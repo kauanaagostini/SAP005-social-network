@@ -277,9 +277,15 @@ Neste projeto aprendemos a lidar com ferramentas diferentes e a comunicação do
 
 Além do trabalho em trio, desenvolvendo muito mais a comunicação entre as pessoas, o trabalho em equipe, e a utilizar as ferramentas de um modo muito mais próximo ao utilizado em grandes equipes. 
 
-Mesmo com todos esses desafios, acredito que foi uma experiência muito rica e divertida.
+Mesmo com todos esses desafios, acreditamos que foi uma experiência muito rica e divertida.
 
-Agradecemos muito a Laboratória por nos desafiar sempre a aprender cada dia mais, aos colegas de trio, e de squad, que foram fundamentais nesse processo, aos mentores e suas maravilhosas oficinas e dicas, e não menos importante aos nosso familiares e amigos, que nem sempre podem nos ajudar com dicas técnicas mas sempre nos incentivam, nos apoiam e estão dispostos a ouvir nossos desabafos.
+Agradecemos muito a Laboratória por nos desafiar sempre a aprender cada dia mais, as colegas de trio, e de squad, que foram fundamentais nesse processo, as mentoras e suas maravilhosas oficinas e dicas, e não menos importante aos nosso familiares e amigos, que nem sempre podem nos ajudar com dicas técnicas mas sempre nos incentivam, nos apoiam e estão dispostos a ouvir nossos desabafos.
+
+![Logo](src/img/readme/img-login.jpg)
+
+Muito Obrigada,
+
+KAT - Redações!
 
 ## 10. Autoras 
 
