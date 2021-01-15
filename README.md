@@ -47,10 +47,10 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 
 ### Personas 
 
-![Personas](src/img/readme/personas.jpg) 
+![Personas](src/img/readme/Personas.jpg) 
 
 ### Entrevistas 
-![Entrevista Voniam](src/img/readme/entrevistaPersona1.jpg)
+![Entrevista Voniam](src/img/readme/entrevistaPersona1.jpeg)
 
 ![Entrevista Ana](src/img/readme/entrevistaPersona2.jpg)
 
@@ -227,7 +227,7 @@ Através das histórias de usuário, conseguimos montar um fluxo de como seria o
 
 Com base nas entrevistas e no fluxograma do projeto criamos os primeiros protótipos da aplicação.
 
-![Prototipos](src/img/readme/prototipos.jpg)
+![Prototipos](src/img/readme/Prototipos.jpg)
 
 ## 6. Teste de Usabilidade 
 
