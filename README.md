@@ -260,18 +260,22 @@ Após os primeiros testes foram visualizados várias melhorias na aplicação, a
 KAT - Redações é uma aplicação que permite o usuário a postar informações, textos e dicas para os demais usuários visualizarem.
 Ao fazer a postagem você poderá editá-la ou até mesmo exclui-lá se não foi o que você desejava publicar. Os demais usuários poderão curtir ou não curtir suas publicações.
 
-[colocar um gif da aplicação]
+A aplicação pode ser acessada através da criação de uma conta ou com Login direto pelo Google.
+
+![Login](src/img/readme/gifs/login.gif)
 
 
 ## 8. Colocando a Mão na Massa  
 
 Desenvolvido em HTML5, CSS3 e Vanilla JavaScript, utilizando funcionalidades do Firebase com o conceito Mobile First.
 
-Para utilizar nossa aplicação você poderá acessá-la através do link: "KAT - Redações"(colocar o link do hosting aqui)
+Para utilizar nossa aplicação você poderá acessá-la através do link: [KAT - Redações](https://rede-social-2b9a9.firebaseapp.com/)
 
-Esperamos que, se divertam e que encontrem uma rede disposta a lhe ajudar. 
+![Publicar](src/img/readme/gifs/Publicar.gif)
 
-[colocar aqui outro gif da aplicação]
+Esperamos que se divirta e que aproveite as dicas dos demais usuários. 
+
+![Publicações](src/img/readme/gifs/Publicações.gif)
 
 
 ## 9. Considerações Finais 
@@ -293,6 +297,12 @@ Mesmo com todos esses desafios, acreditamos que foi uma experiência muito rica 
 - Mentores - com suas maravilhosas oficinas e dicas;
 
 - Familiares e amigos: pelos enormes apoios e incentivos.
+
+![Logo](src/img/readme/img-login.jpg)
+
+Muito Obrigada,
+
+KAT - Redações!
 
 ## 11. Autoras 
 
