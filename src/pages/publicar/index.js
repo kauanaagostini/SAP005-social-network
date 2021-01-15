@@ -20,12 +20,8 @@ export const publicar = () => {
       </section>
       <section class="page-section">
         <label class="title" for="title">Publicar</label>
-        <img src='' width='100%' class='imgPreview'>
         <textarea id="post-user" cols="50" rows="20" placeholder="Escreva aqui..."></textarea>
       </section>
-      <input type="image" class="btnImage" src="img/att-photo.png" value="ENVIAR" alt="button for image" />
-          <input type='file' class='photo' id='photo' accept='image/png, image/jpeg, image/jpg'/> 
-        </label>
       <section id="container-button">
         <button id="postar">Enviar</button>
       </section>  
@@ -43,15 +39,6 @@ export const publicar = () => {
 
   const post = rootElement.querySelector('#postar');
   const mensagem = rootElement.querySelector('#post-user');
-
-  // const photo = rootElement.querySelector('.photo');
-  // const preview = rootElement.querySelector('.imgPreview');
-
-  // photo.addEventListener('change', (event) => {
-  //   const file = event.target.files[0];
-  //   preview.src = URL.createObjectURL(file);
-  //   postImage(photo, validarUrl);
-  // });
 
   post.addEventListener('click', () => {
     if (mensagem.value === '') {

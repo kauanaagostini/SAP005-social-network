@@ -67,20 +67,6 @@ export const validateEmptyInput = (firstName, lastName) => {
   return true;
 };
 
-
-// ----- POSTS -----
-
-export const postImage = (photo, callback) => {
-  const file = photo.files[0];
-  const storageRef = firebase.storage().ref(`imagens/${file.name}`);
-
-  storageRef.put(file).then(() => {
-    storageRef.getDownloadURL().then((url) => {
-      callback(url);
-    });
-  });
-};
-
 export const createPost = (post) => {
   const user = firebase.auth().currentUser;
   const date = new Date();
