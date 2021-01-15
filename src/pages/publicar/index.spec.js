@@ -1,7 +1,8 @@
 import { publicar } from './index.js';
 import * as services from '../../services/index.js';
 
-let firebase = '';
+services.createPost = jest.fn(() => Promise.resolve(true));
+services.handleSignOut = jest.fn(() => Promise.resolve(true));
 
 describe('Publicar', () => {
   it('should be a function', () => {

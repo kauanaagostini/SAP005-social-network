@@ -1,4 +1,4 @@
-# Criando uma Rede Social
+![Logo](src/img/img-login.jpg) 
 
 ## Índice
 
