@@ -16,9 +16,8 @@ export const publicacoes = () => {
 
         <main>
             <section id="user-container">
-                <div id="photo-user"> </div>
-                <img src="../../img/user.png">
-                <h2 class="user-item" id="hello-user"> </h2>
+              <img id="photoUser" class="user-item">
+              <h2 class="user-item" id="hello-user"> </h2>
             </section>
 
             <section id=recent-container>
@@ -31,14 +30,16 @@ export const publicacoes = () => {
         </main>
       
     `;
-  const userName = rootElement.querySelector('#hello-user');
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user != null) {
-      userName.innerHTML = `Olá, ${user.displayName}!`;
-    } else {
-      onNavigate('/');
-    }
-  });
+    const userName = rootElement.querySelector('#hello-user');
+    const photoPerfil = rootElement.querySelector('#photoUser')
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user != null) {
+        userName.innerHTML = `Olá, ${user.displayName}!`;
+        photoPerfil.src = user.photoURL;
+      } else {
+        onNavigate('/');
+      }
+    });
 
   const btnExit = rootElement.querySelector('#exit');
   btnExit.addEventListener('click', (event) => {

@@ -13,6 +13,7 @@ const showModal = (message) => {
   const btnClose = errorTemplate.querySelector('.btnClose');
   btnClose.addEventListener('click', () => {
     errorTemplate.classList.remove('itemActive');
+    errorMessage.style.display = 'none';
     errorMessage.innerHTML = '';
   });
 };
