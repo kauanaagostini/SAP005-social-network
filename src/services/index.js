@@ -1,6 +1,3 @@
-import showModal from '../components/showModal.js';
-import { onNavigate } from '../utils/history.js';
-
 // ----- LOGIN -----
 
 export const handleSignUp = (email, password) => firebase.auth()
@@ -8,27 +5,11 @@ export const handleSignUp = (email, password) => firebase.auth()
 
 export const handleGoogleSignIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth()
-    .signInWithPopup(provider)
-    .then(() => {
-      onNavigate('/publicacoes');
-    })
-    .catch((error) => {
-      const errorMessage = error.message;
-      showModal(errorMessage);
-    });
+  return firebase.auth().signInWithPopup(provider);
 };
 
-export const handleSignIn = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {
-      onNavigate('/publicacoes');
-    })
-    .catch((error) => {
-      const errorMessage = error.message;
-      showModal(errorMessage);
-    });
-};
+export const handleSignIn = (email, password) => firebase.auth()
+  .signInWithEmailAndPassword(email, password);
 
 export const handleSignOut = () => {
   firebase

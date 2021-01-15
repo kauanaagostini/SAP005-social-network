@@ -19,4 +19,3 @@ const showModal = (message) => {
 };
 
 export default showModal;
-

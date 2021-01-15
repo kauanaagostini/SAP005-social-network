@@ -30,16 +30,16 @@ export const publicacoes = () => {
         </main>
       
     `;
-    const userName = rootElement.querySelector('#hello-user');
-    const photoPerfil = rootElement.querySelector('#photoUser')
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user != null) {
-        userName.innerHTML = `Olá, ${user.displayName}!`;
-        photoPerfil.src = user.photoURL;
-      } else {
-        onNavigate('/');
-      }
-    });
+  const userName = rootElement.querySelector('#hello-user');
+  const photoPerfil = rootElement.querySelector('#photoUser');
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user != null) {
+      userName.innerHTML = `Olá, ${user.displayName}!`;
+      photoPerfil.src = user.photoURL;
+    } else {
+      onNavigate('/');
+    }
+  });
 
   const btnExit = rootElement.querySelector('#exit');
   btnExit.addEventListener('click', (event) => {
