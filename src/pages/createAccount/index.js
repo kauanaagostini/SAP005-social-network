@@ -1,4 +1,6 @@
 import { handleSignUp, validateEmptyInput, validatePassword } from '../../services/index.js';
+import showModal from '../../components/showModal.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const createAccount = () => {
   // Coloque sua página
@@ -38,12 +40,31 @@ export const createAccount = () => {
     const email = rootElement.querySelector('#email').value;
     const password = rootElement.querySelector('#password').value;
     const samePassword = rootElement.querySelector('#samePassword').value;
-    const firtsName = rootElement.querySelector('#firstName').value;
+    const firstName = rootElement.querySelector('#firstName').value;
     const lastName = rootElement.querySelector('#lastName').value;
     const returnValidatePassword = validatePassword(password, samePassword);
-    const returnValidateInput = validateEmptyInput(firtsName, lastName);
+    if (!returnValidatePassword) {
+      const errorMessage = 'As senhas digitadas são divergentes';
+      showModal(errorMessage);
+    }
+    const returnValidateInput = validateEmptyInput(firstName, lastName);
+    if (!returnValidateInput) {
+      const errorMessage = 'Os campos Nome e Sobrenome são de preenchimentos obrigatórios';
+      showModal(errorMessage);
+    }
     if (returnValidatePassword && returnValidateInput) {
-      handleSignUp(email, password, firtsName, lastName);
+      handleSignUp(email, password)
+        .then((user) => {
+          const userName = `${firstName} ${lastName}`;
+          user.user.updateProfile({ displayName: userName });
+          const message = 'Usuário criado com sucesso!';
+          showModal(message);
+          onNavigate('/publicacoes');
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          showModal(errorMessage);
+        });
     }
   });
   return rootElement;

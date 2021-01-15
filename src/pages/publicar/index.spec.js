@@ -10,8 +10,16 @@ describe('Publicar', () => {
   });
 
   it('click on the send post button', () => {
+    beforeEach(() => {
+      firebase = jest.fn();
+    });
+
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
     publicar().querySelector('#postar').dispatchEvent(new Event('click'));
-    expect(services.createPost).toHaveBeenCalled();
+    expect(services.createPost).toHaveBeenCalled(firebase);
   });
 
   it('click on the sign out button', () => {

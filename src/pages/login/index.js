@@ -1,4 +1,5 @@
 import { handleGoogleSignIn, handleSignIn } from '../../services/index.js';
+// import showModal from '../../components/showModal.js';
 
 export const Login = () => {
   const rootElement = document.createElement('div');

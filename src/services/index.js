@@ -3,21 +3,8 @@ import { onNavigate } from '../utils/history.js';
 
 // ----- LOGIN -----
 
-export const handleSignUp = (email, password, firstName, lastName) => {
-  firebase.auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-      const userName = `${firstName} ${lastName}`;
-      user.user.updateProfile({ displayName: userName });
-      const message = 'Usuário criado com sucesso!';
-      showModal.error(message);
-      onNavigate('/publicacoes');
-    })
-    .catch((error) => {
-      const errorMessage = error.message;
-      showModal.error(errorMessage);
-    });
-};
+export const handleSignUp = (email, password) => firebase.auth()
+  .createUserWithEmailAndPassword(email, password);
 
 export const handleGoogleSignIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -28,7 +15,7 @@ export const handleGoogleSignIn = () => {
     })
     .catch((error) => {
       const errorMessage = error.message;
-      showModal.error(errorMessage);
+      showModal(errorMessage);
     });
 };
 
@@ -39,7 +26,7 @@ export const handleSignIn = (email, password) => {
     })
     .catch((error) => {
       const errorMessage = error.message;
-      showModal.error(errorMessage);
+      showModal(errorMessage);
     });
 };
 
@@ -51,8 +38,6 @@ export const handleSignOut = () => {
 
 export const validatePassword = (password, samePassword) => {
   if (password !== samePassword) {
-    const errorMessage = 'As senhas digitadas são divergentes';
-    showModal.error(errorMessage);
     return false;
   }
   return true;
@@ -60,8 +45,6 @@ export const validatePassword = (password, samePassword) => {
 
 export const validateEmptyInput = (firstName, lastName) => {
   if (firstName.length < 1 || lastName.length < 1) {
-    const errorMessage = 'Os campos Nome e Sobrenome são de preenchimentos obrigatórios';
-    showModal.error(errorMessage);
     return false;
   }
   return true;

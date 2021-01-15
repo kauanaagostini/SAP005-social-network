@@ -7,6 +7,8 @@ import {
   validateEmptyInput,
 } from './index.js';
 
+// import showModal from '../components/showModal.js';
+
 describe('Google Sign Up', () => {
   it('should be a function', () => {
     expect(typeof handleSignUp).toBe('function');
@@ -31,17 +33,19 @@ describe('Sign Out', () => {
   });
 });
 
-describe('Validate Password', () => {
+describe('Validate Passwodr', () => {
   it('should be a function', () => {
     expect(typeof validatePassword).toBe('function');
   });
 
-  // it('should return false if the passwords are diferents', () => {
-  //   expect(validatePassword('123456', '654321')).toBe(false);
-  // });
+  it('should return false if the passwords are diferents', () => {
+    const validate = validatePassword('123456', '654321');
+    expect(validate).toEqual(false);
+  });
 
   it('should return true if the passwords are iquals', () => {
-    expect(validatePassword('123456', '123456')).toBe(true);
+    const validate = validatePassword('123456', '123456');
+    expect(validate).toEqual(true);
   });
 });
 
@@ -50,13 +54,23 @@ describe('Validate Empty Input', () => {
     expect(typeof validateEmptyInput).toBe('function');
   });
 
-  // it('should return false if the input name is empty', () => {
-  //   expect(() => validateEmptyInput('Joao', '')).toEqual(false);
-  //   expect(() => validateEmptyInput('', 'Silva')).toEqual(false);
-  //   expect(() => validateEmptyInput('', '')).toEqual(false);
-  // });
+  it('should return false if the input name is empty - part1', () => {
+    const validate = validateEmptyInput('Joao', '');
+    expect(validate).toEqual(false);
+  });
+
+  it('should return false if the input name is empty - part2', () => {
+    const validate = validateEmptyInput('', 'Silva');
+    expect(validate).toEqual(false);
+  });
+
+  it('should return false if the input name is empty - part3', () => {
+    const validate = validateEmptyInput('', '');
+    expect(validate).toEqual(false);
+  });
 
   it('should return true if the inputs are filled', () => {
-    expect(validateEmptyInput('Joao', 'Silva')).toEqual(true);
+    const validate = validateEmptyInput('Joao', 'Silva');
+    expect(validate).toEqual(true);
   });
 });
