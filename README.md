@@ -1,4 +1,4 @@
-![Logo](src/img/img-login.jpg) 
+![Aplicação](src/img/readme/KAT_Redacoes.jpg) 
 
 ## Índice
 
@@ -8,11 +8,10 @@
 - [4. Fluxograma](#4-fluxograma)
 - [5. Interface do Usuário](#5-interface-do-usuário)
 - [6. Teste de Usabilidade](#6-teste-de-usabilidade)
-- [7. Ferramentas](#7-ferramentas)
+- [7. KAT - Redações](#7-KAT-redações)
 - [8. Colocando a Mão na Massa](#8-colocando-a-mão-na-massa)
 - [9. Considerações Finais](#9-considerações-finais)
-- [10. Agradecimentos](#10-agradecimentos)
-- [11. Autoras](#11-autoras)
+- [10. Autoras](#11-autoras)
 
 ---
 
@@ -24,7 +23,7 @@ Ao se deparar com essa ideia, e após algumas reuniões e pesquisas com o grupo,
 
 A redação hoje em dia conta muitos pontos nas provas do vestibular, concurso público e até no processo seletivo de uma empresa. E saber fazer uma boa redação para garantir uma vaga, é fundamental. 
 
-K.A.T. é o aplicativo que faltava, para descomplicar a vida dos usuários, onde poderão postar suas redações, refazer, treinar, pedir ajuda, compartilhar dicas, comentar, curtir e receber feedbacks de melhorias seja de professores, como de amigos da rede. 
+K.A.T. é o aplicativo que faltava, para descomplicar a vida dos usuários, onde poderão postar suas redações, refazer, treinar, pedir ajuda, curtir e compartilhar dicas de melhorias seja de professores, como de amigos da rede. 
 
 ## 2. Conhecendo nossos Usuários 
 
@@ -48,8 +47,7 @@ Alguns métodos de UX foram utilizados para o desenvolvimento do aplicativo:
 
 ### Personas 
 
-![Persona - 1](src/img/readme/persona1.jpg)
-![Persona - 2](src/img/readme/persona2.jpg) 
+![Personas](src/img/readme/personas.jpg) 
 
 ### Entrevistas 
 ![Entrevista Voniam](src/img/readme/entrevistaPersona1.jpg)
@@ -223,39 +221,67 @@ Comportamento:
 
 Através das histórias de usuário, conseguimos montar um fluxo de como seria o processo de criação de conta, login e publicação do usuário em nossa aplicação.
 
-![Fluxograma Login](src/img/readme/Fluxograma_Login.jpg)
-
-![Fluxograma Postagem](src/img/readme/Fluxograma_Postagem.jpg)
-
-![Fluxograma Likes](src/img/readme/Fluxograma_Like_Postagem.jpg)
+![Fluxogramas](src/img/readme/Fluxogramas.jpg)
 
 ## 5. Interface de Usuário  
 
-[Imagens dos protótipos] 
+Com base nas entrevistas e no fluxograma do projeto criamos os primeiros protótipos da aplicação.
+
+![Prototipos](src/img/readme/prototipos.jpg)
 
 ## 6. Teste de Usabilidade 
 
-[apresentar dados] 
+Após os primeiros testes foi visualizado várias melhorias na aplicação, cito aqui algumas delas:
+- Página Login: 
+    - Não necessidade de um campo a mais para informar o titulo do campo, podendo ser feito no próprio input de texto.
+    - A logo da aplicação e a descrição do mesmo após o Login, uma vez que nossos úsuarios ao entrar na aplicação já queira efetuar o Login. Deixando a explicação abaixo para os novos usuários verificarem utilizando o scroll de tela.
+    - O próprio botão do Google já estar com a informação de "Entrar com Google", não necessitando mais um paragrafo para o mesmo.
 
-## 7. Ferramentas 
+- Página Cadastro:
+    - Removido também a descrição dos campos e utilizado o próprio input para o mesmo.
 
-:hammer: HTML5 
+- Página Publicar
+    - O menu para navegar entre Publicar e Publicações foi remanejado para a mesma linha do botão de sair.
 
-:hammer: CSS3 
+- Página Publicações
+    - Foi utilizado o mesmo menu da Página Publicar, para navegações entre as página e o botão sair, deixando as duas páginas mais padronizadas.
+    - Acrescentado um botão de "Não gostar" na aplicação.
+    - Limitado a 1 por usuário o "Gostar" e "Não Gostar" da publicação.
+    - Removido a informação da tela "Mais Recente" uma vez que já é ordenado as postagens pela data da mesma, deixando sempre a mais recente no topo.
+    - O botão editar foi alterado por uma imagem assim como o botão "Gostar" e "Sair", deixando intuitivamente o que cada botão faz.
+    - Criado um botão para deletar a postagem.
 
-:hammer: Vanilla JavaScript 
+
+## 7. KAT - Redações 
+
+KAT - Redações é uma aplicação que permite seu usuário a postar informações, textos e dicas para os demais usuários visualizarem.
+Ao fazer a postagem você poderá editá-la ou até mesmo exclui-lá se não foi o que você desejava publicar. Os demais usuários poderão curtir ou não curtir suas publicações.
+
+[colocar um gif da aplicação]
+
 
 ## 8. Colocando a Mão na Massa  
 
-[explicando como utilizar o app e inserir imagens] 
+Desenvolvido em HTML5, CSS3 e Vanilla JavaScript, utilizando funcionalidades do Firebase. Utilizando o conceito Mobile First.
 
-Clica aqui, para testar :rocket: 
+Para utilizar nossa aplicação você pode acessá-la através do link: "KAT - Redações"(colocar o link do hosting aqui)
+
+Esperamos que se divirta e que encontre uma rede disposta a lhe ajudar. 
+
+[colocar aqui outro gif da aplicação]
+
 
 ## 9. Considerações Finais 
 
-## 10. Agradecimentos 
+Neste projeto aprendemos a lidar com ferramentas diferentes e a comunicação do projeto com um banco de dados externo, o que trouxe uma complexidade diferente e desafios ainda não vividos.
 
-## 11. Autoras 
+Além do trabalho em trio, desenvolvendo muito mais a comunicação entre as pessoas, o trabalho em equipe, e a utilizar as ferramentas de um modo muito mais próximo ao utilizado em grandes equipes. 
+
+Mesmo com todos esses desafios, acredito que foi uma experiência muito rica e divertida.
+
+Agradecemos muito a Laboratória por nos desafiar sempre a aprender cada dia mais, aos colegas de trio, e de squad, que foram fundamentais nesse processo, aos mentores e suas maravilhosas oficinas e dicas, e não menos importante aos nosso familiares e amigos, que nem sempre podem nos ajudar com dicas técnicas mas sempre nos incentivam, nos apoiam e estão dispostos a ouvir nossos desabafos.
+
+## 10. Autoras 
 
 :small_blue_diamond: Alessandra Alves | [GitHub - Alessandra](https://github.com/ale-alves)
 

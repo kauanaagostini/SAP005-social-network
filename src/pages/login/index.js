@@ -1,5 +1,6 @@
 import { handleGoogleSignIn, handleSignIn } from '../../services/index.js';
-// import showModal from '../../components/showModal.js';
+import showModal from '../../components/showModal.js';
+import { onNavigate } from '../../utils/history.js';
 
 export const Login = () => {
   const rootElement = document.createElement('div');
@@ -54,11 +55,25 @@ export const Login = () => {
   btnLogin.addEventListener('click', () => {
     const email = rootElement.querySelector('#email').value;
     const password = rootElement.querySelector('#password').value;
-    handleSignIn(email, password);
+    handleSignIn(email, password)
+      .then(() => {
+        onNavigate('/publicacoes');
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        showModal(errorMessage);
+      });
   });
 
   btnGoogle.addEventListener('click', () => {
-    handleGoogleSignIn();
+    handleGoogleSignIn()
+      .then(() => {
+        onNavigate('/publicacoes');
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        showModal(errorMessage);
+      });
   });
 
   return rootElement;

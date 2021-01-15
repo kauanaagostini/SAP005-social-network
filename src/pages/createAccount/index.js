@@ -3,7 +3,6 @@ import showModal from '../../components/showModal.js';
 import { onNavigate } from '../../utils/history.js';
 
 export const createAccount = () => {
-  // Coloque sua página
   const rootElement = document.createElement('div');
   rootElement.innerHTML = `
         <form id="formCreateAccount">
@@ -49,7 +48,7 @@ export const createAccount = () => {
     }
     const returnValidateInput = validateEmptyInput(firstName, lastName);
     if (!returnValidateInput) {
-      const errorMessage = 'Os campos Nome e Sobrenome são de preenchimentos obrigatórios';
+      const errorMessage = 'Os campos Nome e Sobrenome são de preenchimento obrigatório';
       showModal(errorMessage);
     }
     if (returnValidatePassword && returnValidateInput) {

@@ -29,7 +29,7 @@ export const publicar = () => {
   `;
 
   const userName = rootElement.querySelector('#hello-user');
-  const photoPerfil = rootElement.querySelector('#photoUser')
+  const photoPerfil = rootElement.querySelector('#photoUser');
   firebase.auth().onAuthStateChanged((user) => {
     if (user != null) {
       userName.innerHTML = `Olá, ${user.displayName}!`;

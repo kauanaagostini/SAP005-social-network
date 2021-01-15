@@ -5,9 +5,15 @@ import {
   handleSignOut,
   validatePassword,
   validateEmptyInput,
+  createPost,
+  getPosts,
+  likePost,
+  removeLike,
+  dislikePost,
+  removeDislike,
+  editPost,
+  deletePost,
 } from './index.js';
-
-// import showModal from '../components/showModal.js';
 
 describe('Google Sign Up', () => {
   it('should be a function', () => {
@@ -33,7 +39,7 @@ describe('Sign Out', () => {
   });
 });
 
-describe('Validate Passwodr', () => {
+describe('Validate Password', () => {
   it('should be a function', () => {
     expect(typeof validatePassword).toBe('function');
   });
@@ -72,5 +78,53 @@ describe('Validate Empty Input', () => {
   it('should return true if the inputs are filled', () => {
     const validate = validateEmptyInput('Joao', 'Silva');
     expect(validate).toEqual(true);
+  });
+});
+
+describe('Create a Post', () => {
+  it('should be a function', () => {
+    expect(typeof createPost).toBe('function');
+  });
+});
+
+describe('Get the Posts', () => {
+  it('should be a function', () => {
+    expect(typeof getPosts).toBe('function');
+  });
+});
+
+describe('Like a post', () => {
+  it('should be a function', () => {
+    expect(typeof likePost).toBe('function');
+  });
+});
+
+describe('Remove the Like in a post', () => {
+  it('should be a function', () => {
+    expect(typeof removeLike).toBe('function');
+  });
+});
+
+describe('Do not like a post', () => {
+  it('should be a function', () => {
+    expect(typeof dislikePost).toBe('function');
+  });
+});
+
+describe('Remove the do not like in a post', () => {
+  it('should be a function', () => {
+    expect(typeof removeDislike).toBe('function');
+  });
+});
+
+describe('Edit a post', () => {
+  it('should be a function', () => {
+    expect(typeof editPost).toBe('function');
+  });
+});
+
+describe('Delete a post', () => {
+  it('should be a function', () => {
+    expect(typeof deletePost).toBe('function');
   });
 });
