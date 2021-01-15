@@ -110,6 +110,7 @@ nav > ul{
 
 #user-container > img{
     max-width: 73px;
+    border-radius: 50px;
 }
 
 #option-container {

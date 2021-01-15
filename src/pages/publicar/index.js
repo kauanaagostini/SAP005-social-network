@@ -15,7 +15,7 @@ export const publicar = () => {
     </header> 
     <main>
       <section id="user-container">
-        <img src="../../img/user.png" alt="Logo do Site" class="user-item">
+        <img id="photoUser" class="user-item">
         <h2 class="user-item" id="hello-user"> </h2>
       </section>
       <section class="page-section">
@@ -29,9 +29,11 @@ export const publicar = () => {
   `;
 
   const userName = rootElement.querySelector('#hello-user');
+  const photoPerfil = rootElement.querySelector('#photoUser')
   firebase.auth().onAuthStateChanged((user) => {
     if (user != null) {
       userName.innerHTML = `Olá, ${user.displayName}!`;
+      photoPerfil.src = user.photoURL;
     } else {
       onNavigate('/');
     }
