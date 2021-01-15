@@ -8,10 +8,11 @@
 - [4. Fluxograma](#4-fluxograma)
 - [5. Interface do Usuário](#5-interface-do-usuário)
 - [6. Teste de Usabilidade](#6-teste-de-usabilidade)
-- [7. KAT - Redações](#7-KAT-redações)
+- [7. KAT-Redações](#7-KAT-redações)
 - [8. Colocando a Mão na Massa](#8-colocando-a-mão-na-massa)
 - [9. Considerações Finais](#9-considerações-finais)
-- [10. Autoras](#11-autoras)
+- [10. Agradecimentos](#10-agradecimentos)
+- [11. Autoras](#11-autoras)
 
 ---
 
@@ -223,76 +224,80 @@ Através das histórias de usuário, conseguimos montar um fluxo de como seria o
 
 ![Fluxogramas](src/img/readme/Fluxogramas.jpg)
 
-## 5. Interface de Usuário  
+## 5. Interface do Usuário  
 
-Com base nas entrevistas e no fluxograma do projeto criamos os primeiros protótipos da aplicação.
+Com base nas entrevistas e no fluxograma do projeto, foram criados os primeiros protótipos da aplicação.
 
 ![Prototipos](src/img/readme/Prototipos.jpg)
 
-## 6. Teste de Usabilidade 
+## 6. Teste de Usabilidade :mag:
 
-Após os primeiros testes foi visualizado várias melhorias na aplicação, cito aqui algumas delas:
-- Página Login: 
-    - Não necessidade de um campo a mais para informar o titulo do campo, podendo ser feito no próprio input de texto.
-    - A logo da aplicação e a descrição do mesmo após o Login, uma vez que nossos úsuarios ao entrar na aplicação já queira efetuar o Login. Deixando a explicação abaixo para os novos usuários verificarem utilizando o scroll de tela.
-    - O próprio botão do Google já estar com a informação de "Entrar com Google", não necessitando mais um paragrafo para o mesmo.
+Após os primeiros testes foram visualizados várias melhorias na aplicação, algumas delas:
 
-- Página Cadastro:
-    - Removido também a descrição dos campos e utilizado o próprio input para o mesmo.
+:bulb: Página Login: 
+- Retirado um campo a mais para informar o titulo do campo, podendo ser feito no próprio input de texto;
+- A logo da aplicação e a descrição do mesmo após o Login, uma vez que nossos usuários ao entrar na aplicação já queiram efetuar o Login.
+- Deixando a explicação abaixo para os novos usuários verificarem utilizando o scroll de tela;
+- O próprio botão do Google já estar com a informação de "Entrar com Google", não necessitando de mais um parágrafo para o mesmo.
 
-- Página Publicar
-    - O menu para navegar entre Publicar e Publicações foi remanejado para a mesma linha do botão de sair.
+:bulb: Página Cadastro:
+- Removido também a descrição dos campos e utilizado o próprio input para o mesmo.
 
-- Página Publicações
-    - Foi utilizado o mesmo menu da Página Publicar, para navegações entre as página e o botão sair, deixando as duas páginas mais padronizadas.
-    - Acrescentado um botão de "Não gostar" na aplicação.
-    - Limitado a 1 por usuário o "Gostar" e "Não Gostar" da publicação.
-    - Removido a informação da tela "Mais Recente" uma vez que já é ordenado as postagens pela data da mesma, deixando sempre a mais recente no topo.
-    - O botão editar foi alterado por uma imagem assim como o botão "Gostar" e "Sair", deixando intuitivamente o que cada botão faz.
-    - Criado um botão para deletar a postagem.
+:bulb: Página Publicar
+ - O menu para navegar entre Publicar e Publicações foi remanejado para a mesma linha do botão de sair.
+
+:bulb: Página Publicações
+ - Foi utilizado o mesmo menu da Página Publicar, para navegações entre as página e o botão sair, deixando as duas páginas padronizadas;
+ - Acrescentado um botão de "Não gostar" na aplicação;
+ - Limitado a clique 1 por usuário o "Gostar" e "Não Gostar" da publicação;
+ - Removido a informação da tela "Mais Recente" uma vez que já é ordenado as postagens em ordem crescente, deixando sempre a mais recente no topo;
+ - O botão editar foi alterado por uma imagem assim como o botão "Gostar" e "Sair", deixando intuitivo a função de cada botão;
+ - Criado um botão para deletar a postagem.
 
 
-## 7. KAT - Redações 
+## 7. KAT-Redações :iphone:
 
-KAT - Redações é uma aplicação que permite seu usuário a postar informações, textos e dicas para os demais usuários visualizarem.
+KAT - Redações é uma aplicação que permite o usuário a postar informações, textos e dicas para os demais usuários visualizarem.
 Ao fazer a postagem você poderá editá-la ou até mesmo exclui-lá se não foi o que você desejava publicar. Os demais usuários poderão curtir ou não curtir suas publicações.
 
-A aplicação pode ser acessada através da criação de uma conta ou com Login direto pelo Google.
-
-![Login](src/img/readme/gifs/Login-com-Google.Gif)
+[colocar um gif da aplicação]
 
 
 ## 8. Colocando a Mão na Massa  
 
-Desenvolvido em HTML5, CSS3 e Vanilla JavaScript, utilizando funcionalidades do Firebase. Utilizando o conceito Mobile First.
+Desenvolvido em HTML5, CSS3 e Vanilla JavaScript, utilizando funcionalidades do Firebase com o conceito Mobile First.
 
-Para utilizar nossa aplicação você pode acessá-la através do link: "KAT - Redações"(colocar o link do hosting aqui)
+Para utilizar nossa aplicação você poderá acessá-la através do link: "KAT - Redações"(colocar o link do hosting aqui)
 
-Esperamos que se divirta e que encontre uma rede disposta a lhe ajudar. 
+Esperamos que, se divertam e que encontrem uma rede disposta a lhe ajudar. 
 
-![Publicações](src/img/readme/gifs/Publicações.gif)
+[colocar aqui outro gif da aplicação]
 
 
 ## 9. Considerações Finais 
 
-Neste projeto aprendemos a lidar com ferramentas diferentes e a comunicação do projeto com um banco de dados externo, o que trouxe uma complexidade diferente e desafios ainda não vividos.
+Neste projeto a aprendizagem maior, foi lidar com diferentes ferramentas e a interligação do projeto com um banco de dados externo trouxe uma complexidade diferente e desafios ainda não vividos.
 
-Além do trabalho em trio, desenvolvendo muito mais a comunicação entre as pessoas, o trabalho em equipe, e a utilizar as ferramentas de um modo muito mais próximo ao utilizado em grandes equipes. 
+O projeto sendo realizado em trio, desenvolveu aos integrantes uma melhor comunicação e um excelente trabalho em equipe, com isso utilizando ferramentas de um modo muito mais próximo em grandes equipes.
 
 Mesmo com todos esses desafios, acreditamos que foi uma experiência muito rica e divertida.
 
-Agradecemos muito a Laboratória por nos desafiar sempre a aprender cada dia mais, as colegas de trio, e de squad, que foram fundamentais nesse processo, as mentoras e suas maravilhosas oficinas e dicas, e não menos importante aos nosso familiares e amigos, que nem sempre podem nos ajudar com dicas técnicas mas sempre nos incentivam, nos apoiam e estão dispostos a ouvir nossos desabafos.
+## 10. Agradecimentos :yellow_heart:
 
-![Logo](src/img/readme/img-login.jpg)
+- [Laboratória](https://www.laboratoria.la/br) - por sempre nos desafiar a aprender cada dia mais;
 
-Muito Obrigada,
+- Colegas de trio - pelo execelente trabalho em equipe;
 
-KAT - Redações!
+- Squad - que foram fundamentais nesse processo;
 
-## 10. Autoras 
+- Mentores - com suas maravilhosas oficinas e dicas;
 
-:small_blue_diamond: Alessandra Alves | [GitHub - Alessandra](https://github.com/ale-alves)
+- Familiares e amigos: pelos enormes apoios e incentivos.
 
-:small_blue_diamond: Kauana Agostini  | [GitHub - Kauana](https://github.com/kauanaagostini)
+## 11. Autoras 
 
-:small_blue_diamond: Thaís Alencar | [GitHub - Thaís](https://github.com/alencartha)<br/>
+:woman: Alessandra Alves | [GitHub - Alessandra](https://github.com/ale-alves)
+
+:woman: Kauana Agostini  | [GitHub - Kauana](https://github.com/kauanaagostini)
+
+:woman: Thaís Alencar | [GitHub - Thaís](https://github.com/alencartha)<br/>
