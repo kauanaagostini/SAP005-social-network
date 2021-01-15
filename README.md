@@ -257,7 +257,9 @@ Após os primeiros testes foi visualizado várias melhorias na aplicação, cito
 KAT - Redações é uma aplicação que permite seu usuário a postar informações, textos e dicas para os demais usuários visualizarem.
 Ao fazer a postagem você poderá editá-la ou até mesmo exclui-lá se não foi o que você desejava publicar. Os demais usuários poderão curtir ou não curtir suas publicações.
 
-[colocar um gif da aplicação]
+A aplicação pode ser acessada através da criação de uma conta ou com Login direto pelo Google.
+
+![Login](src/img/readme/gifs/Login-com-Google.Gif)
 
 
 ## 8. Colocando a Mão na Massa  
@@ -268,7 +270,7 @@ Para utilizar nossa aplicação você pode acessá-la através do link: "KAT - R
 
 Esperamos que se divirta e que encontre uma rede disposta a lhe ajudar. 
 
-[colocar aqui outro gif da aplicação]
+![Publicações](src/img/readme/gifs/Publicações.gif)
 
 
 ## 9. Considerações Finais 
